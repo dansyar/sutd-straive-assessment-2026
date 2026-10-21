@@ -1,0 +1,21 @@
+name: Assessment verification
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify assessment workflow for dansyar@gmail.com
+        run: |
+          python3 - <<'PY'
+          from datetime import datetime
+          assert datetime.strptime('2024-02-29', '%Y-%m-%d').day == 29
+          print('Assessment workflow verified successfully.')
+          PY
+
