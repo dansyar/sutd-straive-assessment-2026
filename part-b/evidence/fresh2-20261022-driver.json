@@ -1,0 +1,8 @@
+{
+  "prepared_at": "2026-10-22T02:42:16.669683+00:00",
+  "status": "prepared before accessing fresh-2 reviewer output or computing fresh-2 predictions",
+  "driver_sha256": "9892db7611a921617dad0ff7a5af28a657e53da4e94c10c8c01cf8695f80076d",
+  "source_manifest_sha256": "f0c165cbd95a78b9de1ed4ded6f9ef4526ec03515bc3dae02d7b16ba6f5b45c3",
+  "metric_functions": "Unchanged evaluate.py summarize/run_benchmark/requirement_change",
+  "independent_judgments_will_be_preserved": true
+}

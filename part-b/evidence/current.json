@@ -1,0 +1,9 @@
+{
+  "revision": "routing-v4",
+  "development": "evidence/iterations/routing-v4/development.json",
+  "retest": "evidence/iterations/routing-v4/retest.json",
+  "frozen_implementation": "evidence/versions/v1",
+  "fresh": "evidence/fresh-20261022/fresh-test.json",
+  "fresh2": "evidence/fresh2-20261022/fresh-test.json",
+  "previous_fresh_implementation": "evidence/versions/temperature-v3-pre-routing-v4"
+}

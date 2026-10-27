@@ -1,0 +1,22 @@
+{
+  "version": "v1",
+  "preserved_at": "2026-10-22T01:21:01.338985+00:00",
+  "purpose": "Original implementation and frozen inputs, preserved before the user-authorized temperature correction. Original first-test evidence remains unchanged.",
+  "files_sha256": {
+    "engine.py": "ffe0ed8f3cea840b023231944571c31af94757a46aaaeb299ba1a89eee0575eb",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "7221db32c9acf76e583618608745961fb6fa0b556a97f7d77f57f331de244b70",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df",
+    "data/development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "data/review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+    "data/manifest.json": "97a2c7f08903bb4aac21e1b3d8a8646bdc29339906e7e3f2183a9e6693930ed8",
+    "data/reviewed_labels.jsonl": "e0eb4f74c3fca8d150dccdda10044e0e358dd283f92459c97b069c1ff6f27e5c",
+    "data/reviewed_labels.freeze.json": "8045aa2eb91214b73afb934061f7c343a837829a4cf08d6b46069b48a90af6d8"
+  },
+  "original_results_sha256": {
+    "final-test-predictions.json": "e592a856e3afd7f631940b91f3936ab90e228d9d2ca481e9c3373de6d6f4fcab",
+    "final-test.json": "0f485e808dbfd3573e305685b61587968cbcf61dc1a4dc11aed619ad0cadb5b8",
+    "final-test-requirement-change.json": "fec56d43ca74d8730f876f27be10ac5b5e23b70bbb2de01fcd2bbb18db048c6b",
+    "final-test-mistakes.json": "e8516d46534ed52a8fe6cccb72ae82c996089db8c9a6aeb52831fffb8534dbbd"
+  }
+}

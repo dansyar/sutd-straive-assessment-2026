@@ -1,0 +1,136 @@
+[
+  {
+    "id": "RLY-910037",
+    "text": "Our warm-hold meals must remain between 60 and 65 C. A verified probe reads 54 C and heat has not been restored. Staff are asking whether to continue dispatching from this load.",
+    "family": "RLY-910037",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "Multiple temperature readings need reconciliation.",
+        "Usable product temperature limits are missing."
+      ],
+      "signals": [
+        "Cold-chain context"
+      ],
+      "explanation": "Reported issue and consequence check: Cold-chain context.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.216,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-910054",
+    "text": "The broker says the clearance form was accepted; the port system says rejected and does not show a reason. The cargo's location and condition are confirmed. We need to establish which clearance status is valid.",
+    "family": "RLY-910054",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "The reported blocker is a document or clearance record"
+      ],
+      "explanation": "Reported issue and consequence check: The reported blocker is a document or clearance record.",
+      "similarity": 0.164,
+      "margin": 0.0666,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.164
+        },
+        {
+          "category": "missing",
+          "score": 0.0974
+        },
+        {
+          "category": "delay",
+          "score": 0.089
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.094,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-910055",
+    "text": "The message only says 'Please help with shipment 471, something is wrong.' It gives no location, contents, symptoms, condition or current consequence.",
+    "family": "RLY-910055",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": null,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "wrong",
+        "shipment",
+        "contents",
+        "location",
+        "says"
+      ],
+      "explanation": "Words shared with training examples: wrong, shipment, contents, location, says.",
+      "similarity": 0.1695,
+      "margin": 0.0705,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1695
+        },
+        {
+          "category": "damage",
+          "score": 0.0989
+        },
+        {
+          "category": "delay",
+          "score": 0.075
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.066,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  }
+]

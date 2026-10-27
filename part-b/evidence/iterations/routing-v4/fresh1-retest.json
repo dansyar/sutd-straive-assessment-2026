@@ -1,0 +1,529 @@
+{
+  "status": "post-test diagnostic rerun",
+  "revision": "routing-v4",
+  "dataset": "fresh1",
+  "generated_at": "2026-10-22T02:44:55.434867+00:00",
+  "evaluation_n": 60,
+  "test_labels_sha256": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+  "implementation_sha256": {
+    "engine.py": "dfcce3f445ed997d73becca5e0b4b8271ece99379a519c75113a2235189a34b6",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "evaluation_protocol": {
+    "previously_exposed_cases": true,
+    "limitation": "These labels and errors informed routing-v4; this is development evidence only."
+  },
+  "methods": [
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "urgent_total": 15,
+      "urgent_misses": 1,
+      "urgent_recall": 0.9333333333333333,
+      "false_urgent": 0,
+      "review_count": 46,
+      "review_rate": 0.7666666666666667,
+      "review_required_n": 21,
+      "review_recall": 1.0,
+      "review_precision": 0.45652173913043476,
+      "required_review_automated": 0,
+      "automation_coverage": 0.23333333333333334,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 1.0,
+      "auto_category_n": 14,
+      "cost_units_standard": 76,
+      "cost_units_sensitive": 146,
+      "weighted_cost_units": 76,
+      "cost_units_per_report": 1.2666666666666666,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 8,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 12,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 7
+        }
+      },
+      "method": "rules",
+      "policy": "standard",
+      "p50_ms": 0.176,
+      "p95_ms": 0.235,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "urgent_total": 15,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 0,
+      "review_count": 52,
+      "review_rate": 0.8666666666666667,
+      "review_required_n": 21,
+      "review_recall": 1.0,
+      "review_precision": 0.40384615384615385,
+      "required_review_automated": 0,
+      "automation_coverage": 0.13333333333333333,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 1.0,
+      "auto_category_n": 8,
+      "cost_units_standard": 52,
+      "cost_units_sensitive": 52,
+      "weighted_cost_units": 52,
+      "cost_units_per_report": 0.8666666666666667,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 8,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 12,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 7
+        }
+      },
+      "method": "rules",
+      "policy": "sensitive",
+      "p50_ms": 0.166,
+      "p95_ms": 0.208,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "urgent_total": 15,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 0,
+      "review_count": 42,
+      "review_rate": 0.7,
+      "review_required_n": 21,
+      "review_recall": 0.9047619047619048,
+      "review_precision": 0.4523809523809524,
+      "required_review_automated": 2,
+      "automation_coverage": 0.3,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "unknown_labels_automated": 1,
+      "auto_route_accuracy": 1.0,
+      "auto_category_n": 17,
+      "cost_units_standard": 54,
+      "cost_units_sensitive": 54,
+      "weighted_cost_units": 54,
+      "cost_units_per_report": 0.9,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 8,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 12,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 7
+        }
+      },
+      "method": "learned",
+      "policy": "standard",
+      "p50_ms": 0.079,
+      "p95_ms": 0.111,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "urgent_total": 15,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 0,
+      "review_count": 52,
+      "review_rate": 0.8666666666666667,
+      "review_required_n": 21,
+      "review_recall": 1.0,
+      "review_precision": 0.40384615384615385,
+      "required_review_automated": 0,
+      "automation_coverage": 0.13333333333333333,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 1.0,
+      "auto_category_n": 8,
+      "cost_units_standard": 52,
+      "cost_units_sensitive": 52,
+      "weighted_cost_units": 52,
+      "cost_units_per_report": 0.8666666666666667,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 8,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 12,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 7
+        }
+      },
+      "method": "learned",
+      "policy": "sensitive",
+      "p50_ms": 0.079,
+      "p95_ms": 0.113,
+      "latency_samples": 300
+    }
+  ],
+  "requirement_change": [
+    {
+      "method": "rules",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 0.9333333333333333,
+        "urgent_misses": 1,
+        "false_urgent": 0,
+        "review_count": 46,
+        "automation_coverage": 0.23333333333333334,
+        "cost_units_sensitive": 146
+      },
+      "after": {
+        "urgent_recall": 1.0,
+        "urgent_misses": 0,
+        "false_urgent": 0,
+        "review_count": 52,
+        "automation_coverage": 0.13333333333333333,
+        "cost_units_sensitive": 52
+      },
+      "additional_reviews": 6,
+      "urgent_misses_prevented": 1,
+      "cost_reduction_under_new_requirement": 94
+    },
+    {
+      "method": "learned",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 1.0,
+        "urgent_misses": 0,
+        "false_urgent": 0,
+        "review_count": 42,
+        "automation_coverage": 0.3,
+        "cost_units_sensitive": 54
+      },
+      "after": {
+        "urgent_recall": 1.0,
+        "urgent_misses": 0,
+        "false_urgent": 0,
+        "review_count": 52,
+        "automation_coverage": 0.13333333333333333,
+        "cost_units_sensitive": 52
+      },
+      "additional_reviews": 10,
+      "urgent_misses_prevented": 0,
+      "cost_reduction_under_new_requirement": 2
+    }
+  ],
+  "trigger_case": {
+    "id": "RLY-910052",
+    "all_four_configurations": [
+      {
+        "category": "safety",
+        "category_label": "Safety & security",
+        "team": "Safety & security",
+        "urgent": true,
+        "review": true,
+        "review_reasons": [
+          "More than one category has similar evidence.",
+          "The stated issue differs from the base model's strongest word match.",
+          "A critical safety system remains unavailable; human confirmation is required."
+        ],
+        "signals": [
+          "A critical safety system remains unavailable"
+        ],
+        "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+        "similarity": 0.13,
+        "margin": 0.0,
+        "alternatives": [],
+        "policy": "standard",
+        "method": "rules",
+        "latency_ms": 0.163,
+        "api_cost_usd": 0,
+        "action": "Priority review"
+      },
+      {
+        "category": "safety",
+        "category_label": "Safety & security",
+        "team": "Safety & security",
+        "urgent": true,
+        "review": true,
+        "review_reasons": [
+          "Too little matching evidence to route automatically.",
+          "More than one category has similar evidence.",
+          "The stated issue differs from the base model's strongest word match.",
+          "A critical safety system remains unavailable; human confirmation is required."
+        ],
+        "signals": [
+          "A critical safety system remains unavailable"
+        ],
+        "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+        "similarity": 0.13,
+        "margin": 0.0,
+        "alternatives": [],
+        "policy": "sensitive",
+        "method": "rules",
+        "latency_ms": 0.153,
+        "api_cost_usd": 0,
+        "action": "Priority review"
+      },
+      {
+        "category": "safety",
+        "category_label": "Safety & security",
+        "team": "Safety & security",
+        "urgent": true,
+        "review": true,
+        "review_reasons": [
+          "More than one category has similar evidence.",
+          "The stated issue differs from the base model's strongest word match.",
+          "A critical safety system remains unavailable; human confirmation is required."
+        ],
+        "signals": [
+          "A critical safety system remains unavailable"
+        ],
+        "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+        "similarity": 0.1284,
+        "margin": 0.0263,
+        "alternatives": [
+          {
+            "category": "documentation",
+            "score": 0.1284
+          },
+          {
+            "category": "safety",
+            "score": 0.102
+          },
+          {
+            "category": "temperature",
+            "score": 0.0812
+          }
+        ],
+        "policy": "standard",
+        "method": "learned",
+        "latency_ms": 0.057,
+        "api_cost_usd": 0,
+        "action": "Priority review"
+      },
+      {
+        "category": "safety",
+        "category_label": "Safety & security",
+        "team": "Safety & security",
+        "urgent": true,
+        "review": true,
+        "review_reasons": [
+          "Too little matching evidence to route automatically.",
+          "More than one category has similar evidence.",
+          "The stated issue differs from the base model's strongest word match.",
+          "A critical safety system remains unavailable; human confirmation is required."
+        ],
+        "signals": [
+          "A critical safety system remains unavailable"
+        ],
+        "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+        "similarity": 0.1284,
+        "margin": 0.0263,
+        "alternatives": [
+          {
+            "category": "documentation",
+            "score": 0.1284
+          },
+          {
+            "category": "safety",
+            "score": 0.102
+          },
+          {
+            "category": "temperature",
+            "score": 0.0812
+          }
+        ],
+        "policy": "sensitive",
+        "method": "learned",
+        "latency_ms": 0.051,
+        "api_cost_usd": 0,
+        "action": "Priority review"
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "verified_at": "2026-10-22T02:14:07.991604+00:00",
+  "status": "passed",
+  "base_url": "http://127.0.0.1:58731",
+  "fresh_result_matches_first_run": true,
+  "fresh_reports_and_readonly_labels": 60,
+  "unknown_urgencies_preserved": 6,
+  "csv_rows_with_agent_attribution": 60,
+  "original_and_diagnostic_results_preserved": true,
+  "known_urgent_failure_reproduced_over_http": {
+    "id": "RLY-910052",
+    "team": "Trade compliance",
+    "urgent": false,
+    "review": true
+  },
+  "cache_no_store_assets_version": 10,
+  "private_source_not_served": true,
+  "user_state_counts_preserved": {
+    "incidents": {
+      "count": 0
+    },
+    "decisions": {
+      "count": 1
+    },
+    "reviews": {
+      "count": 0
+    },
+    "review_history": {
+      "count": 0
+    }
+  },
+  "classification_files_match_preregistration": true,
+  "implementation_sha256": {
+    "engine.py": "831810cbca74f2f4d372ee4e108b0cd33aff4797e38d06df0989c5b9c9572624",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "labels_sha256": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+  "registration_sha256": "bd122d152abad98324d02e550eb1c9d1bcca6514b8e55c1fb0b58b0c02bc3fa3",
+  "paid_inference_calls": 0,
+  "published": false,
+  "assessment_saved": false,
+  "story": "Evaluation → fresh frozen benchmark → independently reviewed labels → CSV; earlier result versions and saved decisions remain available.",
+  "executed_by": "OpenAI Codex",
+  "testing_attribution": {
+    "manual_product_testing_and_feedback": "dansyar (author-reported)",
+    "fresh_label_review": "fresh_report_review, separate fresh-context Codex agent",
+    "automated_tests_benchmarks_and_browser_verification": "OpenAI Codex"
+  },
+  "container_reproduction": {
+    "status": "passed",
+    "python": "3.12.15",
+    "platform": "Linux aarch64",
+    "reports": 60,
+    "independent_labels": 60,
+    "metric_and_cost_counts_match": true,
+    "all_240_predictions_match_excluding_latency": true,
+    "implementation_sha256": {
+      "engine.py": "831810cbca74f2f4d372ee4e108b0cd33aff4797e38d06df0989c5b9c9572624",
+      "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+      "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+      "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+    },
+    "labels_sha256": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+    "tests_passed_in_build": 31,
+    "linux_p95_ms": [
+      {
+        "method": "rules",
+        "policy": "standard",
+        "p95_ms": 0.155
+      },
+      {
+        "method": "rules",
+        "policy": "sensitive",
+        "p95_ms": 0.1501
+      },
+      {
+        "method": "learned",
+        "policy": "standard",
+        "p95_ms": 0.063
+      },
+      {
+        "method": "learned",
+        "policy": "sensitive",
+        "p95_ms": 0.066
+      }
+    ]
+  },
+  "automated_checks": {
+    "passed": 31,
+    "temperature_regression_scenarios": 32,
+    "configurations_per_temperature_scenario": 4,
+    "node_syntax": "passed"
+  },
+  "browser": {
+    "tab_id": "14",
+    "fresh_default_visible": true,
+    "preserved_original_results_switch_verified": true,
+    "read_only_label_set_switch_verified": true,
+    "widths": [
+      1440,
+      1024,
+      768,
+      390
+    ],
+    "page_overflow_at_tested_widths": false,
+    "review_controls_readonly": true,
+    "mobile_header_revised_and_rechecked": true,
+    "console_warnings_and_errors": 0,
+    "temporary_viewport_reset_called": true,
+    "screenshots": "evidence/ui/fresh-20261022/"
+  },
+  "business_summary": {
+    "path": "output/pdf/business-summary.pdf",
+    "pages": 1,
+    "rendered_and_visually_inspected": true
+  },
+  "limits": [
+    "60 new synthetic convenience scenarios; author knew the classifier; independent agent shares model family and written guide.",
+    "No domain-expert review or operational field trial.",
+    "The preregistered candidate misses one urgent fire-alarm blocker, has 22 wrong known-category suggestions, seven false urgent alerts and reviews 50/60.",
+    "No classifier, taxonomy, evaluator, corpus loader, thresholds, training labels or independent judgments changed after fresh scoring.",
+    "Local only; no push, deployment or assessment save."
+  ]
+}

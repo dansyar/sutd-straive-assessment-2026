@@ -1,0 +1,123 @@
+{
+  "version": "v1",
+  "id": "RLY-82374",
+  "text": "Dispatch update: The driver reports the cold compartment at 19 C with sensitive cargo still inside. Product limits are 2 to 8 C and immediate isolation is needed.",
+  "predictions": [
+    {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.997,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.108,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": true,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "c",
+        "limits",
+        "product limits",
+        "cold",
+        "inside"
+      ],
+      "explanation": "Words shared with training examples: c, limits, product limits, cold, inside.",
+      "similarity": 0.4307,
+      "margin": 0.3924,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.4307
+        },
+        {
+          "category": "damage",
+          "score": 0.0383
+        },
+        {
+          "category": "safety",
+          "score": 0.0369
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.045,
+      "api_cost_usd": 0,
+      "action": "Escalate now"
+    },
+    {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": true,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "c",
+        "limits",
+        "product limits",
+        "cold",
+        "inside"
+      ],
+      "explanation": "Words shared with training examples: c, limits, product limits, cold, inside.",
+      "similarity": 0.4307,
+      "margin": 0.3924,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.4307
+        },
+        {
+          "category": "damage",
+          "score": 0.0383
+        },
+        {
+          "category": "safety",
+          "score": 0.0369
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.035,
+      "api_cost_usd": 0,
+      "action": "Escalate now"
+    }
+  ]
+}

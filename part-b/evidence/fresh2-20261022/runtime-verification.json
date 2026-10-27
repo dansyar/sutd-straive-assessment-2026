@@ -1,0 +1,142 @@
+{
+  "verified_at": "2026-10-22T02:58:46.278366+00:00",
+  "status": "passed",
+  "base_url": "http://127.0.0.1:58731",
+  "revision": "routing-v4",
+  "fresh2_results_match_first_run": true,
+  "fresh2_readonly_labels": 60,
+  "unknown_urgencies_preserved": 8,
+  "csv_rows_with_actual_agent_attribution": 60,
+  "historical_fresh1_labels_and_results_preserved": true,
+  "original_first_test_preserved": true,
+  "current_diagnostic_matches": true,
+  "original_fire_alarm_all_configurations": [
+    {
+      "method": "rules",
+      "policy": "standard",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true
+    },
+    {
+      "method": "rules",
+      "policy": "sensitive",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true
+    },
+    {
+      "method": "learned",
+      "policy": "standard",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true
+    },
+    {
+      "method": "learned",
+      "policy": "sensitive",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true
+    }
+  ],
+  "queues_exclusive": true,
+  "cache_no_store_assets_version": 11,
+  "private_source_not_served": true,
+  "saved_user_rows_identical": true,
+  "user_state_counts": {
+    "incidents": 0,
+    "decisions": 1,
+    "reviews": 0,
+    "review_history": 0
+  },
+  "implementation_sha256": {
+    "engine.py": "dfcce3f445ed997d73becca5e0b4b8271ece99379a519c75113a2235189a34b6",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "labels_sha256": "1cdfac14b0cd68459e954ec6b973eb4da9ee01925b5990671d26233a0f11d98d",
+  "registration_sha256": "62ed08e3c250e989136b5dfd8099d71a28bc7184c31bfa7a2cca725dd9e5c27a",
+  "inference_api_calls": 0,
+  "published": false,
+  "assessment_saved": false,
+  "story": "Fresh 2 Evaluation → frozen benchmark → new independent labels → attributed CSV; preserved prior results/reviews remain readable.",
+  "executed_by": "OpenAI Codex",
+  "testing_attribution": {
+    "manual_product_testing_and_feedback": "dansyar (author-reported)",
+    "new_reference_labels": "fresh2_report_review, separate fresh-context Codex agent",
+    "automated_tests_benchmarks_and_browser_checks": "OpenAI Codex"
+  },
+  "container_reproduction": {
+    "status": "passed",
+    "python": "3.12.15",
+    "platform": "Linux aarch64",
+    "fresh2_reports": 60,
+    "labels_sha256": "1cdfac14b0cd68459e954ec6b973eb4da9ee01925b5990671d26233a0f11d98d",
+    "fresh2_all_240_predictions_match_excluding_latency": true,
+    "fresh2_metric_and_cost_counts_match": true,
+    "preserved_fresh1_all_240_predictions_and_metrics_match": true,
+    "paired_version_quality_and_costs_match": true,
+    "tests_passed_in_build": 40,
+    "linux_p95_ms": [
+      {
+        "method": "rules",
+        "policy": "standard",
+        "p95_ms": 0.2042
+      },
+      {
+        "method": "rules",
+        "policy": "sensitive",
+        "p95_ms": 0.206
+      },
+      {
+        "method": "learned",
+        "policy": "standard",
+        "p95_ms": 0.1251
+      },
+      {
+        "method": "learned",
+        "policy": "sensitive",
+        "p95_ms": 0.1133
+      }
+    ]
+  },
+  "automated_checks": {
+    "passed": 40,
+    "temperature_regression_scenarios": 32,
+    "routing_regression_scenarios": 19,
+    "node_syntax": "passed"
+  },
+  "browser": {
+    "tab_id": "15",
+    "fresh2_default_visible": true,
+    "team_accuracy_column_visible": true,
+    "readonly_fresh2_labels": true,
+    "preserved_fresh1_switch_verified": true,
+    "widths": [
+      1440,
+      1024,
+      768,
+      390
+    ],
+    "page_overflow_at_tested_widths": false,
+    "console_warnings_and_errors": 0,
+    "temporary_viewport_reset_called": true,
+    "screenshots": "evidence/ui/routing-v4/"
+  },
+  "business_summary": {
+    "path": "output/pdf/business-summary.pdf",
+    "pages": 1,
+    "rendered_and_visually_inspected": true
+  },
+  "evaluation_limits": [
+    "Synthetic authored reports; themes overlap; author knew the classifier.",
+    "Fresh-context reviewer shares model family and unchanged guide; no operator/domain-expert review.",
+    "Six team disagreements and five false urgent alerts remain; one wrong team outside abstention.",
+    "Three team disagreements concern operational versus Safety ownership of urgent critical-system restoration.",
+    "Paired old/new comparison added after primary scoring, without tuning or candidate selection.",
+    "No classifier, thresholds, taxonomy, training data, guide, independent judgments or metric functions changed after fresh-2 labels/results.",
+    "No publication, deployment or assessment save."
+  ]
+}

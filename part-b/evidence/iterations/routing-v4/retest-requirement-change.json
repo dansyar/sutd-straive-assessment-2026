@@ -1,0 +1,48 @@
+[
+  {
+    "method": "rules",
+    "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+    "before": {
+      "urgent_recall": 0.75,
+      "urgent_misses": 4,
+      "false_urgent": 0,
+      "review_count": 38,
+      "automation_coverage": 0.36666666666666664,
+      "cost_units_sensitive": 456
+    },
+    "after": {
+      "urgent_recall": 1.0,
+      "urgent_misses": 0,
+      "false_urgent": 11,
+      "review_count": 57,
+      "automation_coverage": 0.05,
+      "cost_units_sensitive": 79
+    },
+    "additional_reviews": 19,
+    "urgent_misses_prevented": 4,
+    "cost_reduction_under_new_requirement": 377
+  },
+  {
+    "method": "learned",
+    "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+    "before": {
+      "urgent_recall": 0.875,
+      "urgent_misses": 2,
+      "false_urgent": 0,
+      "review_count": 35,
+      "automation_coverage": 0.4166666666666667,
+      "cost_units_sensitive": 265
+    },
+    "after": {
+      "urgent_recall": 1.0,
+      "urgent_misses": 0,
+      "false_urgent": 4,
+      "review_count": 47,
+      "automation_coverage": 0.21666666666666667,
+      "cost_units_sensitive": 61
+    },
+    "additional_reviews": 12,
+    "urgent_misses_prevented": 2,
+    "cost_reduction_under_new_requirement": 204
+  }
+]

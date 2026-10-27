@@ -1,0 +1,60 @@
+{"id": "RLY-23879", "text": "The bag was sent to a depot in the wrong city. We have its scan and need a recovery plan.", "channel": "Control desk"}
+{"id": "RLY-63172", "text": "An old near miss has been reviewed and its corrective action closed. Please file the final report.", "channel": "Customer portal"}
+{"id": "RLY-21862", "text": "A faulty display flashed 30 C, but two independent probes verified stable 5 C. The sensor has been replaced.", "channel": "Email"}
+{"id": "RLY-17225", "text": "Rain soaked the paper stock in transit. The load is in dry storage awaiting a claim inspection.", "channel": "Customer portal"}
+{"id": "RLY-33429", "text": "A parcel of lamps has crushed shades. There is no smoke, leaking substance or continuing hazard.", "channel": "Depot note"}
+{"id": "RLY-46664", "text": "A regular apparel order disappeared between two sorting hubs. There is no current evidence of a security incident.", "channel": "Customer portal"}
+{"id": "RLY-24976", "text": "The crate's side is splintered and the sculpture inside is chipped. The packing area has been made safe.", "channel": "Email"}
+{"id": "RLY-11418", "text": "A pallet of spare labels is held because the tariff heading is absent. The broker requests a corrected declaration.", "channel": "Depot note"}
+{"id": "RLY-61963", "text": "The vehicle carrying the replacement emergency ventilation motor is delayed at a road closure. The destination's ventilation has failed and personnel cannot remain there safely.", "channel": "Customer portal"}
+{"id": "RLY-38796", "text": "A mock evacuation was completed on schedule. The fire alarm was part of the exercise and there is no real emergency.", "channel": "Email"}
+{"id": "RLY-25526", "text": "The chilled carton has a cosmetic tear. The seal is intact, the recorded temperature stayed in range and the claim concerns the packaging only.", "channel": "Email"}
+{"id": "RLY-29969", "text": "A consignee says the container never appeared while the terminal record says collected. The collecting vehicle is not identified.", "channel": "Depot note"}
+{"id": "RLY-63550", "text": "The refrigerated goods were transferred into an unpowered compartment. We cannot read the logger or establish how long they have been there.", "channel": "Customer portal"}
+{"id": "RLY-91877", "text": "A box of lithium cells is hissing and giving off heat. People are standing close to the unisolated pallet.", "channel": "Driver message"}
+{"id": "RLY-23213", "text": "A replacement pump needed for emergency flood protection is stuck en route during rising water. We have not confirmed how long the barrier can hold.", "channel": "Depot note"}
+{"id": "RLY-29998", "text": "A mirror arrived with a fracture. All pieces remain secured in the protective film and no one is exposed.", "channel": "Email"}
+{"id": "RLY-11674", "text": "The replacement module for the destination's failed emergency communications is unaccounted for. It is needed now, but we do not know which vehicle last carried it.", "channel": "Control desk"}
+{"id": "RLY-98271", "text": "A receiver reports 'not cold enough'. We lack a measured temperature, the required limits and any transport record.", "channel": "Customer portal"}
+{"id": "RLY-86065", "text": "The delivery signature file is blank, although the consignee confirms receipt of the undamaged shipment.", "channel": "Control desk"}
+{"id": "RLY-56904", "text": "The carton count is correct but the sealed box contains no ordered instrument. The sender has requested a contents investigation.", "channel": "Depot note"}
+{"id": "RLY-95467", "text": "The consignee reports torn packaging and thinks some contents are gone. No count or inventory is supplied.", "channel": "Email"}
+{"id": "RLY-70519", "text": "Last week's cold-chain deviation is already isolated and under a quality hold. This request is for the investigation paperwork only.", "channel": "Email"}
+{"id": "RLY-28450", "text": "The steel panel is dented along one edge. It is stable in the unloading area and the receiver wants replacement approval.", "channel": "Customer portal"}
+{"id": "RLY-21262", "text": "The destination rescheduled unloading because its loading crew is unavailable. The freight is still on our vehicle.", "channel": "Depot note"}
+{"id": "RLY-17064", "text": "An unidentified liquid is spreading from a container near the break area. Its contents and hazard class have not been established.", "channel": "Customer portal"}
+{"id": "RLY-12377", "text": "The driver reports an armed threat beside the vehicle. Cargo and driver remain at the scene.", "channel": "Depot note"}
+{"id": "RLY-60445", "text": "An audit found that the manifest uses the old customer address. The completed delivery itself was correct.", "channel": "Customer portal"}
+{"id": "RLY-70425", "text": "The shipment is intact and located at the origin depot. A scheduling error means it missed tonight's departure.", "channel": "Driver message"}
+{"id": "RLY-92475", "text": "The required minus 18 C freight has reached minus 2 C and continues warming. The refrigeration technician has not arrived.", "channel": "Email"}
+{"id": "RLY-38240", "text": "The driver is taking a mandatory rest break. All ambient cargo is secure and arrival will be 90 minutes after the estimate.", "channel": "Customer portal"}
+{"id": "RLY-43963", "text": "Ice cream is softening in a trailer whose compressor has failed. The stock remains on board without working cooling.", "channel": "Email"}
+{"id": "RLY-84412", "text": "The recipient has sent only 'late again, fix it'. There is no tracking reference or description of what was ordered.", "channel": "Control desk"}
+{"id": "RLY-62301", "text": "A stack of heavy crates is sliding toward the loading crew. The unstable stack has not been secured.", "channel": "Depot note"}
+{"id": "RLY-86887", "text": "A worker is trapped beside a fallen load at the transfer bay. Other vehicles are still moving through the area.", "channel": "Driver message"}
+{"id": "RLY-93646", "text": "The broker needs the invoice currency corrected before lodging the entry. No urgent use or cargo risk is identified.", "channel": "Email"}
+{"id": "RLY-57986", "text": "The delivery photo shows a doorway nobody recognises. The buyer has no parcel and the exact delivery address needs confirmation.", "channel": "Driver message"}
+{"id": "RLY-81591", "text": "The receiver requests a copy of the stamped packing list for its accounts team. There is no operational issue with the cargo.", "channel": "Depot note"}
+{"id": "RLY-49725", "text": "The customer marked a towel order 'ASAP'. It is expected two hours late and no service-critical impact was described.", "channel": "Driver message"}
+{"id": "RLY-73157", "text": "A damaged acid container is venting fumes into the occupied warehouse. Nobody has isolated the area yet.", "channel": "Customer portal"}
+{"id": "RLY-25751", "text": "The cold storage circuit has tripped and the food cargo is warming rapidly. There is no spare cold room available.", "channel": "Depot note"}
+{"id": "RLY-99296", "text": "The security team requests an archive copy of last month's resolved access incident. There is no ongoing intrusion.", "channel": "Email"}
+{"id": "RLY-51173", "text": "The customer received all items but the electronic receipt has the wrong company registration number.", "channel": "Email"}
+{"id": "RLY-79291", "text": "A consignment containing the only replacement pressure-relief valve cannot be located. The site's safety system remains disabled awaiting the part.", "channel": "Control desk"}
+{"id": "RLY-83924", "text": "A furniture delivery missed the customer's preferred morning slot. There is no damage, missing cargo or immediate risk.", "channel": "Customer portal"}
+{"id": "RLY-59960", "text": "The import permit number has one incorrect digit. The goods are safe in the bonded facility awaiting an amendment.", "channel": "Depot note"}
+{"id": "RLY-83191", "text": "The warehouse cannot locate the return shipment after receiving it last week. Please search the return racks.", "channel": "Control desk"}
+{"id": "RLY-40567", "text": "The forwarder cannot release the cargo until the exporter signs the missing origin declaration. Storage conditions are satisfactory.", "channel": "Driver message"}
+{"id": "RLY-50385", "text": "The receiver needs a logger file for the quality archive. All measurements met the shipment's stated storage conditions.", "channel": "Depot note"}
+{"id": "RLY-22467", "text": "The van is waiting for a ferry after the last sailing was cancelled. The dry-goods customer agreed to delivery tomorrow.", "channel": "Driver message"}
+{"id": "RLY-18114", "text": "A temperature warning was generated during an empty return trip. No product was on the vehicle.", "channel": "Email"}
+{"id": "RLY-94293", "text": "The transport papers describe machinery while the receiver expects clothing. We need to verify the actual consignment.", "channel": "Driver message"}
+{"id": "RLY-24299", "text": "A 2 to 8 C product is now at 17 C after the insulated vehicle was left open. The consignment has not been quarantined.", "channel": "Customer portal"}
+{"id": "RLY-87059", "text": "One roll of fabric is unaccounted for after a cross-dock transfer. No incident or active hazard was reported.", "channel": "Customer portal"}
+{"id": "RLY-16564", "text": "A client wrote 'everything is ruined' without photos or details. We need to establish the item and extent of damage.", "channel": "Driver message"}
+{"id": "RLY-43187", "text": "A printer has a cracked housing after transport. It is unplugged and there are no exposed batteries or fluids.", "channel": "Control desk"}
+{"id": "RLY-94005", "text": "Our books are on the correct truck, but the school receiving desk closes before it arrives. Please rebook the handover.", "channel": "Depot note"}
+{"id": "RLY-23545", "text": "The inbound manifest lists twelve units but the destination has eleven. All received units are intact. Trace the absent unit.", "channel": "Customer portal"}
+{"id": "RLY-10016", "text": "An unauthorised truck is taking goods from the locked compound right now. The gate operator has asked for immediate assistance.", "channel": "Email"}
+{"id": "RLY-63003", "text": "A clearance document error is preventing the release of the replacement emergency sprinkler controller. The destination has no working fire protection until it arrives.", "channel": "Control desk"}
+{"id": "RLY-32303", "text": "The receiver unpacked a bent bicycle frame. It is set aside and the customer needs a damage assessment.", "channel": "Depot note"}

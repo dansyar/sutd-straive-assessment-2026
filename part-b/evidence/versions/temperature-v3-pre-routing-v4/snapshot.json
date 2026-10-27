@@ -1,0 +1,30 @@
+{
+  "archived_at": "2026-10-22T02:18:03.293800+00:00",
+  "reason": "Preserve the complete temperature-v3 fresh-test reproduction before routing-v4 work.",
+  "sha256": {
+    "engine.py": "831810cbca74f2f4d372ee4e108b0cd33aff4797e38d06df0989c5b9c9572624",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df",
+    "fresh_evaluate.py": "3669c506bb001ee28f3b602c08d234420cac949c32f54c7a1f3b474b1201ac2e",
+    "generate_fresh.py": "1047022397ce27c4f8e9b6f6432e25d80d97460ca459be6f19e62ba3bac5986a",
+    "evidence/fresh-20261022-registration.json": "bd122d152abad98324d02e550eb1c9d1bcca6514b8e55c1fb0b58b0c02bc3fa3",
+    "evidence/fresh-20261022-source.json": "e8cb61080cdaff6a5d1e86162d8f6c6da2e77a66648c59ec76e9086f83f4bc41",
+    "evidence/fresh-20261022-driver.json": "792af1d0d63c763d0145a681825cf443e50a6e9faa221a1340c9e8e00d4186df",
+    "evidence/final-test.json": "0f485e808dbfd3573e305685b61587968cbcf61dc1a4dc11aed619ad0cadb5b8",
+    "evidence/iterations/temperature-v3/retest.json": "8f40a26a73f5d3c4ccf0fd01d00895f7ef6e04c454ebd6bb6af5646c579c167a",
+    "evidence/reviews/guide.txt": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6",
+    "evidence/reviews/fresh-20261022/review.raw.json": "6569e2e56ecbfa317e17b0f66239382ce84ee1481b356a7d19ef90d2ac09a39e",
+    "data/development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "data/review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+    "data/manifest.json": "97a2c7f08903bb4aac21e1b3d8a8646bdc29339906e7e3f2183a9e6693930ed8",
+    "data/fresh_reports_20261022.jsonl": "f1b7f09b4274d8cae6fcdb277dd858e8abf61bfd2a70a875b4f3c05d360d33a0",
+    "data/fresh_labels_20261022.jsonl": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+    "data/fresh_labels_20261022.freeze.json": "9b0b5f16420bec0dc75efead5f639624fa6830819b820fd90eea1eec543b1fbb",
+    "evidence/fresh-20261022/fresh-test.json": "69bbc342c1f0f4f86c5618a2c6fb8c1721e9278b62dff04d4253792c2fd25ed1",
+    "evidence/fresh-20261022/fresh-test-mistakes.json": "d948097b256aa21d0ef92f6e112394cc3c8c05f5826e3eec37a53128daedfa8f",
+    "evidence/fresh-20261022/fresh-test-predictions.json": "05ba14eccf478af9c4f15201e114b856482adafbefd2d116863206951439edb5",
+    "evidence/fresh-20261022/fresh-test-requirement-change.json": "347a0ea55ccbcabf9035c45e086100446392d57158b45e8579c2022defe3b609",
+    "output/pdf/business-summary.pdf": "fc742a3d37d65871b887d9ba6375f69e1c104ebd7ef8ded4bbd985764afc4073"
+  }
+}

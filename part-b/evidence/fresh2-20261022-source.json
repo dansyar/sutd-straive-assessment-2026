@@ -1,0 +1,318 @@
+{
+  "created_at": "2026-10-22T02:40:45.520107+00:00",
+  "status": "frozen before independent fresh-2 labels and predictions",
+  "reports": "data/fresh2_reports_20261022.jsonl",
+  "count": 60,
+  "reports_sha256": "da3b07a8e05eb1483d825fb5bd54050fcb60d520ae4d84e4f917b713c8011a8d",
+  "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6",
+  "registration_sha256": "62ed08e3c250e989136b5dfd8099d71a28bc7184c31bfa7a2cca725dd9e5c27a",
+  "generation_script_sha256": "f9859700dcad77b7bb5ec7fb3b265bf4ceca1594559510a1764194689d40e7c0",
+  "comparison_reports": 420,
+  "exact_duplicate_count": 0,
+  "id_overlap_count": 0,
+  "closest_word_trigram_matches": [
+    {
+      "fresh_id": "RLY-920036",
+      "old_id": "RLY-910009",
+      "word_trigram_jaccard": 0.1111
+    },
+    {
+      "fresh_id": "RLY-920044",
+      "old_id": "RLY-84930",
+      "word_trigram_jaccard": 0.0769
+    },
+    {
+      "fresh_id": "RLY-920029",
+      "old_id": "RLY-80716",
+      "word_trigram_jaccard": 0.0698
+    },
+    {
+      "fresh_id": "RLY-920018",
+      "old_id": "RLY-910010",
+      "word_trigram_jaccard": 0.0545
+    },
+    {
+      "fresh_id": "RLY-920053",
+      "old_id": "RLY-13950",
+      "word_trigram_jaccard": 0.0526
+    },
+    {
+      "fresh_id": "RLY-920001",
+      "old_id": "RLY-11983",
+      "word_trigram_jaccard": 0.0526
+    },
+    {
+      "fresh_id": "RLY-920037",
+      "old_id": "RLY-910057",
+      "word_trigram_jaccard": 0.0508
+    },
+    {
+      "fresh_id": "RLY-920050",
+      "old_id": "RLY-910045",
+      "word_trigram_jaccard": 0.0508
+    },
+    {
+      "fresh_id": "RLY-920022",
+      "old_id": "RLY-910026",
+      "word_trigram_jaccard": 0.05
+    },
+    {
+      "fresh_id": "RLY-920039",
+      "old_id": "RLY-37106",
+      "word_trigram_jaccard": 0.05
+    },
+    {
+      "fresh_id": "RLY-920051",
+      "old_id": "RLY-910035",
+      "word_trigram_jaccard": 0.0492
+    },
+    {
+      "fresh_id": "RLY-920034",
+      "old_id": "RLY-10288",
+      "word_trigram_jaccard": 0.0488
+    },
+    {
+      "fresh_id": "RLY-920027",
+      "old_id": "RLY-99516",
+      "word_trigram_jaccard": 0.0465
+    },
+    {
+      "fresh_id": "RLY-920025",
+      "old_id": "RLY-29998",
+      "word_trigram_jaccard": 0.0435
+    },
+    {
+      "fresh_id": "RLY-920009",
+      "old_id": "RLY-25526",
+      "word_trigram_jaccard": 0.0408
+    },
+    {
+      "fresh_id": "RLY-920005",
+      "old_id": "RLY-24299",
+      "word_trigram_jaccard": 0.0408
+    },
+    {
+      "fresh_id": "RLY-920059",
+      "old_id": "RLY-910039",
+      "word_trigram_jaccard": 0.04
+    },
+    {
+      "fresh_id": "RLY-920023",
+      "old_id": "RLY-61963",
+      "word_trigram_jaccard": 0.0392
+    },
+    {
+      "fresh_id": "RLY-920052",
+      "old_id": "RLY-910056",
+      "word_trigram_jaccard": 0.0328
+    },
+    {
+      "fresh_id": "RLY-920030",
+      "old_id": "RLY-91877",
+      "word_trigram_jaccard": 0.0286
+    },
+    {
+      "fresh_id": "RLY-920035",
+      "old_id": "RLY-17225",
+      "word_trigram_jaccard": 0.0278
+    },
+    {
+      "fresh_id": "RLY-920045",
+      "old_id": "RLY-17350",
+      "word_trigram_jaccard": 0.0278
+    },
+    {
+      "fresh_id": "RLY-920013",
+      "old_id": "RLY-45639",
+      "word_trigram_jaccard": 0.0263
+    },
+    {
+      "fresh_id": "RLY-920007",
+      "old_id": "RLY-86065",
+      "word_trigram_jaccard": 0.0263
+    },
+    {
+      "fresh_id": "RLY-920055",
+      "old_id": "RLY-83191",
+      "word_trigram_jaccard": 0.0256
+    },
+    {
+      "fresh_id": "RLY-920015",
+      "old_id": "RLY-33758",
+      "word_trigram_jaccard": 0.0256
+    },
+    {
+      "fresh_id": "RLY-920054",
+      "old_id": "RLY-62301",
+      "word_trigram_jaccard": 0.0256
+    },
+    {
+      "fresh_id": "RLY-920058",
+      "old_id": "RLY-32303",
+      "word_trigram_jaccard": 0.0244
+    },
+    {
+      "fresh_id": "RLY-920024",
+      "old_id": "RLY-33429",
+      "word_trigram_jaccard": 0.0238
+    },
+    {
+      "fresh_id": "RLY-920048",
+      "old_id": "RLY-94293",
+      "word_trigram_jaccard": 0.0238
+    },
+    {
+      "fresh_id": "RLY-920033",
+      "old_id": "RLY-85833",
+      "word_trigram_jaccard": 0.0238
+    },
+    {
+      "fresh_id": "RLY-920041",
+      "old_id": "RLY-70041",
+      "word_trigram_jaccard": 0.0238
+    },
+    {
+      "fresh_id": "RLY-920014",
+      "old_id": "RLY-84930",
+      "word_trigram_jaccard": 0.0238
+    },
+    {
+      "fresh_id": "RLY-920057",
+      "old_id": "RLY-12377",
+      "word_trigram_jaccard": 0.0233
+    },
+    {
+      "fresh_id": "RLY-920006",
+      "old_id": "RLY-86887",
+      "word_trigram_jaccard": 0.0233
+    },
+    {
+      "fresh_id": "RLY-920056",
+      "old_id": "RLY-43187",
+      "word_trigram_jaccard": 0.0227
+    },
+    {
+      "fresh_id": "RLY-920060",
+      "old_id": "RLY-86887",
+      "word_trigram_jaccard": 0.0227
+    },
+    {
+      "fresh_id": "RLY-920017",
+      "old_id": "RLY-58782",
+      "word_trigram_jaccard": 0.0227
+    },
+    {
+      "fresh_id": "RLY-920016",
+      "old_id": "RLY-85833",
+      "word_trigram_jaccard": 0.0227
+    },
+    {
+      "fresh_id": "RLY-920008",
+      "old_id": "RLY-70425",
+      "word_trigram_jaccard": 0.0222
+    },
+    {
+      "fresh_id": "RLY-920026",
+      "old_id": "RLY-59960",
+      "word_trigram_jaccard": 0.0222
+    },
+    {
+      "fresh_id": "RLY-920012",
+      "old_id": "RLY-57986",
+      "word_trigram_jaccard": 0.0217
+    },
+    {
+      "fresh_id": "RLY-920031",
+      "old_id": "RLY-24299",
+      "word_trigram_jaccard": 0.0213
+    },
+    {
+      "fresh_id": "RLY-920047",
+      "old_id": "RLY-67055",
+      "word_trigram_jaccard": 0.0213
+    },
+    {
+      "fresh_id": "RLY-920010",
+      "old_id": "RLY-79291",
+      "word_trigram_jaccard": 0.0204
+    },
+    {
+      "fresh_id": "RLY-920038",
+      "old_id": "RLY-25472",
+      "word_trigram_jaccard": 0.0204
+    },
+    {
+      "fresh_id": "RLY-920049",
+      "old_id": "RLY-910020",
+      "word_trigram_jaccard": 0.0196
+    },
+    {
+      "fresh_id": "RLY-920046",
+      "old_id": "RLY-70425",
+      "word_trigram_jaccard": 0.0196
+    },
+    {
+      "fresh_id": "RLY-920021",
+      "old_id": "RLY-910050",
+      "word_trigram_jaccard": 0.0192
+    },
+    {
+      "fresh_id": "RLY-920003",
+      "old_id": "RLY-910008",
+      "word_trigram_jaccard": 0.0189
+    },
+    {
+      "fresh_id": "RLY-920004",
+      "old_id": "RLY-910011",
+      "word_trigram_jaccard": 0.0179
+    },
+    {
+      "fresh_id": "RLY-920042",
+      "old_id": "RLY-910036",
+      "word_trigram_jaccard": 0.0179
+    },
+    {
+      "fresh_id": "RLY-920002",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920040",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920011",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920020",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920028",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920019",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920032",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    },
+    {
+      "fresh_id": "RLY-920043",
+      "old_id": "RLY-99738",
+      "word_trigram_jaccard": 0.0
+    }
+  ],
+  "duplicate_check_limitation": "Lexical uniqueness does not establish scenario independence; issue types and domains intentionally overlap.",
+  "review_input_directory": "/tmp/relay-fresh2-review-20261022",
+  "previous_fresh_reports_sha256": "f1b7f09b4274d8cae6fcdb277dd858e8abf61bfd2a70a875b4f3c05d360d33a0"
+}

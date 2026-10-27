@@ -5,4 +5,10 @@ __pycache__/
 .env.*
 *.log
 evidence/*.png
+tools/
+node_modules
+part-b/.local/
+part-b/outputs/
+part-b/data/private_draft_labels.jsonl
+part-b/output/pdf/*preview*.png
 

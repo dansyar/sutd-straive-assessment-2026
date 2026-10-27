@@ -1,0 +1,8 @@
+{
+  "prepared_at": "2026-10-22T02:00:50.602159+00:00",
+  "status": "prepared before accessing reviewer output or computing fresh predictions",
+  "driver_sha256": "3669c506bb001ee28f3b602c08d234420cac949c32f54c7a1f3b474b1201ac2e",
+  "source_manifest_sha256": "e8cb61080cdaff6a5d1e86162d8f6c6da2e77a66648c59ec76e9086f83f4bc41",
+  "metric_functions": "unchanged evaluate.py summarize/run_benchmark/requirement_change",
+  "original_labels_unchanged": true
+}

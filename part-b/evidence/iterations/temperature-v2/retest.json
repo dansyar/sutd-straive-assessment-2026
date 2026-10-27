@@ -1,0 +1,476 @@
+{
+  "status": "post-test diagnostic rerun",
+  "revision": "temperature-v2",
+  "generated_at": "2026-10-22T01:29:08.213116+00:00",
+  "python": "3.12.14",
+  "platform": "Darwin arm64",
+  "train_n": 240,
+  "train_families": 48,
+  "evaluation_n": 60,
+  "evaluation_families": 60,
+  "corpus_sha256": {
+    "development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c"
+  },
+  "model_fit_ms": 4.222,
+  "implementation_sha256": {
+    "engine.py": "bab51e114923d9ba4e2bf5f586bb349864a6d1c5ba476850a5136d8f78be43b9",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "35b081e461132fb3f685c4c8d3063ce27ae6c5e186fc6647027f76893352e00f"
+  },
+  "test_labels_sha256": "e0eb4f74c3fca8d150dccdda10044e0e358dd283f92459c97b069c1ff6f27e5c",
+  "review_provenance": {
+    "status": "frozen independent review",
+    "count": 60,
+    "frozen_at": "2026-10-21T07:49:38.138829+00:00",
+    "labels_sha256": "e0eb4f74c3fca8d150dccdda10044e0e358dd283f92459c97b069c1ff6f27e5c",
+    "reports_sha256": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+    "implementation_sha256": {
+      "engine.py": "ffe0ed8f3cea840b023231944571c31af94757a46aaaeb299ba1a89eee0575eb",
+      "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+      "evaluate.py": "7221db32c9acf76e583618608745961fb6fa0b556a97f7d77f57f331de244b70"
+    },
+    "source": {
+      "kind": "independent agent",
+      "reviewer_type": "agent",
+      "reviewer": "independent_report_review",
+      "file": "independent-review.json",
+      "sha256": "d3bedcb9529a594df379274cf64fca4935dc3b1a73fe8703c095e7af6273c943",
+      "method": "Fresh-context, label- and prediction-blind agent review of the supplied report texts and written guide only. Each category, urgency and clarification judgment was made individually using the reviewer's own judgment; no keyword classifier, existing model, repository material, original annotations, other reviews or evaluation results were used. Code was used only to read the two inputs, package the manually authored judgments and validate coverage and field types.",
+      "fresh_context": true,
+      "blind_inputs": {
+        "reports_sha256": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+        "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6"
+      },
+      "guide_notes": [
+        "The guide does not explicitly distinguish an active unsafe destination from the urgent logistics blocker restoring its safety system. I applied safety precedence where unsafe personnel or rising floodwater are explicitly described (RLY-61963 and RLY-23213). I retained the missing or documentation cause for other blocked safety-system replacements without a separately described active physical event, while still marking them urgent.",
+        "The guide does not expressly say whether archival safety reports or cold-chain investigation and logger records become documentation cases. I used the underlying safety or temperature domain because documentation is specifically described through trade and delivery documents, and temperature records are expressly within temperature.",
+        "Routine means no immediate threat is described, while unclear urgency warns against treating missing information as proof of safety; the boundary is underspecified. I used routine for concrete operational incidents without an urgency cue, including some with unresolved identity or delivery records. I used unclear when reported cold-chain risk lacks the necessary temperature facts or an extremely vague report supplies no usable condition or consequence information.",
+        "The guide does not define how many facts must be missing before clarification is required. I did not flag normal recovery, claims, filing or tracing work by itself. I flagged explicit material gaps, conflicting accounts, unresolved primary issues, and separate active safety and transport handling.",
+        "There is no tie-breaker between packaging damage and a merely suspected shortage, or between a document discrepancy and the wrong consignment. I preserved an unclear primary category for RLY-95467 and RLY-94293 until inventory or actual consignment identity is verified.",
+        "Generic late again and everything is ruined statements could suggest delay or damage, but they do not establish the required shipment condition or specific primary issue. I used unclear for RLY-84412 and RLY-16564 rather than infer absent facts."
+      ]
+    },
+    "reviewers": [
+      "independent_report_review"
+    ],
+    "reviewer_types": [
+      "agent"
+    ],
+    "unclear_category": 4,
+    "unclear_urgency": 4
+  },
+  "methods": [
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 56,
+      "category_accuracy": 0.5714285714285714,
+      "macro_f1": 0.5900070689544373,
+      "urgent_total": 16,
+      "urgent_misses": 12,
+      "urgent_recall": 0.25,
+      "false_urgent": 1,
+      "review_count": 32,
+      "review_rate": 0.5333333333333333,
+      "review_required_n": 12,
+      "review_recall": 0.5833333333333334,
+      "review_precision": 0.21875,
+      "required_review_automated": 5,
+      "automation_coverage": 0.4666666666666667,
+      "unsafe_auto_urgent_misses": 4,
+      "wrong_auto_routes": 5,
+      "unknown_labels_automated": 3,
+      "auto_route_accuracy": 0.8,
+      "auto_category_n": 25,
+      "cost_units_standard": 448,
+      "cost_units_sensitive": 1288,
+      "weighted_cost_units": 448,
+      "cost_units_per_report": 7.466666666666667,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 8,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 4,
+          "missing": 4,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 3,
+          "missing": 0,
+          "damage": 4,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 9,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 8,
+          "missing": 0,
+          "damage": 1,
+          "temperature": 0,
+          "safety": 3,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 3,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 4
+        }
+      },
+      "method": "rules",
+      "policy": "standard",
+      "p50_ms": 0.094,
+      "p95_ms": 0.116,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 56,
+      "category_accuracy": 0.5714285714285714,
+      "macro_f1": 0.5900070689544373,
+      "urgent_total": 16,
+      "urgent_misses": 1,
+      "urgent_recall": 0.9375,
+      "false_urgent": 18,
+      "review_count": 56,
+      "review_rate": 0.9333333333333333,
+      "review_required_n": 12,
+      "review_recall": 1.0,
+      "review_precision": 0.21428571428571427,
+      "required_review_automated": 0,
+      "automation_coverage": 0.06666666666666667,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 1,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 0.75,
+      "auto_category_n": 4,
+      "cost_units_standard": 128,
+      "cost_units_sensitive": 198,
+      "weighted_cost_units": 198,
+      "cost_units_per_report": 3.3,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 8,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 4,
+          "missing": 4,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 3,
+          "missing": 0,
+          "damage": 4,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 9,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 8,
+          "missing": 0,
+          "damage": 1,
+          "temperature": 0,
+          "safety": 3,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 3,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 4
+        }
+      },
+      "method": "rules",
+      "policy": "sensitive",
+      "p50_ms": 0.097,
+      "p95_ms": 0.12,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 56,
+      "category_accuracy": 0.6964285714285714,
+      "macro_f1": 0.682724301841949,
+      "urgent_total": 16,
+      "urgent_misses": 4,
+      "urgent_recall": 0.75,
+      "false_urgent": 1,
+      "review_count": 23,
+      "review_rate": 0.38333333333333336,
+      "review_required_n": 12,
+      "review_recall": 0.5833333333333334,
+      "review_precision": 0.30434782608695654,
+      "required_review_automated": 5,
+      "automation_coverage": 0.6166666666666667,
+      "unsafe_auto_urgent_misses": 2,
+      "wrong_auto_routes": 8,
+      "unknown_labels_automated": 4,
+      "auto_route_accuracy": 0.7575757575757576,
+      "auto_category_n": 33,
+      "cost_units_standard": 217,
+      "cost_units_sensitive": 497,
+      "weighted_cost_units": 217,
+      "cost_units_per_report": 3.6166666666666667,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 4,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 2
+        },
+        "missing": {
+          "delay": 3,
+          "missing": 4,
+          "damage": 0,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 1,
+          "damage": 6,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 1,
+          "temperature": 1,
+          "safety": 9,
+          "documentation": 1
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 2,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 6
+        }
+      },
+      "method": "learned",
+      "policy": "standard",
+      "p50_ms": 0.029,
+      "p95_ms": 0.0441,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 56,
+      "category_accuracy": 0.6964285714285714,
+      "macro_f1": 0.682724301841949,
+      "urgent_total": 16,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 6,
+      "review_count": 44,
+      "review_rate": 0.7333333333333333,
+      "review_required_n": 12,
+      "review_recall": 0.9166666666666666,
+      "review_precision": 0.25,
+      "required_review_automated": 1,
+      "automation_coverage": 0.26666666666666666,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 2,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 0.875,
+      "auto_category_n": 16,
+      "cost_units_standard": 68,
+      "cost_units_sensitive": 68,
+      "weighted_cost_units": 68,
+      "cost_units_per_report": 1.1333333333333333,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 4,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 2
+        },
+        "missing": {
+          "delay": 3,
+          "missing": 4,
+          "damage": 0,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 1,
+          "damage": 6,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 1,
+          "temperature": 1,
+          "safety": 9,
+          "documentation": 1
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 2,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 6
+        }
+      },
+      "method": "learned",
+      "policy": "sensitive",
+      "p50_ms": 0.03,
+      "p95_ms": 0.0431,
+      "latency_samples": 300
+    }
+  ],
+  "requirement_change": [
+    {
+      "method": "rules",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 0.25,
+        "urgent_misses": 12,
+        "false_urgent": 1,
+        "review_count": 32,
+        "automation_coverage": 0.4666666666666667,
+        "cost_units_sensitive": 1288
+      },
+      "after": {
+        "urgent_recall": 0.9375,
+        "urgent_misses": 1,
+        "false_urgent": 18,
+        "review_count": 56,
+        "automation_coverage": 0.06666666666666667,
+        "cost_units_sensitive": 198
+      },
+      "additional_reviews": 24,
+      "urgent_misses_prevented": 11,
+      "cost_reduction_under_new_requirement": 1090
+    },
+    {
+      "method": "learned",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 0.75,
+        "urgent_misses": 4,
+        "false_urgent": 1,
+        "review_count": 23,
+        "automation_coverage": 0.6166666666666667,
+        "cost_units_sensitive": 497
+      },
+      "after": {
+        "urgent_recall": 1.0,
+        "urgent_misses": 0,
+        "false_urgent": 6,
+        "review_count": 44,
+        "automation_coverage": 0.26666666666666666,
+        "cost_units_sensitive": 68
+      },
+      "additional_reviews": 21,
+      "urgent_misses_prevented": 4,
+      "cost_reduction_under_new_requirement": 429
+    }
+  ],
+  "assumptions": {
+    "cost_units": {
+      "wrong_route": 6,
+      "false_urgent": 2,
+      "human_review": 1
+    },
+    "urgent_miss_by_policy": {
+      "standard": 30,
+      "sensitive": 100
+    },
+    "priority_delay": "All missed urgent flags incur the priority penalty, including reports in ordinary human review.",
+    "review": "Human review costs 1 relative unit. Automatic wrong routes or bypassed required review cost 6 once. False urgent flags cost 2. Human errors, staffing and elapsed queue time are unmeasured.",
+    "api_cost": "Both approaches make zero paid API calls. Computing and human labor are excluded from USD figures.",
+    "latency": "Warm inference only, 5 passes per report; excludes HTTP, UI and startup. Fit time is reported separately.",
+    "quality": "Synthetic data. Development has 12 scenario families with 5 variants each, so 60 rows are not 60 independent scenarios.",
+    "unclear": "Unclear category/urgency labels are not forced into known classes. Known-label denominators are explicit; required-review behavior is evaluated on all reports.",
+    "thresholds": "Temperature checks revised after the original test was inspected; thresholds otherwise unchanged. Reused test cases are diagnostic, not new independent validation."
+  },
+  "testing_attribution": {
+    "manual_product_testing_and_feedback": "dansyar (as reported by the author)",
+    "automated_tests_and_evaluation_execution": "OpenAI Codex",
+    "reference_label_review": "separate fresh-context Codex agent"
+  },
+  "evaluation_protocol": {
+    "kind": "post-test diagnostic",
+    "previously_exposed_cases": true,
+    "original_result": "evidence/final-test.json",
+    "original_result_sha256": "0f485e808dbfd3573e305685b61587968cbcf61dc1a4dc11aed619ad0cadb5b8",
+    "frozen_implementation": "evidence/versions/v1",
+    "limitation": "These cases have already been inspected. Improvement on them is not an estimate of unseen performance; a new independently reviewed set is still needed."
+  }
+}

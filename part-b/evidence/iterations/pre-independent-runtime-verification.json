@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-10-21T03:36:36.682361+00:00",
+  "scope": "fresh local Docker container, separate from author state",
+  "python_family": "3.12",
+  "checks": {
+    "fresh_dependency_install": true,
+    "behavioral_tests": 16,
+    "initial_demo_incidents": 48,
+    "exclusive_priority_queues": true,
+    "http_triage_to_human_confirmation_to_done": true,
+    "blind_review_reports": 60,
+    "review_labels_blank": true,
+    "final_test_unavailable_until_review": true,
+    "private_source_not_served": true,
+    "container_development_quality_reproduced": true
+  },
+  "not_verified": [
+    "GitHub CI run after publication",
+    "independent human labels and final test",
+    "public hosted deployment",
+    "assessment Q11 save"
+  ],
+  "container_runtime": {
+    "python": "3.12.15",
+    "platform": "Linux aarch64"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "seed": 20261021,
+  "development": 300,
+  "train": 240,
+  "validation": 60,
+  "independent_review": 60,
+  "source": "Original synthetic reports authored with OpenAI Codex. No real operator data.",
+  "sha256": {
+    "development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c"
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "status": "development estimates",
+  "generated_at": "2026-10-21T02:13:31.704343+00:00",
+  "python": "3.12.14",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "train_n": 240,
+  "evaluation_n": 60,
+  "test_labels_sha256": null,
+  "methods": [
+    {
+      "n": 60,
+      "category_accuracy": 0.9166666666666666,
+      "macro_f1": 0.9111111111111111,
+      "urgent_total": 20,
+      "urgent_misses": 5,
+      "urgent_recall": 0.75,
+      "false_urgent": 0,
+      "review_count": 25,
+      "review_rate": 0.4166666666666667,
+      "automation_coverage": 0.5833333333333334,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "auto_route_accuracy": 1.0,
+      "weighted_cost_units": 25,
+      "cost_units_per_report": 0.4166666666666667,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 10,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 10,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 10
+        }
+      },
+      "method": "rules",
+      "policy": "standard",
+      "p50_ms": 0.016,
+      "p95_ms": 0.024,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_accuracy": 0.9166666666666666,
+      "macro_f1": 0.9111111111111111,
+      "urgent_total": 20,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 5,
+      "review_count": 45,
+      "review_rate": 0.75,
+      "automation_coverage": 0.25,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "auto_route_accuracy": 1.0,
+      "weighted_cost_units": 45,
+      "cost_units_per_report": 0.75,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 10,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 10,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 10
+        }
+      },
+      "method": "rules",
+      "policy": "sensitive",
+      "p50_ms": 0.015,
+      "p95_ms": 0.022,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_accuracy": 0.43333333333333335,
+      "macro_f1": 0.446687370600414,
+      "urgent_total": 20,
+      "urgent_misses": 20,
+      "urgent_recall": 0.0,
+      "false_urgent": 0,
+      "review_count": 54,
+      "review_rate": 0.9,
+      "automation_coverage": 0.1,
+      "unsafe_auto_urgent_misses": 5,
+      "wrong_auto_routes": 1,
+      "auto_route_accuracy": 0.8333333333333334,
+      "weighted_cost_units": 210,
+      "cost_units_per_report": 3.5,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 7,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 3
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 5
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 5,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 4,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 5,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        }
+      },
+      "method": "learned",
+      "policy": "standard",
+      "p50_ms": 0.027,
+      "p95_ms": 0.038,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_accuracy": 0.43333333333333335,
+      "macro_f1": 0.446687370600414,
+      "urgent_total": 20,
+      "urgent_misses": 0,
+      "urgent_recall": 1.0,
+      "false_urgent": 5,
+      "review_count": 60,
+      "review_rate": 1.0,
+      "automation_coverage": 0.0,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "auto_route_accuracy": null,
+      "weighted_cost_units": 60,
+      "cost_units_per_report": 1.0,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 7,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 3
+        },
+        "missing": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 5
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 5,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 5,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 4,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 5,
+          "temperature": 0,
+          "safety": 5,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 9,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        }
+      },
+      "method": "learned",
+      "policy": "sensitive",
+      "p50_ms": 0.0295,
+      "p95_ms": 0.043,
+      "latency_samples": 300
+    }
+  ],
+  "assumptions": {
+    "cost_units": {
+      "wrong_route": 6,
+      "false_urgent": 2,
+      "human_review": 1
+    },
+    "urgent_miss_by_policy": {
+      "standard": 30,
+      "sensitive": 100
+    },
+    "human_review": "A reviewed report costs one relative unit; assumed correct and timely. Human errors/queue delays are not modeled.",
+    "api_cost": "Both local approaches make zero paid API calls. Local compute and human labor are excluded from USD figures.",
+    "latency": "Warm inference only, 5 passes per report; excludes startup, HTTP and user-interface time.",
+    "quality": "Synthetic data. Development labels are author drafts. Not evidence of real-world performance.",
+    "thresholds": "Fixed initial policy settings. Any subsequent tuning must use development data only."
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "reviewer": "fresh2_report_review",
+  "reviewer_type": "agent",
+  "human_review": false,
+  "fresh_context": true,
+  "allowed_inputs": [
+    "/tmp/relay-fresh2-review-20261022/reports.jsonl",
+    "/tmp/relay-fresh2-review-20261022/guide.txt"
+  ],
+  "judgments": [
+    {
+      "id": "RLY-920001",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The display stand is visibly bent, the carton is complete, and a repair assessment is requested."
+    },
+    {
+      "id": "RLY-920002",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The identified sealed container remains in bay 12; the terminal closure postpones collection."
+    },
+    {
+      "id": "RLY-920003",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "An outdated consignee entity on the import declaration is preventing clearance; all machines are accounted for."
+    },
+    {
+      "id": "RLY-920004",
+      "category": "missing",
+      "urgent": false,
+      "clarification": true,
+      "reason": "Only three of four scanned projectors can be found, and the handover count is disputed."
+    },
+    {
+      "id": "RLY-920005",
+      "category": "temperature",
+      "urgent": true,
+      "clarification": false,
+      "reason": "The calibrated vaccine probe is above the 2-8 C limit and still rising in the transport box."
+    },
+    {
+      "id": "RLY-920006",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "A worker is currently trapped under a dropped dock leveller while another truck continues approaching."
+    },
+    {
+      "id": "RLY-920007",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Delivery is confirmed complete and intact; the unresolved issue is the incorrect date on the receipt."
+    },
+    {
+      "id": "RLY-920008",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The sealed furniture wagon remains located in the yard but must wait for the next rail service."
+    },
+    {
+      "id": "RLY-920009",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Torn cardboard sleeves are the claimed physical damage; the food is covered and at a compliant temperature."
+    },
+    {
+      "id": "RLY-920010",
+      "category": "documentation",
+      "urgent": true,
+      "clarification": false,
+      "reason": "A missing export licence holds the relay that is needed to restore disabled fire suppression, with no alternative protection."
+    },
+    {
+      "id": "RLY-920011",
+      "category": "unclear",
+      "urgent": null,
+      "clarification": true,
+      "reason": "Conflicting shipper and airline accounts do not establish whether an extra crate was tendered or is missing, and its condition is unknown."
+    },
+    {
+      "id": "RLY-920012",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The complete load is with the driver at a locked gate awaiting the confirmed 3 pm receiving time."
+    },
+    {
+      "id": "RLY-920013",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The rug has a confirmed long cut and a replacement is requested, with no continuing physical hazard."
+    },
+    {
+      "id": "RLY-920014",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "Liquid is actively leaking from a drum marked corrosive into an aisle where staff are still working."
+    },
+    {
+      "id": "RLY-920015",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Incorrect weight units on the packing list must be corrected for clearance; the shipment is sound and located."
+    },
+    {
+      "id": "RLY-920016",
+      "category": "missing",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Neither depot can locate the cutlery tote after an unscanned subcontractor handover, and the recipient denies receipt."
+    },
+    {
+      "id": "RLY-920017",
+      "category": "temperature",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The routine request concerns a temperature chart, and verified probes show the flowers within their specified range."
+    },
+    {
+      "id": "RLY-920018",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The coffee cups are located securely and delayed one day; customer annoyance and the urgent heading do not establish an immediate threat."
+    },
+    {
+      "id": "RLY-920019",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "Cut door bars and unloading into an unmarked van describe an active theft and site security incident."
+    },
+    {
+      "id": "RLY-920020",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Customs needs a readable permit because the uploaded PDF is blank; the household-goods load is routine."
+    },
+    {
+      "id": "RLY-920021",
+      "category": "temperature",
+      "urgent": null,
+      "clarification": true,
+      "reason": "A six-hour temperature-record gap requires cold-chain review, but missing arrival readings and limits prevent judging exposure or urgency."
+    },
+    {
+      "id": "RLY-920022",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The books have swollen pages from transit water damage and are now on a dry rack for a claim."
+    },
+    {
+      "id": "RLY-920023",
+      "category": "delay",
+      "urgent": true,
+      "clarification": false,
+      "reason": "The replacement ventilation fan is delayed at a bridge, blocking restoration of failed emergency ventilation needed for safe room occupancy."
+    },
+    {
+      "id": "RLY-920024",
+      "category": "missing",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The delivery claim is unconfirmed because the signer is unknown at the address and the parcel cannot currently be located."
+    },
+    {
+      "id": "RLY-920025",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The cracked machine counterweight requires a repair claim; the machine is disconnected, supported and cordoned off with no current exposure."
+    },
+    {
+      "id": "RLY-920026",
+      "category": "temperature",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The request concerns a historical freezer trace after the excursion closed and the goods entered verified controlled storage."
+    },
+    {
+      "id": "RLY-920027",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The declaration contains a transcribed seal-number error while the actual seal remains intact and matches the shipper photo."
+    },
+    {
+      "id": "RLY-920028",
+      "category": "unclear",
+      "urgent": null,
+      "clarification": true,
+      "reason": "The unexplained red-status message provides no shipment, location or condition facts to identify the issue or urgency."
+    },
+    {
+      "id": "RLY-920029",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The entire sealed toy load is located at the north hub on the wrong service, with recovery arranged and late delivery expected."
+    },
+    {
+      "id": "RLY-920030",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "The charger is currently sparking and smoking beside a packing station that staff still use."
+    },
+    {
+      "id": "RLY-920031",
+      "category": "temperature",
+      "urgent": true,
+      "clarification": false,
+      "reason": "The calibrated berry reading exceeds the frozen limit, and the loaded trailer still has no working compressor."
+    },
+    {
+      "id": "RLY-920032",
+      "category": "missing",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Six of seven camera cases were received and the remaining case cannot be found at either end."
+    },
+    {
+      "id": "RLY-920033",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The commercial invoice needs the correct tax registration number to complete the import file."
+    },
+    {
+      "id": "RLY-920034",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The intact hotel order remains on the truck and its delivery appointment must move to the later authorised road window."
+    },
+    {
+      "id": "RLY-920035",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Chipped shelving coating and twisted brackets require a claim inspection; all components are present and secured on the ground."
+    },
+    {
+      "id": "RLY-920036",
+      "category": "missing",
+      "urgent": true,
+      "clarification": false,
+      "reason": "The replacement alarm sensor is absent from the parcel, blocking restoration of an unavailable medical-gas alarm in an occupied facility without temporary monitoring."
+    },
+    {
+      "id": "RLY-920037",
+      "category": "safety",
+      "urgent": null,
+      "clarification": true,
+      "reason": "An unusual odour from a reagent box raises a safety concern, but unknown contents, containment and nearby exposure prevent judging the immediate hazard."
+    },
+    {
+      "id": "RLY-920038",
+      "category": "temperature",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Quality must review a cold-room false-alarm record; the bay contained no stock and is now isolated for maintenance."
+    },
+    {
+      "id": "RLY-920039",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Every carton arrived intact; the unresolved issue is the missing signed proof of delivery."
+    },
+    {
+      "id": "RLY-920040",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The three sealed cases are confirmed in secure airline storage but need later onward delivery after a cancelled flight."
+    },
+    {
+      "id": "RLY-920041",
+      "category": "damage",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The plates are shattered and replacement stock is requested; the shards are boxed and the unpacking area has been cleared."
+    },
+    {
+      "id": "RLY-920042",
+      "category": "temperature",
+      "urgent": true,
+      "clarification": false,
+      "reason": "An independent probe shows 31 C above the chemicals specified 25 C maximum, and cooling has not recovered."
+    },
+    {
+      "id": "RLY-920043",
+      "category": "unclear",
+      "urgent": null,
+      "clarification": true,
+      "reason": "The clerks disagree about parcel identity, with no count or recent location record to establish the primary issue or current condition."
+    },
+    {
+      "id": "RLY-920044",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "Gas is actively venting from a damaged cylinder beside an occupied sorting line without isolation or evacuation."
+    },
+    {
+      "id": "RLY-920045",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The import declaration wrongly describes wooden ornaments as electric heaters and needs correction before clearance."
+    },
+    {
+      "id": "RLY-920046",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The only unresolved issue is the late appointment; the intact goods are located and have complete compliant temperature records."
+    },
+    {
+      "id": "RLY-920047",
+      "category": "missing",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The listed calibration tool is absent from its pallet space and neither packing nor receiving staff can account for it."
+    },
+    {
+      "id": "RLY-920048",
+      "category": "damage",
+      "urgent": false,
+      "clarification": true,
+      "reason": "An outer-case crack is photographed, but the parties dispute when it occurred and the contents still require inspection."
+    },
+    {
+      "id": "RLY-920049",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The intact stationery shipment is located in the yard and pickup is postponed until a replacement driver arrives tomorrow."
+    },
+    {
+      "id": "RLY-920050",
+      "category": "safety",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The request is to close a completed safety-drill record from last week; the site is currently secure."
+    },
+    {
+      "id": "RLY-920051",
+      "category": "temperature",
+      "urgent": null,
+      "clarification": true,
+      "reason": "The seafood sensors disagree across the permitted temperature limit and neither has been checked against a reference, leaving current exposure unresolved."
+    },
+    {
+      "id": "RLY-920052",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "A current signed count and photographs account for all ten sealed reels; the stated remaining request is delivery rebooking after the factory closure."
+    },
+    {
+      "id": "RLY-920053",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "An incorrect country of manufacture on the certificate of origin prevents release of intact stock held securely by the broker."
+    },
+    {
+      "id": "RLY-920054",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "Loaded crates with a fractured support are leaning over an active pedestrian route and could collapse onto passing workers."
+    },
+    {
+      "id": "RLY-920055",
+      "category": "missing",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The handbag collection cannot be found after its last conveyor scan despite searches at both ends."
+    },
+    {
+      "id": "RLY-920056",
+      "category": "unclear",
+      "urgent": null,
+      "clarification": true,
+      "reason": "A rattling noise alone does not establish an appliance fault or its consequence; the unopened crate has not been inspected or tested."
+    },
+    {
+      "id": "RLY-920057",
+      "category": "delay",
+      "urgent": false,
+      "clarification": false,
+      "reason": "The broken-mirror vehicle and sealed cargo are parked safely, and a booked replacement vehicle makes the unresolved issue late delivery."
+    },
+    {
+      "id": "RLY-920058",
+      "category": "documentation",
+      "urgent": false,
+      "clarification": false,
+      "reason": "Release is confirmed by the broker, but the clearance status record needs correction before collection can be arranged."
+    },
+    {
+      "id": "RLY-920059",
+      "category": "unclear",
+      "urgent": null,
+      "clarification": true,
+      "reason": "Unconfirmed mentions of damage, shortage and warmth lack counts, temperatures, limits and location, so neither priority nor urgency can be established."
+    },
+    {
+      "id": "RLY-920060",
+      "category": "safety",
+      "urgent": true,
+      "clarification": false,
+      "reason": "A worker is injured after a fall, assistance has not been reached and vehicles continue entering the bay."
+    }
+  ]
+}

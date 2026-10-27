@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-10-21T09:05:33.213863+00:00",
+  "scope": "fresh local Linux container, separate disposable state from author records",
+  "checks": {
+    "fresh_dependency_install": true,
+    "behavioral_tests": 18,
+    "initial_demo_incidents": 48,
+    "exclusive_priority_queues_all_four_configurations": true,
+    "http_triage_correction_persistent_done": true,
+    "frozen_review_count": 60,
+    "frozen_agent_attribution": true,
+    "completed_workbook_download": true,
+    "csv_agent_attribution": true,
+    "independent_labels_readonly_in_ui": true,
+    "separate_manual_review_preserves_frozen_labels": true,
+    "private_source_not_served": true,
+    "development_quality_cost_reproduced": true,
+    "final-test_quality_cost_reproduced": true,
+    "blank_manual_workbook_download": true,
+    "final_image_assets_version": 7
+  },
+  "container_runtime": {
+    "python": "3.12.15",
+    "platform": "Linux aarch64"
+  },
+  "not_verified": [
+    "GitHub checks after publication",
+    "public hosted deployment",
+    "assessment Q11 save",
+    "operator or production use"
+  ]
+}

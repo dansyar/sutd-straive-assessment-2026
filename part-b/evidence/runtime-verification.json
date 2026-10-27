@@ -1,0 +1,45 @@
+{
+  "revision": "temperature-v3",
+  "verified_at": "2026-10-22T01:46:19.630413+00:00",
+  "verification_executed_by": "OpenAI Codex",
+  "manual_product_testing_credit": "dansyar (as reported by the author)",
+  "reference_label_review": "separate fresh-context Codex agent",
+  "scope": "local preview and isolated Linux container; no publication or external dispatch",
+  "checks": {
+    "automated_test_methods": 26,
+    "temperature_regression_scenarios": 32,
+    "method_policy_combinations": 4,
+    "trigger_correct_all_four_configurations": true,
+    "urgent_review_queues_exclusive": true,
+    "current_development_quality_cost_reproduced": true,
+    "current_diagnostic_quality_cost_reproduced": true,
+    "preserved_original_quality_cost_reproduced": true,
+    "original_first_test_result_hashes_unchanged": true,
+    "frozen_agent_judgments": 60,
+    "separate_manual_review_preserved": true,
+    "http_new_incident_to_confirmation_to_done": true,
+    "completed_and_blank_workbook_downloads": true,
+    "csv_actual_reviewer_attribution": true,
+    "html_cache_prevents_stale_interface": true,
+    "private_source_route_not_served": true,
+    "desktop_mobile_widths": [
+      1440,
+      1024,
+      768,
+      390
+    ],
+    "page_horizontal_overflow": false,
+    "browser_console_errors": 0,
+    "existing_local_state_counts": {
+      "incidents": 0,
+      "decisions": 1,
+      "reviews": 0,
+      "review_history": 0
+    }
+  },
+  "limits": [
+    "Reused reference cases are a post-test diagnostic, not new unseen validation.",
+    "Manual product testing credit does not imply human execution of automated checks.",
+    "No operator field trial, production use, GitHub CI run or assessment Q11 save."
+  ]
+}

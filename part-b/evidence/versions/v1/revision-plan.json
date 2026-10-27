@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-22T01:23:20.707068+00:00",
+  "trigger": "User-observed RLY-82374; generalize explicit readings/limits and active cold-chain conditions, not report IDs.",
+  "regression_fixture_sha256": "698e413cf97e29ce0832e5747ba5eb85f13c511d6863253c78a734109758f1c8",
+  "protocol": "Preserve first-test evidence and frozen judgments. Reuse the 60 cases only as a disclosed post-test diagnostic. No new independent validation is claimed.",
+  "testing_roles": {
+    "manual_product_testing_and_feedback": "dansyar, as reported by the author",
+    "automated_checks_and_evaluation_execution": "OpenAI Codex",
+    "independent_reference_labels": "separate fresh-context Codex agent"
+  }
+}

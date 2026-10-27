@@ -1,0 +1,55 @@
+{
+  "registered_at": "2026-10-22T02:38:39.063521+00:00",
+  "status": "final preregistration before fresh-2 report authoring and label review",
+  "candidate_revision": "routing-v4",
+  "selected_method": "learned",
+  "selected_policy": "sensitive",
+  "selection_basis": "Retain Text/Sensitive default; improve primary-issue and critical-consequence checks using exposed cases and authored regressions only.",
+  "planned_n": 60,
+  "source": "Another set of locally authored fictional logistics reports, excluded from training and operations.",
+  "implementation_sha256": {
+    "engine.py": "dfcce3f445ed997d73becca5e0b4b8271ece99379a519c75113a2235189a34b6",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "training_sha256": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+  "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6",
+  "original_results_sha256": {
+    "evidence/final-test.json": "0f485e808dbfd3573e305685b61587968cbcf61dc1a4dc11aed619ad0cadb5b8",
+    "evidence/iterations/temperature-v3/retest.json": "8f40a26a73f5d3c4ccf0fd01d00895f7ef6e04c454ebd6bb6af5646c579c167a",
+    "evidence/fresh-20261022/fresh-test.json": "69bbc342c1f0f4f86c5618a2c6fb8c1721e9278b62dff04d4253792c2fd25ed1"
+  },
+  "review_protocol": {
+    "reviewer_type": "agent",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "reports.jsonl",
+      "guide.txt"
+    ],
+    "excluded_inputs": [
+      "parent history",
+      "classifier code",
+      "predictions",
+      "author labels",
+      "earlier reports or judgments",
+      "evaluation results"
+    ],
+    "retain_unknowns": true,
+    "freeze_all_labels_before_predictions": true
+  },
+  "metrics": "Unchanged evaluate.py definitions; Rules/Text with Standard/Sensitive; known-label category accuracy and macro F1, urgency, review, misroutes, cost at both 30/100 and warm latency.",
+  "stopping_rule": "Score the complete set once with five timing passes. Do not change classifier, taxonomy, thresholds, training data or reference judgments after fresh-2 labels or results are seen. Preserve adverse results.",
+  "limitations": [
+    "Synthetic convenience set; author knows classifier and earlier failure cases.",
+    "Independent reviewer has a fresh context but shares a model family and unchanged rubric.",
+    "No domain-expert or operator validation; no production prevalence or safety guarantee."
+  ],
+  "testing_attribution": {
+    "manual_product_testing_and_feedback": "dansyar (author-reported)",
+    "fresh_label_review": "separate fresh-context Codex agent",
+    "automated_evaluation_execution": "OpenAI Codex"
+  },
+  "supersedes": "evidence/fresh2-20261022-registration.draft.json",
+  "pretest_regression_note": "The draft was superseded before new report authoring after exposed-case regressions; those diagnostics and code are archived. The final candidate passes the authored routing/temperature regressions."
+}

@@ -1,0 +1,35 @@
+{
+  "status": "frozen independent review",
+  "frozen_at": "2026-10-22T02:43:18.250887+00:00",
+  "count": 60,
+  "reports_sha256": "da3b07a8e05eb1483d825fb5bd54050fcb60d520ae4d84e4f917b713c8011a8d",
+  "labels_sha256": "1cdfac14b0cd68459e954ec6b973eb4da9ee01925b5990671d26233a0f11d98d",
+  "raw_review_sha256": "9dd94db4d8130d065f7663e4ed4f386846c1e5a40e1744924e55c9c6928bbf9c",
+  "registration_sha256": "62ed08e3c250e989136b5dfd8099d71a28bc7184c31bfa7a2cca725dd9e5c27a",
+  "source_manifest_sha256": "f0c165cbd95a78b9de1ed4ded6f9ef4526ec03515bc3dae02d7b16ba6f5b45c3",
+  "driver_sha256": "9892db7611a921617dad0ff7a5af28a657e53da4e94c10c8c01cf8695f80076d",
+  "implementation_sha256": {
+    "engine.py": "dfcce3f445ed997d73becca5e0b4b8271ece99379a519c75113a2235189a34b6",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "reviewer_types": [
+    "agent"
+  ],
+  "human_review": false,
+  "source": {
+    "kind": "independent agent",
+    "fresh_context": true,
+    "reviewer": "fresh2_report_review",
+    "blind_inputs": {
+      "reports_sha256": "da3b07a8e05eb1483d825fb5bd54050fcb60d520ae4d84e4f917b713c8011a8d",
+      "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6"
+    },
+    "allowed_inputs": [
+      "/tmp/relay-fresh2-review-20261022/reports.jsonl",
+      "/tmp/relay-fresh2-review-20261022/guide.txt"
+    ]
+  },
+  "limitation": "Separate context and judgments, same model family; no domain-expert human review."
+}

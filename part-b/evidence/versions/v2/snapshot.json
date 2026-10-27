@@ -1,0 +1,17 @@
+{
+  "version": "temperature-v2",
+  "preserved_at": "2026-10-22T01:31:07.441767+00:00",
+  "files_sha256": {
+    "engine.py": "bab51e114923d9ba4e2bf5f586bb349864a6d1c5ba476850a5136d8f78be43b9",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "35b081e461132fb3f685c4c8d3063ce27ae6c5e186fc6647027f76893352e00f",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df",
+    "data/development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "data/review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+    "data/manifest.json": "97a2c7f08903bb4aac21e1b3d8a8646bdc29339906e7e3f2183a9e6693930ed8",
+    "data/reviewed_labels.jsonl": "e0eb4f74c3fca8d150dccdda10044e0e358dd283f92459c97b069c1ff6f27e5c",
+    "data/reviewed_labels.freeze.json": "8045aa2eb91214b73afb934061f7c343a837829a4cf08d6b46069b48a90af6d8"
+  },
+  "results": "evidence/iterations/temperature-v2/retest.json",
+  "next_correction": "The first diagnostic identified product-range phrasing without an explicit limits keyword; add that general grammar and its regression."
+}

@@ -1,0 +1,2710 @@
+[
+  {
+    "id": "RLY-24976",
+    "text": "The crate's side is splintered and the sculpture inside is chipped. The packing area has been made safe.",
+    "family": "RLY-24976",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.132,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-91877",
+    "text": "A box of lithium cells is hissing and giving off heat. People are standing close to the unisolated pallet.",
+    "family": "RLY-91877",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.112,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category",
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-23213",
+    "text": "A replacement pump needed for emergency flood protection is stuck en route during rising water. We have not confirmed how long the barrier can hold.",
+    "family": "RLY-23213",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.15,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category",
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-29998",
+    "text": "A mirror arrived with a fracture. All pieces remain secured in the protective film and no one is exposed.",
+    "family": "RLY-29998",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.129,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-11674",
+    "text": "The replacement module for the destination's failed emergency communications is unaccounted for. It is needed now, but we do not know which vehicle last carried it.",
+    "family": "RLY-11674",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.137,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-86065",
+    "text": "The delivery signature file is blank, although the consignee confirms receipt of the undamaged shipment.",
+    "family": "RLY-86065",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.144,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-56904",
+    "text": "The carton count is correct but the sealed box contains no ordered instrument. The sender has requested a contents investigation.",
+    "family": "RLY-56904",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.162,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-95467",
+    "text": "The consignee reports torn packaging and thinks some contents are gone. No count or inventory is supplied.",
+    "family": "RLY-95467",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "The primary reported issue is physical cargo or packaging damage"
+      ],
+      "explanation": "Reported issue and consequence check: The primary reported issue is physical cargo or packaging damage.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.132,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-84412",
+    "text": "The recipient has sent only 'late again, fix it'. There is no tracking reference or description of what was ordered.",
+    "family": "RLY-84412",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": null,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "The goods are located and the reported issue is timing or handover"
+      ],
+      "explanation": "Reported issue and consequence check: The goods are located and the reported issue is timing or handover.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.137,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-62301",
+    "text": "A stack of heavy crates is sliding toward the loading crew. The unstable stack has not been secured.",
+    "family": "RLY-62301",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.126,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category",
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-57986",
+    "text": "The delivery photo shows a doorway nobody recognises. The buyer has no parcel and the exact delivery address needs confirmation.",
+    "family": "RLY-57986",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.168,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-51173",
+    "text": "The customer received all items but the electronic receipt has the wrong company registration number.",
+    "family": "RLY-51173",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.131,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-79291",
+    "text": "A consignment containing the only replacement pressure-relief valve cannot be located. The site's safety system remains disabled awaiting the part.",
+    "family": "RLY-79291",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.118,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-40567",
+    "text": "The forwarder cannot release the cargo until the exporter signs the missing origin declaration. Storage conditions are satisfactory.",
+    "family": "RLY-40567",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "The reported goods or contents cannot be accounted for"
+      ],
+      "explanation": "Reported issue and consequence check: The reported goods or contents cannot be accounted for.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.139,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-16564",
+    "text": "A client wrote 'everything is ruined' without photos or details. We need to establish the item and extent of damage.",
+    "family": "RLY-16564",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": null,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "damage"
+      ],
+      "explanation": "Keyword matches: damage.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.134,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-10016",
+    "text": "An unauthorised truck is taking goods from the locked compound right now. The gate operator has asked for immediate assistance.",
+    "family": "RLY-10016",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.128,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category",
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-63003",
+    "text": "A clearance document error is preventing the release of the replacement emergency sprinkler controller. The destination has no working fire protection until it arrives.",
+    "family": "RLY-63003",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.127,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-24976",
+    "text": "The crate's side is splintered and the sculpture inside is chipped. The packing area has been made safe.",
+    "family": "RLY-24976",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.134,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-38796",
+    "text": "A mock evacuation was completed on schedule. The fire alarm was part of the exercise and there is no real emergency.",
+    "family": "RLY-38796",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "fire"
+      ],
+      "explanation": "Keyword matches: fire.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.131,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-91877",
+    "text": "A box of lithium cells is hissing and giving off heat. People are standing close to the unisolated pallet.",
+    "family": "RLY-91877",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.132,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-23213",
+    "text": "A replacement pump needed for emergency flood protection is stuck en route during rising water. We have not confirmed how long the barrier can hold.",
+    "family": "RLY-23213",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.17,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-29998",
+    "text": "A mirror arrived with a fracture. All pieces remain secured in the protective film and no one is exposed.",
+    "family": "RLY-29998",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.121,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-11674",
+    "text": "The replacement module for the destination's failed emergency communications is unaccounted for. It is needed now, but we do not know which vehicle last carried it.",
+    "family": "RLY-11674",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The report contains missing or conflicting facts.",
+        "The stricter policy escalates a possible critical consequence for human confirmation.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.131,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-86065",
+    "text": "The delivery signature file is blank, although the consignee confirms receipt of the undamaged shipment.",
+    "family": "RLY-86065",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.108,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-56904",
+    "text": "The carton count is correct but the sealed box contains no ordered instrument. The sender has requested a contents investigation.",
+    "family": "RLY-56904",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.143,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-62301",
+    "text": "A stack of heavy crates is sliding toward the loading crew. The unstable stack has not been secured.",
+    "family": "RLY-62301",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.125,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-57986",
+    "text": "The delivery photo shows a doorway nobody recognises. The buyer has no parcel and the exact delivery address needs confirmation.",
+    "family": "RLY-57986",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.162,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-99296",
+    "text": "The security team requests an archive copy of last month's resolved access incident. There is no ongoing intrusion.",
+    "family": "RLY-99296",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.127,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-51173",
+    "text": "The customer received all items but the electronic receipt has the wrong company registration number.",
+    "family": "RLY-51173",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.11,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-79291",
+    "text": "A consignment containing the only replacement pressure-relief valve cannot be located. The site's safety system remains disabled awaiting the part.",
+    "family": "RLY-79291",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.116,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-40567",
+    "text": "The forwarder cannot release the cargo until the exporter signs the missing origin declaration. Storage conditions are satisfactory.",
+    "family": "RLY-40567",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "The reported goods or contents cannot be accounted for"
+      ],
+      "explanation": "Reported issue and consequence check: The reported goods or contents cannot be accounted for.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.121,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-22467",
+    "text": "The van is waiting for a ferry after the last sailing was cancelled. The dry-goods customer agreed to delivery tomorrow.",
+    "family": "RLY-22467",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.131,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-94293",
+    "text": "The transport papers describe machinery while the receiver expects clothing. We need to verify the actual consignment.",
+    "family": "RLY-94293",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "unclear",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.129,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-94005",
+    "text": "Our books are on the correct truck, but the school receiving desk closes before it arrives. Please rebook the handover.",
+    "family": "RLY-94005",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.132,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-10016",
+    "text": "An unauthorised truck is taking goods from the locked compound right now. The gate operator has asked for immediate assistance.",
+    "family": "RLY-10016",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [],
+      "explanation": "Keyword matches are insufficient.",
+      "similarity": 0.0,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.126,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-63003",
+    "text": "A clearance document error is preventing the release of the replacement emergency sprinkler controller. The destination has no working fire protection until it arrives.",
+    "family": "RLY-63003",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.142,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-91877",
+    "text": "A box of lithium cells is hissing and giving off heat. People are standing close to the unisolated pallet.",
+    "family": "RLY-91877",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "pallet"
+      ],
+      "explanation": "Words shared with training examples: pallet.",
+      "similarity": 0.0662,
+      "margin": 0.0047,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.0662
+        },
+        {
+          "category": "missing",
+          "score": 0.0615
+        },
+        {
+          "category": "safety",
+          "score": 0.06
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.055,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category",
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-23213",
+    "text": "A replacement pump needed for emergency flood protection is stuck en route during rising water. We have not confirmed how long the barrier can hold.",
+    "family": "RLY-23213",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically."
+      ],
+      "signals": [
+        "can",
+        "pump",
+        "protection",
+        "replacement",
+        "we"
+      ],
+      "explanation": "Words shared with training examples: can, pump, protection, replacement, we.",
+      "similarity": 0.12,
+      "margin": 0.0575,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.12
+        },
+        {
+          "category": "missing",
+          "score": 0.0625
+        },
+        {
+          "category": "temperature",
+          "score": 0.0613
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.068,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-11674",
+    "text": "The replacement module for the destination's failed emergency communications is unaccounted for. It is needed now, but we do not know which vehicle last carried it.",
+    "family": "RLY-11674",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.19,
+      "margin": 0.0934,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.19
+        },
+        {
+          "category": "safety",
+          "score": 0.0966
+        },
+        {
+          "category": "temperature",
+          "score": 0.0677
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.05,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-86065",
+    "text": "The delivery signature file is blank, although the consignee confirms receipt of the undamaged shipment.",
+    "family": "RLY-86065",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "signature",
+        "receipt",
+        "shipment",
+        "consignee"
+      ],
+      "explanation": "Words shared with training examples: signature, receipt, shipment, consignee.",
+      "similarity": 0.1302,
+      "margin": 0.0106,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1302
+        },
+        {
+          "category": "documentation",
+          "score": 0.1196
+        },
+        {
+          "category": "delay",
+          "score": 0.0665
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.056,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-95467",
+    "text": "The consignee reports torn packaging and thinks some contents are gone. No count or inventory is supplied.",
+    "family": "RLY-95467",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "The primary reported issue is physical cargo or packaging damage"
+      ],
+      "explanation": "Reported issue and consequence check: The primary reported issue is physical cargo or packaging damage.",
+      "similarity": 0.1549,
+      "margin": 0.0523,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1549
+        },
+        {
+          "category": "missing",
+          "score": 0.1026
+        },
+        {
+          "category": "safety",
+          "score": 0.038
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.052,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-70425",
+    "text": "The shipment is intact and located at the origin depot. A scheduling error means it missed tonight's departure.",
+    "family": "RLY-70425",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "origin",
+        "shipment",
+        "error"
+      ],
+      "explanation": "Words shared with training examples: origin, shipment, error.",
+      "similarity": 0.0914,
+      "margin": 0.0024,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.0914
+        },
+        {
+          "category": "delay",
+          "score": 0.089
+        },
+        {
+          "category": "missing",
+          "score": 0.0845
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.061,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-62301",
+    "text": "A stack of heavy crates is sliding toward the loading crew. The unstable stack has not been secured.",
+    "family": "RLY-62301",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "loading",
+        "secured",
+        "not"
+      ],
+      "explanation": "Words shared with training examples: loading, secured, not.",
+      "similarity": 0.1815,
+      "margin": 0.1128,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.1815
+        },
+        {
+          "category": "damage",
+          "score": 0.0687
+        },
+        {
+          "category": "delay",
+          "score": 0.0504
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.056,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "urgent_miss"
+    ]
+  },
+  {
+    "id": "RLY-57986",
+    "text": "The delivery photo shows a doorway nobody recognises. The buyer has no parcel and the exact delivery address needs confirmation.",
+    "family": "RLY-57986",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "delivery",
+        "no",
+        "parcel",
+        "shows"
+      ],
+      "explanation": "Words shared with training examples: delivery, no, parcel, shows.",
+      "similarity": 0.1707,
+      "margin": 0.0712,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1707
+        },
+        {
+          "category": "missing",
+          "score": 0.0995
+        },
+        {
+          "category": "documentation",
+          "score": 0.0641
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.066,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "wrong_category",
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-51173",
+    "text": "The customer received all items but the electronic receipt has the wrong company registration number.",
+    "family": "RLY-51173",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "wrong",
+        "receipt",
+        "received"
+      ],
+      "explanation": "Words shared with training examples: wrong, receipt, received.",
+      "similarity": 0.1073,
+      "margin": 0.0332,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1073
+        },
+        {
+          "category": "delay",
+          "score": 0.0741
+        },
+        {
+          "category": "temperature",
+          "score": 0.0191
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.053,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-79291",
+    "text": "A consignment containing the only replacement pressure-relief valve cannot be located. The site's safety system remains disabled awaiting the part.",
+    "family": "RLY-79291",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.1793,
+      "margin": 0.0719,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1793
+        },
+        {
+          "category": "missing",
+          "score": 0.1074
+        },
+        {
+          "category": "safety",
+          "score": 0.0757
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.048,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-40567",
+    "text": "The forwarder cannot release the cargo until the exporter signs the missing origin declaration. Storage conditions are satisfactory.",
+    "family": "RLY-40567",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The stated issue differs from the base model's strongest word match."
+      ],
+      "signals": [
+        "The reported goods or contents cannot be accounted for"
+      ],
+      "explanation": "Reported issue and consequence check: The reported goods or contents cannot be accounted for.",
+      "similarity": 0.1685,
+      "margin": 0.0705,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1685
+        },
+        {
+          "category": "missing",
+          "score": 0.098
+        },
+        {
+          "category": "delay",
+          "score": 0.0523
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.053,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-94293",
+    "text": "The transport papers describe machinery while the receiver expects clothing. We need to verify the actual consignment.",
+    "family": "RLY-94293",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "need",
+        "actual",
+        "we need",
+        "consignment",
+        "we"
+      ],
+      "explanation": "Words shared with training examples: need, actual, we need, consignment, we.",
+      "similarity": 0.1419,
+      "margin": 0.0787,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1419
+        },
+        {
+          "category": "missing",
+          "score": 0.0632
+        },
+        {
+          "category": "delay",
+          "score": 0.0399
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.061,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-16564",
+    "text": "A client wrote 'everything is ruined' without photos or details. We need to establish the item and extent of damage.",
+    "family": "RLY-16564",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "unclear",
+    "actual_urgent": null,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "without",
+        "need",
+        "we need",
+        "we",
+        "item"
+      ],
+      "explanation": "Words shared with training examples: without, need, we need, we, item.",
+      "similarity": 0.1237,
+      "margin": 0.0503,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1237
+        },
+        {
+          "category": "damage",
+          "score": 0.0735
+        },
+        {
+          "category": "missing",
+          "score": 0.0487
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.057,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-94005",
+    "text": "Our books are on the correct truck, but the school receiving desk closes before it arrives. Please rebook the handover.",
+    "family": "RLY-94005",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "before",
+        "correct"
+      ],
+      "explanation": "Words shared with training examples: before, correct.",
+      "similarity": 0.1229,
+      "margin": 0.0665,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1229
+        },
+        {
+          "category": "delay",
+          "score": 0.0563
+        },
+        {
+          "category": "safety",
+          "score": 0.033
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.054,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-63003",
+    "text": "A clearance document error is preventing the release of the replacement emergency sprinkler controller. The destination has no working fire protection until it arrives.",
+    "family": "RLY-63003",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.1353,
+      "margin": 0.0709,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1353
+        },
+        {
+          "category": "delay",
+          "score": 0.0643
+        },
+        {
+          "category": "missing",
+          "score": 0.0614
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.046,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-24976",
+    "text": "The crate's side is splintered and the sculpture inside is chipped. The packing area has been made safe.",
+    "family": "RLY-24976",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "crate",
+        "safe",
+        "inside",
+        "area"
+      ],
+      "explanation": "Words shared with training examples: crate, safe, inside, area.",
+      "similarity": 0.1059,
+      "margin": 0.0248,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1059
+        },
+        {
+          "category": "safety",
+          "score": 0.0811
+        },
+        {
+          "category": "temperature",
+          "score": 0.0552
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.059,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-38796",
+    "text": "A mock evacuation was completed on schedule. The fire alarm was part of the exercise and there is no real emergency.",
+    "family": "RLY-38796",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "there",
+        "fire",
+        "real",
+        "no real",
+        "emergency"
+      ],
+      "explanation": "Words shared with training examples: there, fire, real, no real, emergency.",
+      "similarity": 0.1864,
+      "margin": 0.1037,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.1864
+        },
+        {
+          "category": "delay",
+          "score": 0.0827
+        },
+        {
+          "category": "missing",
+          "score": 0.079
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.056,
+      "api_cost_usd": 0,
+      "action": "Escalate now"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-91877",
+    "text": "A box of lithium cells is hissing and giving off heat. People are standing close to the unisolated pallet.",
+    "family": "RLY-91877",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "pallet"
+      ],
+      "explanation": "Words shared with training examples: pallet.",
+      "similarity": 0.0662,
+      "margin": 0.0047,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.0662
+        },
+        {
+          "category": "missing",
+          "score": 0.0615
+        },
+        {
+          "category": "safety",
+          "score": 0.06
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.055,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-23213",
+    "text": "A replacement pump needed for emergency flood protection is stuck en route during rising water. We have not confirmed how long the barrier can hold.",
+    "family": "RLY-23213",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "can",
+        "pump",
+        "protection",
+        "replacement",
+        "we"
+      ],
+      "explanation": "Words shared with training examples: can, pump, protection, replacement, we.",
+      "similarity": 0.12,
+      "margin": 0.0575,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.12
+        },
+        {
+          "category": "missing",
+          "score": 0.0625
+        },
+        {
+          "category": "temperature",
+          "score": 0.0613
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.074,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-11674",
+    "text": "The replacement module for the destination's failed emergency communications is unaccounted for. It is needed now, but we do not know which vehicle last carried it.",
+    "family": "RLY-11674",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.19,
+      "margin": 0.0934,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.19
+        },
+        {
+          "category": "safety",
+          "score": 0.0966
+        },
+        {
+          "category": "temperature",
+          "score": 0.0677
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.039,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-86065",
+    "text": "The delivery signature file is blank, although the consignee confirms receipt of the undamaged shipment.",
+    "family": "RLY-86065",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "signature",
+        "receipt",
+        "shipment",
+        "consignee"
+      ],
+      "explanation": "Words shared with training examples: signature, receipt, shipment, consignee.",
+      "similarity": 0.1302,
+      "margin": 0.0106,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1302
+        },
+        {
+          "category": "documentation",
+          "score": 0.1196
+        },
+        {
+          "category": "delay",
+          "score": 0.0665
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.051,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-70425",
+    "text": "The shipment is intact and located at the origin depot. A scheduling error means it missed tonight's departure.",
+    "family": "RLY-70425",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "origin",
+        "shipment",
+        "error"
+      ],
+      "explanation": "Words shared with training examples: origin, shipment, error.",
+      "similarity": 0.0914,
+      "margin": 0.0024,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.0914
+        },
+        {
+          "category": "delay",
+          "score": 0.089
+        },
+        {
+          "category": "missing",
+          "score": 0.0845
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.073,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category",
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-57986",
+    "text": "The delivery photo shows a doorway nobody recognises. The buyer has no parcel and the exact delivery address needs confirmation.",
+    "family": "RLY-57986",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "actual_review_required": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "delivery",
+        "no",
+        "parcel",
+        "shows"
+      ],
+      "explanation": "Words shared with training examples: delivery, no, parcel, shows.",
+      "similarity": 0.1707,
+      "margin": 0.0712,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1707
+        },
+        {
+          "category": "missing",
+          "score": 0.0995
+        },
+        {
+          "category": "documentation",
+          "score": 0.0641
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.071,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    },
+    "issues": [
+      "wrong_category",
+      "required_review_bypassed"
+    ]
+  },
+  {
+    "id": "RLY-99296",
+    "text": "The security team requests an archive copy of last month's resolved access incident. There is no ongoing intrusion.",
+    "family": "RLY-99296",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "there",
+        "s",
+        "security",
+        "incident",
+        "there no"
+      ],
+      "explanation": "Words shared with training examples: there, s, security, incident, there no.",
+      "similarity": 0.1722,
+      "margin": 0.1026,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.1722
+        },
+        {
+          "category": "damage",
+          "score": 0.0696
+        },
+        {
+          "category": "missing",
+          "score": 0.0677
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.091,
+      "api_cost_usd": 0,
+      "action": "Escalate now"
+    },
+    "issues": [
+      "false_urgent"
+    ]
+  },
+  {
+    "id": "RLY-51173",
+    "text": "The customer received all items but the electronic receipt has the wrong company registration number.",
+    "family": "RLY-51173",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "wrong",
+        "receipt",
+        "received"
+      ],
+      "explanation": "Words shared with training examples: wrong, receipt, received.",
+      "similarity": 0.1073,
+      "margin": 0.0332,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1073
+        },
+        {
+          "category": "delay",
+          "score": 0.0741
+        },
+        {
+          "category": "temperature",
+          "score": 0.0191
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.071,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-79291",
+    "text": "A consignment containing the only replacement pressure-relief valve cannot be located. The site's safety system remains disabled awaiting the part.",
+    "family": "RLY-79291",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.1793,
+      "margin": 0.0719,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1793
+        },
+        {
+          "category": "missing",
+          "score": 0.1074
+        },
+        {
+          "category": "safety",
+          "score": 0.0757
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.06,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-40567",
+    "text": "The forwarder cannot release the cargo until the exporter signs the missing origin declaration. Storage conditions are satisfactory.",
+    "family": "RLY-40567",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stated issue differs from the base model's strongest word match."
+      ],
+      "signals": [
+        "The reported goods or contents cannot be accounted for"
+      ],
+      "explanation": "Reported issue and consequence check: The reported goods or contents cannot be accounted for.",
+      "similarity": 0.1685,
+      "margin": 0.0705,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1685
+        },
+        {
+          "category": "missing",
+          "score": 0.098
+        },
+        {
+          "category": "delay",
+          "score": 0.0523
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.057,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-94005",
+    "text": "Our books are on the correct truck, but the school receiving desk closes before it arrives. Please rebook the handover.",
+    "family": "RLY-94005",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": false,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically."
+      ],
+      "signals": [
+        "before",
+        "correct"
+      ],
+      "explanation": "Words shared with training examples: before, correct.",
+      "similarity": 0.1229,
+      "margin": 0.0665,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1229
+        },
+        {
+          "category": "delay",
+          "score": 0.0563
+        },
+        {
+          "category": "safety",
+          "score": 0.033
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.055,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  },
+  {
+    "id": "RLY-63003",
+    "text": "A clearance document error is preventing the release of the replacement emergency sprinkler controller. The destination has no working fire protection until it arrives.",
+    "family": "RLY-63003",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": true,
+    "actual_review_required": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stated issue differs from the base model's strongest word match.",
+        "A critical safety system remains unavailable; human confirmation is required."
+      ],
+      "signals": [
+        "A critical safety system remains unavailable"
+      ],
+      "explanation": "Reported issue and consequence check: A critical safety system remains unavailable.",
+      "similarity": 0.1353,
+      "margin": 0.0709,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1353
+        },
+        {
+          "category": "delay",
+          "score": 0.0643
+        },
+        {
+          "category": "missing",
+          "score": 0.0614
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.043,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    },
+    "issues": [
+      "wrong_category"
+    ]
+  }
+]

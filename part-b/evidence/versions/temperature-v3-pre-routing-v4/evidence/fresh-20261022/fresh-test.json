@@ -1,0 +1,481 @@
+{
+  "status": "fresh independently reviewed test",
+  "revision": "temperature-v3",
+  "generated_at": "2026-10-22T02:02:44.574132+00:00",
+  "python": "3.12.14",
+  "platform": "Darwin arm64",
+  "train_n": 240,
+  "train_families": 48,
+  "evaluation_n": 60,
+  "evaluation_families": 60,
+  "model_fit_ms": 4.6429,
+  "corpus_sha256": {
+    "development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c"
+  },
+  "reports_sha256": "f1b7f09b4274d8cae6fcdb277dd858e8abf61bfd2a70a875b4f3c05d360d33a0",
+  "test_labels_sha256": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+  "implementation_sha256": {
+    "engine.py": "831810cbca74f2f4d372ee4e108b0cd33aff4797e38d06df0989c5b9c9572624",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+    "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+  },
+  "review_provenance": {
+    "status": "frozen independent review",
+    "frozen_at": "2026-10-22T02:02:39.751072+00:00",
+    "count": 60,
+    "reports_sha256": "f1b7f09b4274d8cae6fcdb277dd858e8abf61bfd2a70a875b4f3c05d360d33a0",
+    "labels_sha256": "b82ae9f1750a15c8ee4e7e83746387f4a87e35717d5436892426ac4d948d02d5",
+    "raw_review_sha256": "6569e2e56ecbfa317e17b0f66239382ce84ee1481b356a7d19ef90d2ac09a39e",
+    "registration_sha256": "bd122d152abad98324d02e550eb1c9d1bcca6514b8e55c1fb0b58b0c02bc3fa3",
+    "source_manifest_sha256": "e8cb61080cdaff6a5d1e86162d8f6c6da2e77a66648c59ec76e9086f83f4bc41",
+    "driver_sha256": "3669c506bb001ee28f3b602c08d234420cac949c32f54c7a1f3b474b1201ac2e",
+    "implementation_sha256": {
+      "engine.py": "831810cbca74f2f4d372ee4e108b0cd33aff4797e38d06df0989c5b9c9572624",
+      "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+      "evaluate.py": "2e0ac2d058c2d587bfc4dcd6c52aeeb379f6649b3a38917beeeab4486d5cb2bc",
+      "corpus.py": "3f4b78a473ee7cdfe6d291cb33aaa4de1aa19202dca613473bb8a40c81e9f9df"
+    },
+    "reviewer_types": [
+      "agent"
+    ],
+    "human_review": false,
+    "source": {
+      "kind": "independent agent",
+      "fresh_context": true,
+      "reviewer": "fresh_report_review",
+      "blind_inputs": {
+        "reports_sha256": "f1b7f09b4274d8cae6fcdb277dd858e8abf61bfd2a70a875b4f3c05d360d33a0",
+        "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6"
+      },
+      "allowed_inputs": [
+        "/tmp/relay-fresh-review-20261022/reports.jsonl",
+        "/tmp/relay-fresh-review-20261022/guide.txt"
+      ]
+    },
+    "limitation": "Separate context and judgments, same model family; no domain-expert human review."
+  },
+  "methods": [
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 0.5892857142857143,
+      "macro_f1": 0.5708874458874459,
+      "urgent_total": 15,
+      "urgent_misses": 12,
+      "urgent_recall": 0.2,
+      "false_urgent": 0,
+      "review_count": 39,
+      "review_rate": 0.65,
+      "review_required_n": 21,
+      "review_recall": 0.8571428571428571,
+      "review_precision": 0.46153846153846156,
+      "required_review_automated": 3,
+      "automation_coverage": 0.35,
+      "unsafe_auto_urgent_misses": 3,
+      "wrong_auto_routes": 5,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 0.7619047619047619,
+      "auto_category_n": 21,
+      "cost_units_standard": 441,
+      "cost_units_sensitive": 1281,
+      "weighted_cost_units": 441,
+      "cost_units_per_report": 7.35,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 3,
+          "missing": 4,
+          "damage": 1,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 1
+        },
+        "damage": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 5,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 9,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 6,
+          "missing": 2,
+          "damage": 1,
+          "temperature": 1,
+          "safety": 2,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 2,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 3
+        }
+      },
+      "method": "rules",
+      "policy": "standard",
+      "p50_ms": 0.125,
+      "p95_ms": 0.1541,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 0.5892857142857143,
+      "macro_f1": 0.5708874458874459,
+      "urgent_total": 15,
+      "urgent_misses": 6,
+      "urgent_recall": 0.6,
+      "false_urgent": 12,
+      "review_count": 51,
+      "review_rate": 0.85,
+      "review_required_n": 21,
+      "review_recall": 1.0,
+      "review_precision": 0.4117647058823529,
+      "required_review_automated": 0,
+      "automation_coverage": 0.15,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 2,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 0.7777777777777778,
+      "auto_category_n": 9,
+      "cost_units_standard": 267,
+      "cost_units_sensitive": 687,
+      "weighted_cost_units": 687,
+      "cost_units_per_report": 11.45,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 10,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 0
+        },
+        "missing": {
+          "delay": 3,
+          "missing": 4,
+          "damage": 1,
+          "temperature": 0,
+          "safety": 0,
+          "documentation": 1
+        },
+        "damage": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 5,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 9,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 6,
+          "missing": 2,
+          "damage": 1,
+          "temperature": 1,
+          "safety": 2,
+          "documentation": 0
+        },
+        "documentation": {
+          "delay": 2,
+          "missing": 1,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 3
+        }
+      },
+      "method": "rules",
+      "policy": "sensitive",
+      "p50_ms": 0.1275,
+      "p95_ms": 0.1601,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 0.6071428571428571,
+      "macro_f1": 0.600036075036075,
+      "urgent_total": 15,
+      "urgent_misses": 3,
+      "urgent_recall": 0.8,
+      "false_urgent": 1,
+      "review_count": 34,
+      "review_rate": 0.5666666666666667,
+      "review_required_n": 21,
+      "review_recall": 0.9047619047619048,
+      "review_precision": 0.5588235294117647,
+      "required_review_automated": 2,
+      "automation_coverage": 0.43333333333333335,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 6,
+      "unknown_labels_automated": 1,
+      "auto_route_accuracy": 0.76,
+      "auto_category_n": 25,
+      "cost_units_standard": 174,
+      "cost_units_sensitive": 384,
+      "weighted_cost_units": 174,
+      "cost_units_per_report": 2.9,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 4,
+          "missing": 3,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 2,
+          "documentation": 1
+        },
+        "missing": {
+          "delay": 4,
+          "missing": 3,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 1
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 7,
+          "temperature": 1,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 1,
+          "missing": 1,
+          "damage": 1,
+          "temperature": 2,
+          "safety": 6,
+          "documentation": 1
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 4
+        }
+      },
+      "method": "learned",
+      "policy": "standard",
+      "p50_ms": 0.04,
+      "p95_ms": 0.066,
+      "latency_samples": 300
+    },
+    {
+      "n": 60,
+      "category_n": 56,
+      "urgency_n": 54,
+      "category_accuracy": 0.6071428571428571,
+      "macro_f1": 0.600036075036075,
+      "urgent_total": 15,
+      "urgent_misses": 1,
+      "urgent_recall": 0.9333333333333333,
+      "false_urgent": 7,
+      "review_count": 50,
+      "review_rate": 0.8333333333333334,
+      "review_required_n": 21,
+      "review_recall": 1.0,
+      "review_precision": 0.42,
+      "required_review_automated": 0,
+      "automation_coverage": 0.16666666666666666,
+      "unsafe_auto_urgent_misses": 0,
+      "wrong_auto_routes": 0,
+      "unknown_labels_automated": 0,
+      "auto_route_accuracy": 1.0,
+      "auto_category_n": 10,
+      "cost_units_standard": 94,
+      "cost_units_sensitive": 164,
+      "weighted_cost_units": 164,
+      "cost_units_per_report": 2.7333333333333334,
+      "api_cost_usd": 0,
+      "confusion": {
+        "delay": {
+          "delay": 4,
+          "missing": 3,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 2,
+          "documentation": 1
+        },
+        "missing": {
+          "delay": 4,
+          "missing": 3,
+          "damage": 0,
+          "temperature": 0,
+          "safety": 1,
+          "documentation": 1
+        },
+        "damage": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 7,
+          "temperature": 1,
+          "safety": 0,
+          "documentation": 0
+        },
+        "temperature": {
+          "delay": 0,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 10,
+          "safety": 0,
+          "documentation": 0
+        },
+        "safety": {
+          "delay": 1,
+          "missing": 1,
+          "damage": 1,
+          "temperature": 2,
+          "safety": 6,
+          "documentation": 1
+        },
+        "documentation": {
+          "delay": 1,
+          "missing": 0,
+          "damage": 0,
+          "temperature": 1,
+          "safety": 1,
+          "documentation": 4
+        }
+      },
+      "method": "learned",
+      "policy": "sensitive",
+      "p50_ms": 0.038,
+      "p95_ms": 0.0591,
+      "latency_samples": 300
+    }
+  ],
+  "requirement_change": [
+    {
+      "method": "rules",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 0.2,
+        "urgent_misses": 12,
+        "false_urgent": 0,
+        "review_count": 39,
+        "automation_coverage": 0.35,
+        "cost_units_sensitive": 1281
+      },
+      "after": {
+        "urgent_recall": 0.6,
+        "urgent_misses": 6,
+        "false_urgent": 12,
+        "review_count": 51,
+        "automation_coverage": 0.15,
+        "cost_units_sensitive": 687
+      },
+      "additional_reviews": 12,
+      "urgent_misses_prevented": 6,
+      "cost_reduction_under_new_requirement": 594
+    },
+    {
+      "method": "learned",
+      "requirement": "Urgent priority miss penalty increases from 30 to 100 units.",
+      "before": {
+        "urgent_recall": 0.8,
+        "urgent_misses": 3,
+        "false_urgent": 1,
+        "review_count": 34,
+        "automation_coverage": 0.43333333333333335,
+        "cost_units_sensitive": 384
+      },
+      "after": {
+        "urgent_recall": 0.9333333333333333,
+        "urgent_misses": 1,
+        "false_urgent": 7,
+        "review_count": 50,
+        "automation_coverage": 0.16666666666666666,
+        "cost_units_sensitive": 164
+      },
+      "additional_reviews": 16,
+      "urgent_misses_prevented": 2,
+      "cost_reduction_under_new_requirement": 220
+    }
+  ],
+  "evaluation_protocol": {
+    "kind": "preregistered fresh synthetic challenge set",
+    "previously_exposed_cases": false,
+    "classifier_frozen_before_report_authoring": true,
+    "labels_frozen_before_predictions": true,
+    "selected_method": "learned",
+    "selected_policy": "sensitive",
+    "registration": "evidence/fresh-20261022-registration.json",
+    "registration_sha256": "bd122d152abad98324d02e550eb1c9d1bcca6514b8e55c1fb0b58b0c02bc3fa3",
+    "source_manifest": "evidence/fresh-20261022-source.json",
+    "scoring_driver_sha256": "3669c506bb001ee28f3b602c08d234420cac949c32f54c7a1f3b474b1201ac2e",
+    "no_post_test_tuning": true,
+    "limitations": [
+      "Synthetic convenience set, not a representative sample of production incidents.",
+      "Independent fresh-context agent labels share the same model family and written rubric; no domain-expert validation.",
+      "The report author knows the existing implementation; lexical uniqueness does not prove scenario independence."
+    ]
+  },
+  "assumptions": {
+    "cost_units": {
+      "wrong_route": 6,
+      "false_urgent": 2,
+      "human_review": 1
+    },
+    "urgent_miss_by_policy": {
+      "standard": 30,
+      "sensitive": 100
+    },
+    "priority_delay": "Every missed urgent flag incurs the priority penalty, including ordinary review.",
+    "review": "Human review 1; automatic wrong route OR bypassed required review 6 once; false urgent 2. Staffing, human errors and queue delays unmeasured.",
+    "api_cost": "USD 0 in classifier inference API calls. Computing, development/review services and labor excluded.",
+    "latency": "Warm inference, 5 passes per report; excludes startup, HTTP, UI and human handling.",
+    "unclear": "Unknown category and urgency excluded only from their respective known-label scores; required-review behavior uses all reports.",
+    "quality": "60 separately authored fictional scenarios; no exact overlap with the original 360. Not a random or representative production sample."
+  },
+  "testing_attribution": {
+    "manual_product_testing_and_feedback": "dansyar (author-reported)",
+    "fresh_label_review": "separate fresh-context Codex agent",
+    "automated_evaluation_execution": "OpenAI Codex"
+  }
+}

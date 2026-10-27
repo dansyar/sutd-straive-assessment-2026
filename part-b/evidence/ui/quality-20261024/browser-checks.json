@@ -1,0 +1,319 @@
+{
+  "responsive": [
+    {
+      "documentWidth": 1440,
+      "page": "reviews",
+      "width": 1440
+    },
+    {
+      "documentWidth": 1024,
+      "page": "reviews",
+      "width": 1024
+    },
+    {
+      "documentWidth": 768,
+      "page": "reviews",
+      "width": 768
+    },
+    {
+      "documentWidth": 390,
+      "page": "reviews",
+      "width": 390
+    },
+    {
+      "documentWidth": 1440,
+      "page": "evaluation",
+      "tableScroll": 1172,
+      "tableWidth": 1172,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1024,
+      "page": "evaluation",
+      "tableScroll": 822,
+      "tableWidth": 794,
+      "width": 1024
+    },
+    {
+      "documentWidth": 768,
+      "page": "evaluation",
+      "tableScroll": 822,
+      "tableWidth": 554,
+      "width": 768
+    },
+    {
+      "documentWidth": 390,
+      "page": "evaluation",
+      "tableScroll": 822,
+      "tableWidth": 346,
+      "width": 390
+    },
+    {
+      "documentWidth": 1440,
+      "page": "operations",
+      "queueCount": 7,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1024,
+      "page": "operations",
+      "queueCount": 7,
+      "width": 1024
+    },
+    {
+      "documentWidth": 768,
+      "page": "operations",
+      "queueCount": 7,
+      "width": 768
+    },
+    {
+      "documentWidth": 390,
+      "page": "operations",
+      "queueCount": 7,
+      "width": 390
+    }
+  ],
+  "renderedReviews": [
+    {
+      "id": "RLY-920035",
+      "position": "1 / 60"
+    },
+    {
+      "id": "RLY-920049",
+      "position": "2 / 60"
+    },
+    {
+      "id": "RLY-920055",
+      "position": "3 / 60"
+    },
+    {
+      "id": "RLY-920015",
+      "position": "4 / 60"
+    },
+    {
+      "id": "RLY-920051",
+      "position": "5 / 60"
+    },
+    {
+      "id": "RLY-920057",
+      "position": "6 / 60"
+    },
+    {
+      "id": "RLY-920022",
+      "position": "7 / 60"
+    },
+    {
+      "id": "RLY-920059",
+      "position": "8 / 60"
+    },
+    {
+      "id": "RLY-920037",
+      "position": "9 / 60"
+    },
+    {
+      "id": "RLY-920002",
+      "position": "10 / 60"
+    },
+    {
+      "id": "RLY-920006",
+      "position": "11 / 60"
+    },
+    {
+      "id": "RLY-920052",
+      "position": "12 / 60"
+    },
+    {
+      "id": "RLY-920031",
+      "position": "13 / 60"
+    },
+    {
+      "id": "RLY-920034",
+      "position": "14 / 60"
+    },
+    {
+      "id": "RLY-920013",
+      "position": "15 / 60"
+    },
+    {
+      "id": "RLY-920040",
+      "position": "16 / 60"
+    },
+    {
+      "id": "RLY-920056",
+      "position": "17 / 60"
+    },
+    {
+      "id": "RLY-920004",
+      "position": "18 / 60"
+    },
+    {
+      "id": "RLY-920011",
+      "position": "19 / 60"
+    },
+    {
+      "id": "RLY-920009",
+      "position": "20 / 60"
+    },
+    {
+      "id": "RLY-920042",
+      "position": "21 / 60"
+    },
+    {
+      "id": "RLY-920045",
+      "position": "22 / 60"
+    },
+    {
+      "id": "RLY-920005",
+      "position": "23 / 60"
+    },
+    {
+      "id": "RLY-920044",
+      "position": "24 / 60"
+    },
+    {
+      "id": "RLY-920018",
+      "position": "25 / 60"
+    },
+    {
+      "id": "RLY-920060",
+      "position": "26 / 60"
+    },
+    {
+      "id": "RLY-920030",
+      "position": "27 / 60"
+    },
+    {
+      "id": "RLY-920020",
+      "position": "28 / 60"
+    },
+    {
+      "id": "RLY-920046",
+      "position": "29 / 60"
+    },
+    {
+      "id": "RLY-920039",
+      "position": "30 / 60"
+    },
+    {
+      "id": "RLY-920047",
+      "position": "31 / 60"
+    },
+    {
+      "id": "RLY-920024",
+      "position": "32 / 60"
+    },
+    {
+      "id": "RLY-920023",
+      "position": "33 / 60"
+    },
+    {
+      "id": "RLY-920028",
+      "position": "34 / 60"
+    },
+    {
+      "id": "RLY-920008",
+      "position": "35 / 60"
+    },
+    {
+      "id": "RLY-920019",
+      "position": "36 / 60"
+    },
+    {
+      "id": "RLY-920036",
+      "position": "37 / 60"
+    },
+    {
+      "id": "RLY-920032",
+      "position": "38 / 60"
+    },
+    {
+      "id": "RLY-920007",
+      "position": "39 / 60"
+    },
+    {
+      "id": "RLY-920048",
+      "position": "40 / 60"
+    },
+    {
+      "id": "RLY-920017",
+      "position": "41 / 60"
+    },
+    {
+      "id": "RLY-920021",
+      "position": "42 / 60"
+    },
+    {
+      "id": "RLY-920033",
+      "position": "43 / 60"
+    },
+    {
+      "id": "RLY-920043",
+      "position": "44 / 60"
+    },
+    {
+      "id": "RLY-920010",
+      "position": "45 / 60"
+    },
+    {
+      "id": "RLY-920053",
+      "position": "46 / 60"
+    },
+    {
+      "id": "RLY-920003",
+      "position": "47 / 60"
+    },
+    {
+      "id": "RLY-920041",
+      "position": "48 / 60"
+    },
+    {
+      "id": "RLY-920054",
+      "position": "49 / 60"
+    },
+    {
+      "id": "RLY-920050",
+      "position": "50 / 60"
+    },
+    {
+      "id": "RLY-920058",
+      "position": "51 / 60"
+    },
+    {
+      "id": "RLY-920038",
+      "position": "52 / 60"
+    },
+    {
+      "id": "RLY-920027",
+      "position": "53 / 60"
+    },
+    {
+      "id": "RLY-920001",
+      "position": "54 / 60"
+    },
+    {
+      "id": "RLY-920026",
+      "position": "55 / 60"
+    },
+    {
+      "id": "RLY-920025",
+      "position": "56 / 60"
+    },
+    {
+      "id": "RLY-920016",
+      "position": "57 / 60"
+    },
+    {
+      "id": "RLY-920029",
+      "position": "58 / 60"
+    },
+    {
+      "id": "RLY-920014",
+      "position": "59 / 60"
+    },
+    {
+      "id": "RLY-920012",
+      "position": "60 / 60"
+    }
+  ],
+  "all60Rendered": true
+}

@@ -1,0 +1,41 @@
+{
+  "status": "frozen independent review",
+  "count": 60,
+  "frozen_at": "2026-10-21T07:49:38.138829+00:00",
+  "labels_sha256": "e0eb4f74c3fca8d150dccdda10044e0e358dd283f92459c97b069c1ff6f27e5c",
+  "reports_sha256": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+  "implementation_sha256": {
+    "engine.py": "ffe0ed8f3cea840b023231944571c31af94757a46aaaeb299ba1a89eee0575eb",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a",
+    "evaluate.py": "7221db32c9acf76e583618608745961fb6fa0b556a97f7d77f57f331de244b70"
+  },
+  "source": {
+    "kind": "independent agent",
+    "reviewer_type": "agent",
+    "reviewer": "independent_report_review",
+    "file": "independent-review.json",
+    "sha256": "d3bedcb9529a594df379274cf64fca4935dc3b1a73fe8703c095e7af6273c943",
+    "method": "Fresh-context, label- and prediction-blind agent review of the supplied report texts and written guide only. Each category, urgency and clarification judgment was made individually using the reviewer's own judgment; no keyword classifier, existing model, repository material, original annotations, other reviews or evaluation results were used. Code was used only to read the two inputs, package the manually authored judgments and validate coverage and field types.",
+    "fresh_context": true,
+    "blind_inputs": {
+      "reports_sha256": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c",
+      "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6"
+    },
+    "guide_notes": [
+      "The guide does not explicitly distinguish an active unsafe destination from the urgent logistics blocker restoring its safety system. I applied safety precedence where unsafe personnel or rising floodwater are explicitly described (RLY-61963 and RLY-23213). I retained the missing or documentation cause for other blocked safety-system replacements without a separately described active physical event, while still marking them urgent.",
+      "The guide does not expressly say whether archival safety reports or cold-chain investigation and logger records become documentation cases. I used the underlying safety or temperature domain because documentation is specifically described through trade and delivery documents, and temperature records are expressly within temperature.",
+      "Routine means no immediate threat is described, while unclear urgency warns against treating missing information as proof of safety; the boundary is underspecified. I used routine for concrete operational incidents without an urgency cue, including some with unresolved identity or delivery records. I used unclear when reported cold-chain risk lacks the necessary temperature facts or an extremely vague report supplies no usable condition or consequence information.",
+      "The guide does not define how many facts must be missing before clarification is required. I did not flag normal recovery, claims, filing or tracing work by itself. I flagged explicit material gaps, conflicting accounts, unresolved primary issues, and separate active safety and transport handling.",
+      "There is no tie-breaker between packaging damage and a merely suspected shortage, or between a document discrepancy and the wrong consignment. I preserved an unclear primary category for RLY-95467 and RLY-94293 until inventory or actual consignment identity is verified.",
+      "Generic late again and everything is ruined statements could suggest delay or damage, but they do not establish the required shipment condition or specific primary issue. I used unclear for RLY-84412 and RLY-16564 rather than infer absent facts."
+    ]
+  },
+  "reviewers": [
+    "independent_report_review"
+  ],
+  "reviewer_types": [
+    "agent"
+  ],
+  "unclear_category": 4,
+  "unclear_urgency": 4
+}

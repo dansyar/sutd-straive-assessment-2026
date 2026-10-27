@@ -18,4 +18,42 @@ jobs:
           assert datetime.strptime('2024-02-29', '%Y-%m-%d').day == 29
           print('Assessment workflow verified successfully.')
           PY
+  incident-triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install prototype dependencies
+        run: python -m pip install -r part-b/requirements.txt
+      - name: Verify frozen corpus and behavior
+        working-directory: part-b
+        run: |
+          python corpus.py
+          python -m unittest discover -s tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify navigation and save behavior
+        working-directory: part-b
+        run: node --test tests/test_frontend.mjs
+      - name: Reproduce development benchmark
+        working-directory: part-b
+        run: python evaluate.py --output evidence/ci-development
+      - name: Reproduce preserved original test
+        working-directory: part-b
+        run: python evidence/versions/v1/evaluate.py --reviewed data/reviewed_labels.jsonl --output evidence/ci-original
+      - name: Reproduce disclosed diagnostic retest
+        working-directory: part-b
+        run: python evaluate.py --reviewed data/reviewed_labels.jsonl --diagnostic --output evidence/ci-retest
+      - name: Reproduce preregistered fresh test
+        working-directory: part-b
+        run: python evidence/versions/temperature-v3-pre-routing-v4/fresh_evaluate.py --output evidence/ci-fresh
+      - name: Reproduce second fresh test
+        working-directory: part-b
+        run: python fresh2_evaluate.py --output evidence/ci-fresh2
+      - name: Reproduce disclosed version comparisons
+        working-directory: part-b
+        run: python compare_versions.py --output evidence/ci-version-comparison
 

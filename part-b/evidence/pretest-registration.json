@@ -1,0 +1,36 @@
+{
+  "registered_at": "2026-10-21T07:45:44.392486+00:00",
+  "purpose": "Predeclare classifier and policy before receiving independent reviewer judgments.",
+  "selected_method": "rules",
+  "selected_policy": "sensitive",
+  "selection_basis": "Existing development comparison; lower modeled urgency cost with explicit review workload.",
+  "classifier_sha256": {
+    "engine.py": "ffe0ed8f3cea840b023231944571c31af94757a46aaaeb299ba1a89eee0575eb",
+    "taxonomy.py": "4c658e49ca44be7db1f27de1dbc435e17b9b6575c7a57828fdb6d7b11a2d0a4a"
+  },
+  "corpus_sha256": {
+    "development.jsonl": "2a79995c8aaea9e1a468442800bc26c14bf945bf89f9a77e86d8701c6c2d6bf4",
+    "review_reports.jsonl": "9d126744d9f0c5e408b4de0e30ed1b1117c178f9bcc7a1afe7f1438b7cd5d13c"
+  },
+  "review_protocol": {
+    "reviewer": "independent_report_review",
+    "reviewer_type": "agent",
+    "context": "fresh context; parent history not forked",
+    "allowed_inputs": [
+      "reports.jsonl",
+      "guide.txt"
+    ],
+    "guide_sha256": "aa55c9434dc4853a5c8793d0fb28076ba0ba42b064e04da1423a3a2c3dac2cc6",
+    "excluded_inputs": [
+      "author draft labels",
+      "same-author review",
+      "classifiers",
+      "predictions",
+      "evaluation results"
+    ],
+    "unknown_labels": "preserve unclear category and urgency; do not force guesses"
+  },
+  "metrics": "Existing evaluate.py definitions, including known-label denominators, all missed urgent flags incurring delay cost, both 30 and 100 penalty matrices, review coverage and warm inference timing.",
+  "implementation_policy": "Do not change engine.py, taxonomy.py or tune model parameters based on independent labels. Importer/evaluator updates only add truthful agent provenance and leave scoring definitions unchanged.",
+  "limits": "Separate agent, same model family and shared written rubric; not domain-expert or human validation."
+}

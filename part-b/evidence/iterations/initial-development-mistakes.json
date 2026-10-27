@@ -1,0 +1,4603 @@
+[
+  {
+    "id": "RLY-51623",
+    "text": "Message from the receiving team: A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "refrigerat",
+        "chilled",
+        "logger"
+      ],
+      "explanation": "Keyword matches: refrigerat, chilled, logger.",
+      "similarity": 0.39,
+      "margin": 0.24,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.017,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-68032",
+    "text": "Message from the receiving team: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.02,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-85415",
+    "text": "Please check this report. A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "refrigerat",
+        "chilled",
+        "logger"
+      ],
+      "explanation": "Keyword matches: refrigerat, chilled, logger.",
+      "similarity": 0.39,
+      "margin": 0.24,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.019,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-40667",
+    "text": "Dispatch update: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.017,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-29805",
+    "text": "Operations note \u2014 The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked. Please advise the next team.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.022,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-72987",
+    "text": "Please check this report. The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.017,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-91738",
+    "text": "The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.016,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-60057",
+    "text": "Dispatch update: A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "refrigerat",
+        "chilled",
+        "logger"
+      ],
+      "explanation": "Keyword matches: refrigerat, chilled, logger.",
+      "similarity": 0.39,
+      "margin": 0.24,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.016,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82740",
+    "text": "Operations note \u2014 A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed. Please advise the next team.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "refrigerat",
+        "chilled",
+        "logger"
+      ],
+      "explanation": "Keyword matches: refrigerat, chilled, logger.",
+      "similarity": 0.39,
+      "margin": 0.24,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.03,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-53298",
+    "text": "A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "rules",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "refrigerat",
+        "chilled",
+        "logger"
+      ],
+      "explanation": "Keyword matches: refrigerat, chilled, logger.",
+      "similarity": 0.39,
+      "margin": 0.24,
+      "alternatives": [],
+      "policy": "standard",
+      "method": "rules",
+      "latency_ms": 0.018,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-72918",
+    "text": "Message from the receiving team: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.013,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-68032",
+    "text": "Message from the receiving team: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.014,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-40667",
+    "text": "Dispatch update: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.013,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-29805",
+    "text": "Operations note \u2014 The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked. Please advise the next team.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.017,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-72987",
+    "text": "Please check this report. The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.014,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-58782",
+    "text": "The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.012,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-39194",
+    "text": "Operations note \u2014 The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred. Please advise the next team.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.017,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-91738",
+    "text": "The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "missing"
+      ],
+      "explanation": "Keyword matches: missing.",
+      "similarity": 0.13,
+      "margin": 0.0,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.012,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-76728",
+    "text": "Dispatch update: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.013,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-88056",
+    "text": "Please check this report. The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "rules",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "security"
+      ],
+      "explanation": "Keyword matches: security.",
+      "similarity": 0.13,
+      "margin": 0.08,
+      "alternatives": [],
+      "policy": "sensitive",
+      "method": "rules",
+      "latency_ms": 0.014,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-63947",
+    "text": "Please check this report. The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.2019,
+      "margin": 0.0125,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.2019
+        },
+        {
+          "category": "damage",
+          "score": 0.1893
+        },
+        {
+          "category": "temperature",
+          "score": 0.1742
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.029,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-89007",
+    "text": "The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.1584,
+      "margin": 0.0186,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1584
+        },
+        {
+          "category": "damage",
+          "score": 0.1399
+        },
+        {
+          "category": "temperature",
+          "score": 0.1148
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-30556",
+    "text": "Operations note \u2014 The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, from the.",
+      "similarity": 0.2301,
+      "margin": 0.0094,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2301
+        },
+        {
+          "category": "delay",
+          "score": 0.2207
+        },
+        {
+          "category": "safety",
+          "score": 0.2177
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.037,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-51623",
+    "text": "Message from the receiving team: A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "unreadable",
+        "is unreadable",
+        "unreadable and",
+        "whether"
+      ],
+      "explanation": "Words shared with training examples: the, unreadable, is unreadable, unreadable and, whether.",
+      "similarity": 0.2074,
+      "margin": 0.0025,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2074
+        },
+        {
+          "category": "temperature",
+          "score": 0.2048
+        },
+        {
+          "category": "safety",
+          "score": 0.2039
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.035,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-72918",
+    "text": "Message from the receiving team: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2271,
+      "margin": 0.033,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2271
+        },
+        {
+          "category": "temperature",
+          "score": 0.1941
+        },
+        {
+          "category": "safety",
+          "score": 0.185
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-20705",
+    "text": "Please check this report. An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.1804,
+      "margin": 0.0026,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1804
+        },
+        {
+          "category": "delay",
+          "score": 0.1778
+        },
+        {
+          "category": "temperature",
+          "score": 0.1579
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-68032",
+    "text": "Message from the receiving team: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, from the.",
+      "similarity": 0.2638,
+      "margin": 0.0242,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2638
+        },
+        {
+          "category": "safety",
+          "score": 0.2396
+        },
+        {
+          "category": "damage",
+          "score": 0.2189
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.03,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-60176",
+    "text": "Operations note \u2014 The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, delivered, shipment, has.",
+      "similarity": 0.248,
+      "margin": 0.0175,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.248
+        },
+        {
+          "category": "documentation",
+          "score": 0.2306
+        },
+        {
+          "category": "damage",
+          "score": 0.229
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.033,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-79326",
+    "text": "Please check this report. The destination needs its missing emergency power module immediately. Backup supply is running out, but the shipment's last confirmed location is unclear.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the shipment",
+        "missing",
+        "the",
+        "is",
+        "shipment"
+      ],
+      "explanation": "Words shared with training examples: the shipment, missing, the, is, shipment.",
+      "similarity": 0.2249,
+      "margin": 0.0594,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2249
+        },
+        {
+          "category": "temperature",
+          "score": 0.1655
+        },
+        {
+          "category": "delay",
+          "score": 0.1578
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-85415",
+    "text": "Please check this report. A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "logger",
+        "the",
+        "is",
+        "chilled",
+        "a chilled"
+      ],
+      "explanation": "Words shared with training examples: logger, the, is, chilled, a chilled.",
+      "similarity": 0.2046,
+      "margin": 0.0066,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.2046
+        },
+        {
+          "category": "missing",
+          "score": 0.198
+        },
+        {
+          "category": "safety",
+          "score": 0.1897
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.033,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-40667",
+    "text": "Dispatch update: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.2248,
+      "margin": 0.0289,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2248
+        },
+        {
+          "category": "safety",
+          "score": 0.1959
+        },
+        {
+          "category": "damage",
+          "score": 0.1858
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-83451",
+    "text": "Please check this report. A pallet is leaning over a busy pedestrian lane and could collapse. Staff have not yet cordoned off the area.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "staff",
+        "area",
+        "the area",
+        "a",
+        "and"
+      ],
+      "explanation": "Words shared with training examples: staff, area, the area, a, and.",
+      "similarity": 0.2344,
+      "margin": 0.0459,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.2344
+        },
+        {
+          "category": "damage",
+          "score": 0.1885
+        },
+        {
+          "category": "missing",
+          "score": 0.1827
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.028,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-29805",
+    "text": "Operations note \u2014 The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.272,
+      "margin": 0.0264,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.272
+        },
+        {
+          "category": "safety",
+          "score": 0.2456
+        },
+        {
+          "category": "damage",
+          "score": 0.2352
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.033,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-78711",
+    "text": "Operations note \u2014 The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2282,
+      "margin": 0.0364,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2282
+        },
+        {
+          "category": "delay",
+          "score": 0.1918
+        },
+        {
+          "category": "missing",
+          "score": 0.1917
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.071,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-72987",
+    "text": "Please check this report. The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "check",
+        "one"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, check, one.",
+      "similarity": 0.2544,
+      "margin": 0.0314,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2544
+        },
+        {
+          "category": "safety",
+          "score": 0.2229
+        },
+        {
+          "category": "damage",
+          "score": 0.2104
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.047,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-58782",
+    "text": "The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.1699,
+      "margin": 0.0349,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1699
+        },
+        {
+          "category": "temperature",
+          "score": 0.135
+        },
+        {
+          "category": "delay",
+          "score": 0.1209
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-39194",
+    "text": "Operations note \u2014 The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2433,
+      "margin": 0.0341,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2433
+        },
+        {
+          "category": "temperature",
+          "score": 0.2093
+        },
+        {
+          "category": "delay",
+          "score": 0.2028
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.032,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-91738",
+    "text": "The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.2066,
+      "margin": 0.0259,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2066
+        },
+        {
+          "category": "safety",
+          "score": 0.1807
+        },
+        {
+          "category": "damage",
+          "score": 0.162
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.029,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-75558",
+    "text": "Message from the receiving team: The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2089,
+      "margin": 0.0286,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2089
+        },
+        {
+          "category": "missing",
+          "score": 0.1803
+        },
+        {
+          "category": "delay",
+          "score": 0.1698
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.032,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-55374",
+    "text": "Operations note \u2014 A pallet is leaning over a busy pedestrian lane and could collapse. Staff have not yet cordoned off the area. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "staff",
+        "area",
+        "the area",
+        "a",
+        "the"
+      ],
+      "explanation": "Words shared with training examples: staff, area, the area, a, the.",
+      "similarity": 0.2605,
+      "margin": 0.041,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.2605
+        },
+        {
+          "category": "damage",
+          "score": 0.2195
+        },
+        {
+          "category": "missing",
+          "score": 0.2094
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.047,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-20092",
+    "text": "Message from the receiving team: An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.1889,
+      "margin": 0.0019,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1889
+        },
+        {
+          "category": "delay",
+          "score": 0.187
+        },
+        {
+          "category": "safety",
+          "score": 0.1651
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.03,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-66901",
+    "text": "A pallet is leaning over a busy pedestrian lane and could collapse. Staff have not yet cordoned off the area.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "staff",
+        "area",
+        "the area",
+        "a",
+        "and"
+      ],
+      "explanation": "Words shared with training examples: staff, area, the area, a, and.",
+      "similarity": 0.1865,
+      "margin": 0.0495,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.1865
+        },
+        {
+          "category": "damage",
+          "score": 0.137
+        },
+        {
+          "category": "missing",
+          "score": 0.1227
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-65554",
+    "text": "Message from the receiving team: The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "delivered",
+        "shipment",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, delivered, shipment, from the.",
+      "similarity": 0.239,
+      "margin": 0.0272,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.239
+        },
+        {
+          "category": "damage",
+          "score": 0.2118
+        },
+        {
+          "category": "documentation",
+          "score": 0.2108
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.031,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-38505",
+    "text": "Operations note \u2014 The destination needs its missing emergency power module immediately. Backup supply is running out, but the shipment's last confirmed location is unclear. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "missing",
+        "is",
+        "shipment"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, missing, is, shipment.",
+      "similarity": 0.2445,
+      "margin": 0.0574,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2445
+        },
+        {
+          "category": "delay",
+          "score": 0.1871
+        },
+        {
+          "category": "temperature",
+          "score": 0.1806
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.033,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-53118",
+    "text": "Message from the receiving team: The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "from the",
+        "from",
+        "contents",
+        "transport"
+      ],
+      "explanation": "Words shared with training examples: the, from the, from, contents, transport.",
+      "similarity": 0.2188,
+      "margin": 0.0062,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2188
+        },
+        {
+          "category": "safety",
+          "score": 0.2126
+        },
+        {
+          "category": "delay",
+          "score": 0.2066
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.031,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-39433",
+    "text": "Dispatch update: The destination needs its missing emergency power module immediately. Backup supply is running out, but the shipment's last confirmed location is unclear.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the shipment",
+        "missing",
+        "the",
+        "is",
+        "shipment"
+      ],
+      "explanation": "Words shared with training examples: the shipment, missing, the, is, shipment.",
+      "similarity": 0.1964,
+      "margin": 0.0567,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1964
+        },
+        {
+          "category": "delay",
+          "score": 0.1396
+        },
+        {
+          "category": "temperature",
+          "score": 0.1326
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-83050",
+    "text": "Message from the receiving team: The destination needs its missing emergency power module immediately. Backup supply is running out, but the shipment's last confirmed location is unclear.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "missing",
+        "is",
+        "shipment"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, missing, is, shipment.",
+      "similarity": 0.2354,
+      "margin": 0.0682,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2354
+        },
+        {
+          "category": "delay",
+          "score": 0.1672
+        },
+        {
+          "category": "temperature",
+          "score": 0.1658
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-11983",
+    "text": "The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, has.",
+      "similarity": 0.1726,
+      "margin": 0.0241,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1726
+        },
+        {
+          "category": "damage",
+          "score": 0.1485
+        },
+        {
+          "category": "delay",
+          "score": 0.1447
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.022,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-97735",
+    "text": "Dispatch update: The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "in",
+        "the depot",
+        "dispatch",
+        "depot"
+      ],
+      "explanation": "Words shared with training examples: the, in, the depot, dispatch, depot.",
+      "similarity": 0.1919,
+      "margin": 0.0012,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1919
+        },
+        {
+          "category": "missing",
+          "score": 0.1908
+        },
+        {
+          "category": "safety",
+          "score": 0.1821
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.028,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-24450",
+    "text": "Operations note \u2014 The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "the",
+        "or",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, the, or, for, delivery no.",
+      "similarity": 0.2303,
+      "margin": 0.0147,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.2303
+        },
+        {
+          "category": "damage",
+          "score": 0.2156
+        },
+        {
+          "category": "temperature",
+          "score": 0.1892
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.036,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-76728",
+    "text": "Dispatch update: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.1936,
+      "margin": 0.0335,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1936
+        },
+        {
+          "category": "temperature",
+          "score": 0.16
+        },
+        {
+          "category": "delay",
+          "score": 0.1525
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-13758",
+    "text": "The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.1424,
+      "margin": 0.0342,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1424
+        },
+        {
+          "category": "delay",
+          "score": 0.1082
+        },
+        {
+          "category": "missing",
+          "score": 0.1067
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-36680",
+    "text": "Please check this report. The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "check"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, check.",
+      "similarity": 0.2271,
+      "margin": 0.0253,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2271
+        },
+        {
+          "category": "documentation",
+          "score": 0.2018
+        },
+        {
+          "category": "damage",
+          "score": 0.2013
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-60057",
+    "text": "Dispatch update: A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "logger",
+        "the",
+        "is",
+        "chilled",
+        "a chilled"
+      ],
+      "explanation": "Words shared with training examples: logger, the, is, chilled, a chilled.",
+      "similarity": 0.178,
+      "margin": 0.0052,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.178
+        },
+        {
+          "category": "missing",
+          "score": 0.1728
+        },
+        {
+          "category": "safety",
+          "score": 0.1674
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.032,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82397",
+    "text": "Dispatch update: The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.1732,
+      "margin": 0.0326,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1732
+        },
+        {
+          "category": "delay",
+          "score": 0.1405
+        },
+        {
+          "category": "missing",
+          "score": 0.1337
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82740",
+    "text": "Operations note \u2014 A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "logger",
+        "is",
+        "chilled",
+        "a chilled"
+      ],
+      "explanation": "Words shared with training examples: the, logger, is, chilled, a chilled.",
+      "similarity": 0.2172,
+      "margin": 0.0007,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.2172
+        },
+        {
+          "category": "missing",
+          "score": 0.2165
+        },
+        {
+          "category": "safety",
+          "score": 0.2106
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.038,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-50608",
+    "text": "Dispatch update: A pallet is leaning over a busy pedestrian lane and could collapse. Staff have not yet cordoned off the area.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "staff",
+        "area",
+        "the area",
+        "a",
+        "and"
+      ],
+      "explanation": "Words shared with training examples: staff, area, the area, a, and.",
+      "similarity": 0.2075,
+      "margin": 0.0454,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.2075
+        },
+        {
+          "category": "damage",
+          "score": 0.1621
+        },
+        {
+          "category": "missing",
+          "score": 0.1482
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-98606",
+    "text": "The destination needs its missing emergency power module immediately. Backup supply is running out, but the shipment's last confirmed location is unclear.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the shipment",
+        "missing",
+        "the",
+        "is",
+        "shipment"
+      ],
+      "explanation": "Words shared with training examples: the shipment, missing, the, is, shipment.",
+      "similarity": 0.1767,
+      "margin": 0.0654,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1767
+        },
+        {
+          "category": "delay",
+          "score": 0.1113
+        },
+        {
+          "category": "temperature",
+          "score": 0.1084
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.022,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-64337",
+    "text": "Operations note \u2014 An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown. Please advise the next team.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.2078,
+      "margin": 0.001,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2078
+        },
+        {
+          "category": "delay",
+          "score": 0.2068
+        },
+        {
+          "category": "temperature",
+          "score": 0.1738
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.03,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-32627",
+    "text": "Message from the receiving team: A pallet is leaning over a busy pedestrian lane and could collapse. Staff have not yet cordoned off the area.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "safety",
+      "category_label": "Safety & security",
+      "team": "Safety & security",
+      "urgent": false,
+      "review": false,
+      "review_reasons": [],
+      "signals": [
+        "staff",
+        "area",
+        "the area",
+        "a",
+        "the"
+      ],
+      "explanation": "Words shared with training examples: staff, area, the area, a, the.",
+      "similarity": 0.2555,
+      "margin": 0.0532,
+      "alternatives": [
+        {
+          "category": "safety",
+          "score": 0.2555
+        },
+        {
+          "category": "damage",
+          "score": 0.2024
+        },
+        {
+          "category": "missing",
+          "score": 0.1987
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.029,
+      "api_cost_usd": 0,
+      "action": "Ready to route"
+    }
+  },
+  {
+    "id": "RLY-23581",
+    "text": "Message from the receiving team: The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "the",
+        "or",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, the, or, for, delivery no.",
+      "similarity": 0.211,
+      "margin": 0.0118,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.211
+        },
+        {
+          "category": "damage",
+          "score": 0.1992
+        },
+        {
+          "category": "temperature",
+          "score": 0.1741
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.031,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-53298",
+    "text": "A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "temperature",
+      "category_label": "Temperature issue",
+      "team": "Cold-chain quality",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "logger",
+        "the",
+        "is",
+        "chilled",
+        "a chilled"
+      ],
+      "explanation": "Words shared with training examples: logger, the, is, chilled, a chilled.",
+      "similarity": 0.1637,
+      "margin": 0.0095,
+      "alternatives": [
+        {
+          "category": "temperature",
+          "score": 0.1637
+        },
+        {
+          "category": "missing",
+          "score": 0.1542
+        },
+        {
+          "category": "safety",
+          "score": 0.1475
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-88056",
+    "text": "Please check this report. The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2185,
+      "margin": 0.022,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2185
+        },
+        {
+          "category": "temperature",
+          "score": 0.1964
+        },
+        {
+          "category": "delay",
+          "score": 0.1721
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.025,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-99516",
+    "text": "The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, from the.",
+      "similarity": 0.1694,
+      "margin": 0.0037,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1694
+        },
+        {
+          "category": "safety",
+          "score": 0.1657
+        },
+        {
+          "category": "delay",
+          "score": 0.1646
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.025,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-84756",
+    "text": "Please check this report. The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2018,
+      "margin": 0.0328,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2018
+        },
+        {
+          "category": "missing",
+          "score": 0.169
+        },
+        {
+          "category": "delay",
+          "score": 0.1607
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-45876",
+    "text": "Dispatch update: An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "is",
+        "in",
+        "the",
+        "part",
+        "queue"
+      ],
+      "explanation": "Words shared with training examples: is, in, the, part, queue.",
+      "similarity": 0.1601,
+      "margin": 0.0067,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1601
+        },
+        {
+          "category": "documentation",
+          "score": 0.1534
+        },
+        {
+          "category": "temperature",
+          "score": 0.124
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-87800",
+    "text": "Dispatch update: The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.1849,
+      "margin": 0.0203,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1849
+        },
+        {
+          "category": "damage",
+          "score": 0.1646
+        },
+        {
+          "category": "temperature",
+          "score": 0.1397
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-22834",
+    "text": "An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "is",
+        "in",
+        "the",
+        "part",
+        "queue"
+      ],
+      "explanation": "Words shared with training examples: is, in, the, part, queue.",
+      "similarity": 0.1367,
+      "margin": 0.004,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1367
+        },
+        {
+          "category": "documentation",
+          "score": 0.1327
+        },
+        {
+          "category": "temperature",
+          "score": 0.1051
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.021,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82972",
+    "text": "Please check this report. The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "check"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, check.",
+      "similarity": 0.2227,
+      "margin": 0.0123,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2227
+        },
+        {
+          "category": "safety",
+          "score": 0.2104
+        },
+        {
+          "category": "delay",
+          "score": 0.2092
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.036,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-95729",
+    "text": "Dispatch update: The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "standard",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, has.",
+      "similarity": 0.194,
+      "margin": 0.0191,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.194
+        },
+        {
+          "category": "delay",
+          "score": 0.1748
+        },
+        {
+          "category": "damage",
+          "score": 0.1747
+        }
+      ],
+      "policy": "standard",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-63947",
+    "text": "Please check this report. The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.2019,
+      "margin": 0.0125,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.2019
+        },
+        {
+          "category": "damage",
+          "score": 0.1893
+        },
+        {
+          "category": "temperature",
+          "score": 0.1742
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.03,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-89007",
+    "text": "The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.1584,
+      "margin": 0.0186,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1584
+        },
+        {
+          "category": "damage",
+          "score": 0.1399
+        },
+        {
+          "category": "temperature",
+          "score": 0.1148
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-30556",
+    "text": "Operations note \u2014 The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, from the.",
+      "similarity": 0.2301,
+      "margin": 0.0094,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2301
+        },
+        {
+          "category": "delay",
+          "score": 0.2207
+        },
+        {
+          "category": "safety",
+          "score": 0.2177
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.041,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-51623",
+    "text": "Message from the receiving team: A chilled load may have been left unrefrigerated overnight. The logger is unreadable and nobody has confirmed whether the stock is still exposed.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "unreadable",
+        "is unreadable",
+        "unreadable and",
+        "whether"
+      ],
+      "explanation": "Words shared with training examples: the, unreadable, is unreadable, unreadable and, whether.",
+      "similarity": 0.2074,
+      "margin": 0.0025,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2074
+        },
+        {
+          "category": "temperature",
+          "score": 0.2048
+        },
+        {
+          "category": "safety",
+          "score": 0.2039
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.036,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-72918",
+    "text": "Message from the receiving team: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2271,
+      "margin": 0.033,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2271
+        },
+        {
+          "category": "temperature",
+          "score": 0.1941
+        },
+        {
+          "category": "safety",
+          "score": 0.185
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-20705",
+    "text": "Please check this report. An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.1804,
+      "margin": 0.0026,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1804
+        },
+        {
+          "category": "delay",
+          "score": 0.1778
+        },
+        {
+          "category": "temperature",
+          "score": 0.1579
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-68032",
+    "text": "Message from the receiving team: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, from the.",
+      "similarity": 0.2638,
+      "margin": 0.0242,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2638
+        },
+        {
+          "category": "safety",
+          "score": 0.2396
+        },
+        {
+          "category": "damage",
+          "score": 0.2189
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.028,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-60176",
+    "text": "Operations note \u2014 The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, delivered, shipment, has.",
+      "similarity": 0.248,
+      "margin": 0.0175,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.248
+        },
+        {
+          "category": "documentation",
+          "score": 0.2306
+        },
+        {
+          "category": "damage",
+          "score": 0.229
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.031,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-40667",
+    "text": "Dispatch update: The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.2248,
+      "margin": 0.0289,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2248
+        },
+        {
+          "category": "safety",
+          "score": 0.1959
+        },
+        {
+          "category": "damage",
+          "score": 0.1858
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-29805",
+    "text": "Operations note \u2014 The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.272,
+      "margin": 0.0264,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.272
+        },
+        {
+          "category": "safety",
+          "score": 0.2456
+        },
+        {
+          "category": "damage",
+          "score": 0.2352
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.032,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-78711",
+    "text": "Operations note \u2014 The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2282,
+      "margin": 0.0364,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2282
+        },
+        {
+          "category": "delay",
+          "score": 0.1918
+        },
+        {
+          "category": "missing",
+          "score": 0.1917
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.031,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-72987",
+    "text": "Please check this report. The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "check",
+        "one"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, check, one.",
+      "similarity": 0.2544,
+      "margin": 0.0314,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2544
+        },
+        {
+          "category": "safety",
+          "score": 0.2229
+        },
+        {
+          "category": "damage",
+          "score": 0.2104
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-58782",
+    "text": "The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.1699,
+      "margin": 0.0349,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1699
+        },
+        {
+          "category": "temperature",
+          "score": 0.135
+        },
+        {
+          "category": "delay",
+          "score": 0.1209
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.019,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-39194",
+    "text": "Operations note \u2014 The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2433,
+      "margin": 0.0341,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2433
+        },
+        {
+          "category": "temperature",
+          "score": 0.2093
+        },
+        {
+          "category": "delay",
+          "score": 0.2028
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.028,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-91738",
+    "text": "The pallet looks damaged and the receiver says one box may also be missing. The count has not been checked.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "damage",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "missing",
+        "count",
+        "one",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the, missing, count, one, has.",
+      "similarity": 0.2066,
+      "margin": 0.0259,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2066
+        },
+        {
+          "category": "safety",
+          "score": 0.1807
+        },
+        {
+          "category": "damage",
+          "score": 0.162
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.022,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-75558",
+    "text": "Message from the receiving team: The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2089,
+      "margin": 0.0286,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2089
+        },
+        {
+          "category": "missing",
+          "score": 0.1803
+        },
+        {
+          "category": "delay",
+          "score": 0.1698
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-20092",
+    "text": "Message from the receiving team: An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.1889,
+      "margin": 0.0019,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1889
+        },
+        {
+          "category": "delay",
+          "score": 0.187
+        },
+        {
+          "category": "safety",
+          "score": 0.1651
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.025,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-65554",
+    "text": "Message from the receiving team: The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "the shipment",
+        "delivered",
+        "shipment",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, the shipment, delivered, shipment, from the.",
+      "similarity": 0.239,
+      "margin": 0.0272,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.239
+        },
+        {
+          "category": "damage",
+          "score": 0.2118
+        },
+        {
+          "category": "documentation",
+          "score": 0.2108
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.026,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-53118",
+    "text": "Message from the receiving team: The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "from the",
+        "from",
+        "contents",
+        "transport"
+      ],
+      "explanation": "Words shared with training examples: the, from the, from, contents, transport.",
+      "similarity": 0.2188,
+      "margin": 0.0062,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2188
+        },
+        {
+          "category": "safety",
+          "score": 0.2126
+        },
+        {
+          "category": "delay",
+          "score": 0.2066
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-11983",
+    "text": "The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, has.",
+      "similarity": 0.1726,
+      "margin": 0.0241,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1726
+        },
+        {
+          "category": "damage",
+          "score": 0.1485
+        },
+        {
+          "category": "delay",
+          "score": 0.1447
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-97735",
+    "text": "Dispatch update: The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "in",
+        "the depot",
+        "dispatch",
+        "depot"
+      ],
+      "explanation": "Words shared with training examples: the, in, the depot, dispatch, depot.",
+      "similarity": 0.1919,
+      "margin": 0.0012,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1919
+        },
+        {
+          "category": "missing",
+          "score": 0.1908
+        },
+        {
+          "category": "safety",
+          "score": 0.1821
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.029,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-24450",
+    "text": "Operations note \u2014 The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "the",
+        "or",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, the, or, for, delivery no.",
+      "similarity": 0.2303,
+      "margin": 0.0147,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.2303
+        },
+        {
+          "category": "damage",
+          "score": 0.2156
+        },
+        {
+          "category": "temperature",
+          "score": 0.1892
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.037,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-76728",
+    "text": "Dispatch update: The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.1936,
+      "margin": 0.0335,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.1936
+        },
+        {
+          "category": "temperature",
+          "score": 0.16
+        },
+        {
+          "category": "delay",
+          "score": 0.1525
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-13758",
+    "text": "The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.1424,
+      "margin": 0.0342,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1424
+        },
+        {
+          "category": "delay",
+          "score": 0.1082
+        },
+        {
+          "category": "missing",
+          "score": 0.1067
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-36680",
+    "text": "Please check this report. The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "check"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, check.",
+      "similarity": 0.2271,
+      "margin": 0.0253,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2271
+        },
+        {
+          "category": "documentation",
+          "score": 0.2018
+        },
+        {
+          "category": "damage",
+          "score": 0.2013
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.032,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82397",
+    "text": "Dispatch update: The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.1732,
+      "margin": 0.0326,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.1732
+        },
+        {
+          "category": "delay",
+          "score": 0.1405
+        },
+        {
+          "category": "missing",
+          "score": 0.1337
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.025,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-64337",
+    "text": "Operations note \u2014 An emergency generator part is held in a traffic queue while the backup power at the destination is failing. Exact remaining runtime is unknown. Please advise the next team.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "delay",
+    "actual_urgent": true,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The report contains missing or conflicting facts.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "an",
+        "held",
+        "at the",
+        "is"
+      ],
+      "explanation": "Words shared with training examples: the, an, held, at the, is.",
+      "similarity": 0.2078,
+      "margin": 0.001,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2078
+        },
+        {
+          "category": "delay",
+          "score": 0.2068
+        },
+        {
+          "category": "temperature",
+          "score": 0.1738
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.028,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-23581",
+    "text": "Message from the receiving team: The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "the",
+        "or",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, the, or, for, delivery no.",
+      "similarity": 0.211,
+      "margin": 0.0118,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.211
+        },
+        {
+          "category": "damage",
+          "score": 0.1992
+        },
+        {
+          "category": "temperature",
+          "score": 0.1741
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.029,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-88056",
+    "text": "Please check this report. The receiver asks for the signed security seal checklist. The seal was intact and no intrusion occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "safety",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "damage",
+      "category_label": "Cargo damage",
+      "team": "Claims & recovery",
+      "urgent": true,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence.",
+        "The stricter policy escalates a possible critical consequence for human confirmation."
+      ],
+      "signals": [
+        "the",
+        "was",
+        "receiver",
+        "the receiver",
+        "no"
+      ],
+      "explanation": "Words shared with training examples: the, was, receiver, the receiver, no.",
+      "similarity": 0.2185,
+      "margin": 0.022,
+      "alternatives": [
+        {
+          "category": "damage",
+          "score": 0.2185
+        },
+        {
+          "category": "temperature",
+          "score": 0.1964
+        },
+        {
+          "category": "delay",
+          "score": 0.1721
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Priority review"
+    }
+  },
+  {
+    "id": "RLY-99516",
+    "text": "The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "Too little matching evidence to route automatically.",
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "from the"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, from the.",
+      "similarity": 0.1694,
+      "margin": 0.0037,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.1694
+        },
+        {
+          "category": "safety",
+          "score": 0.1657
+        },
+        {
+          "category": "delay",
+          "score": 0.1646
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-84756",
+    "text": "Please check this report. The freight forwarder cannot find the consignment at the transfer hub. No hazardous or controlled contents were declared.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "missing",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "documentation",
+      "category_label": "Documents & customs",
+      "team": "Trade compliance",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "forwarder",
+        "at the",
+        "consignment",
+        "the consignment"
+      ],
+      "explanation": "Words shared with training examples: the, forwarder, at the, consignment, the consignment.",
+      "similarity": 0.2018,
+      "margin": 0.0328,
+      "alternatives": [
+        {
+          "category": "documentation",
+          "score": 0.2018
+        },
+        {
+          "category": "missing",
+          "score": 0.169
+        },
+        {
+          "category": "delay",
+          "score": 0.1607
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.025,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-87800",
+    "text": "Dispatch update: The receiver requests the temperature trace for an otherwise compliant delivery. No excursion or active cooling issue occurred.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "temperature",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "delay",
+      "category_label": "Delivery delay",
+      "team": "Transport operations",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "delivery",
+        "or",
+        "the",
+        "for",
+        "delivery no"
+      ],
+      "explanation": "Words shared with training examples: delivery, or, the, for, delivery no.",
+      "similarity": 0.1849,
+      "margin": 0.0203,
+      "alternatives": [
+        {
+          "category": "delay",
+          "score": 0.1849
+        },
+        {
+          "category": "damage",
+          "score": 0.1646
+        },
+        {
+          "category": "temperature",
+          "score": 0.1397
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.024,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-82972",
+    "text": "Please check this report. The seal number in the transport document differs from the recorded number. The physical seal is intact and the depot verified the contents.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the",
+        "contents",
+        "transport",
+        "depot",
+        "check"
+      ],
+      "explanation": "Words shared with training examples: the, contents, transport, depot, check.",
+      "similarity": 0.2227,
+      "margin": 0.0123,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.2227
+        },
+        {
+          "category": "safety",
+          "score": 0.2104
+        },
+        {
+          "category": "delay",
+          "score": 0.2092
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.027,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  },
+  {
+    "id": "RLY-95729",
+    "text": "Dispatch update: The customer wants a duplicate invoice for reconciliation. The shipment has already been delivered and accepted.",
+    "method": "learned",
+    "policy": "sensitive",
+    "actual_category": "documentation",
+    "actual_urgent": false,
+    "prediction": {
+      "category": "missing",
+      "category_label": "Missing shipment",
+      "team": "Shipment tracing",
+      "urgent": false,
+      "review": true,
+      "review_reasons": [
+        "More than one category has similar evidence."
+      ],
+      "signals": [
+        "the shipment",
+        "the",
+        "delivered",
+        "shipment",
+        "has"
+      ],
+      "explanation": "Words shared with training examples: the shipment, the, delivered, shipment, has.",
+      "similarity": 0.194,
+      "margin": 0.0191,
+      "alternatives": [
+        {
+          "category": "missing",
+          "score": 0.194
+        },
+        {
+          "category": "delay",
+          "score": 0.1748
+        },
+        {
+          "category": "damage",
+          "score": 0.1747
+        }
+      ],
+      "policy": "sensitive",
+      "method": "learned",
+      "latency_ms": 0.023,
+      "api_cost_usd": 0,
+      "action": "Human review"
+    }
+  }
+]

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#18191d">
+  <meta name="description" content="Relay incident triage">
+  <title>Relay</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232a293a'/%3E%3Cpath d='M9 24V8h14M9 24 23 8v12' fill='none' stroke='%23b8b4ef' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/style.css?v=12">
+  <script src="/assets/app.js?v=12" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#operations" aria-label="Relay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V5h14M5 19 19 5v10"/></svg>Relay</a>
+      <nav aria-label="Navigation" id="navigation"></nav>
+      <span class="sidebar-foot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v5m0 3h.01"/></svg>Demo</span>
+    </aside>
+    <main id="main" tabindex="-1"><div class="loading">Loading…</div></main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="new-report" aria-labelledby="new-title">
+    <form id="new-form">
+      <div class="dialog-head"><h2 id="new-title">New report</h2><button type="button" class="icon-button" id="close-dialog" aria-label="Close">×</button></div>
+      <label class="sr-only" for="new-text">Report</label>
+      <textarea id="new-text" name="text" minlength="12" maxlength="6000" rows="7" required placeholder="Report…"></textarea>
+      <div id="new-error" class="form-error" role="alert"></div>
+      <div class="dialog-actions"><button type="button" class="button ghost" id="cancel-new">Cancel</button><button type="submit" class="button primary" id="new-submit">Create</button></div>
+    </form>
+  </dialog>
+  <dialog id="guide-dialog" aria-labelledby="guide-title"><div class="dialog-head"><h2 id="guide-title">Guide</h2><button type="button" class="icon-button" data-close="guide-dialog" aria-label="Close guide">×</button></div><dl id="guide-content" class="guide-list"></dl></dialog>
+  <dialog id="jump-dialog" aria-labelledby="jump-title"><div class="dialog-head"><h2 id="jump-title">Reports</h2><button type="button" class="icon-button" data-close="jump-dialog" aria-label="Close report selector">×</button></div><div id="jump-content" class="jump-grid"></div></dialog>
+</body>
+</html>
