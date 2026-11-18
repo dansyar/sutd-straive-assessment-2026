@@ -1,4 +1,4 @@
-/* Local incident workflow. Independent review never receives predictions. */
+/* Incident workflow. Independent review never receives predictions. */
 const $ = (selector, root = document) => root.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pct = value => value == null ? '—' : `${(value * 100).toFixed(1)}%`;
@@ -16,6 +16,19 @@ const state = {
   reviewer: storage.get('relay-reviewer') || '', reviewSource: 'quality'
 };
 let toastTimer, navigationVersion = 0, benchmarkVersion = 0, newPending = false;
+const browserDemo = () => state.config?.storage === 'browser';
+const demoStorageKey = 'relay-demo-incidents-v1';
+const demoPredictions = new Map();
+
+function readDemoState() {
+  const raw = storage.get(demoStorageKey);
+  return raw ? JSON.parse(raw) : {reports: [], decisions: {}};
+}
+
+function writeDemoState(data) {
+  try {localStorage.setItem(demoStorageKey, JSON.stringify(data));}
+  catch {throw new Error('Browser storage is unavailable. Allow site data or use another browser.');}
+}
 
 const paths = {
   inbox: '<path d="M4 5h16v14H4zM4 13h5l2 3h2l2-3h5"/>',
@@ -37,7 +50,7 @@ const header = (title, count = '', actions = '', className = '') => `<header cla
 async function api(path, options = {}) {
   let response;
   try {response = await fetch(path, {headers: {'Content-Type': 'application/json'}, ...options});}
-  catch {throw new Error('Cannot reach the local app. Check that it is running, then try again.');}
+  catch {throw new Error('Couldn’t reach Relay. Try again.');}
   if (!response.ok) {
     let message = 'Request failed.';
     try { const result = await response.json(); message = typeof result.detail === 'string' ? result.detail : result.detail?.[0]?.msg || message; } catch {}
@@ -81,9 +94,55 @@ function renderNavigation() {
     `<div class="nav-divider" role="separator"></div><a class="nav-link ${state.view === 'review' ? 'active' : ''}" href="#review" ${state.view === 'review' ? 'aria-current="page"' : ''}>${icon('labels')}<span>Reviews</span></a>
     <a class="nav-link ${state.view === 'evidence' ? 'active' : ''}" href="#evidence" ${state.view === 'evidence' ? 'aria-current="page"' : ''}>${icon('chart')}<span>Evaluation</span></a>`;
 }
+const triageReport = (text, method, policy, save = false) => api('/api/triage', {
+  method: 'POST', body: JSON.stringify({text, method, policy, save})
+});
+
+async function incidentRows(method, policy) {
+  const rows = await api(`/api/incidents?method=${method}&policy=${policy}`);
+  if (!browserDemo()) return rows;
+
+  const {reports, decisions} = readDemoState();
+  const custom = await Promise.all(reports.map(async report => {
+    const key = `${report.id}:${method}:${policy}`;
+    if (!demoPredictions.has(key)) {
+      const {prediction} = await triageReport(report.text, method, policy);
+      demoPredictions.set(key, prediction);
+    }
+    return {...report, prediction: demoPredictions.get(key)};
+  }));
+  return [...rows, ...custom].map(row => ({...row, decision: decisions[row.id] || null}))
+    .sort((a, b) => Boolean(a.decision) - Boolean(b.decision) || b.prediction.urgent - a.prediction.urgent ||
+      b.prediction.review - a.prediction.review || a.id.localeCompare(b.id));
+}
+
+async function createIncident(text, method, policy) {
+  const result = await triageReport(text, method, policy, !browserDemo());
+  if (!browserDemo()) return result.id;
+
+  const id = `NEW-${crypto.randomUUID().replace(/-/g, '').slice(0, 12).toUpperCase()}`;
+  const data = readDemoState();
+  data.reports.push({id, text: text.trim(), channel: 'Demo entry'});
+  writeDemoState(data);
+  demoPredictions.set(`${id}:${method}:${policy}`, result.prediction);
+  return id;
+}
+
+async function saveIncidentDecision(id, payload) {
+  if (!browserDemo()) {
+    const {created_at} = await api(`/api/incidents/${id}/decision`, {method: 'POST', body: JSON.stringify(payload)});
+    return {...payload, created_at};
+  }
+  const data = readDemoState();
+  const decision = {...payload, note: payload.note.trim(), created_at: new Date().toISOString()};
+  data.decisions[id] = decision;
+  writeDemoState(data);
+  return decision;
+}
+
 async function loadIncidents() {
   const method = state.method, policy = state.policy, version = navigationVersion;
-  const rows = await api(`/api/incidents?method=${method}&policy=${policy}`);
+  const rows = await incidentRows(method, policy);
   if (version === navigationVersion && method === state.method && policy === state.policy) state.incidents = rows;
 }
 function filteredIncidents() {
@@ -168,9 +227,9 @@ function renderDetail() {
     state.pendingDecisions.add(row.id);
     document.querySelectorAll('#decision-form select, #decision-form textarea, #decision-form button').forEach(el => el.disabled = true);
     try {
-      const saved = await api(`/api/incidents/${row.id}/decision`, {method: 'POST', body: JSON.stringify(payload)});
+      const saved = await saveIncidentDecision(row.id, payload);
       // A successful save is final even if a later refresh loses its connection.
-      for (const item of state.incidents || []) if (item.id === row.id) item.decision = {...payload, created_at: saved.created_at};
+      for (const item of state.incidents || []) if (item.id === row.id) item.decision = saved;
       delete state.decisionDrafts[row.id]; state.pendingDecisions.delete(row.id);
       if (version === navigationVersion && state.view === 'operations') renderOperations();
       renderNavigation(); toast(decision ? 'Route updated' : 'Route confirmed', false, row.id);
@@ -219,7 +278,7 @@ function renderEvidence() {
     event.preventDefault(); const button = $('button', event.target); if (button.disabled) return; button.disabled = true;
     const method = $('#method').value, policy = $('#policy').value, version = navigationVersion;
     try {
-      const incidents = await api(`/api/incidents?method=${method}&policy=${policy}`);
+      const incidents = await incidentRows(method, policy);
       if (version !== navigationVersion) return;
       Object.assign(state, {method, policy, incidents}); storage.set('relay-method', method); storage.set('relay-policy', policy);
       renderEvidence(); $('#method').focus(); toast('Settings applied');
@@ -239,7 +298,8 @@ function renderReview() {
   const source = ['quality', 'fresh', 'fresh2'].includes(state.reviewSource) ? state.reviewSource : readonly ? 'independent' : 'human';
   const count = state.reviews.filter(r => r.review).length, parts = reportParts(row.text);
   const clarification = draft.clarification === true || draft.clarification === 1 ? 'yes' : draft.clarification === false || draft.clarification === 0 ? 'no' : '';
-  const sourceOptions = [['quality','Latest review'],['fresh2','Fresh 2'],['fresh','Fresh 1'],['auto','Original'],['human','Your review']];
+  const sourceOptions = [['quality','Latest review'],['fresh2','Fresh 2'],['fresh','Fresh 1'],['auto','Original']];
+  if (!browserDemo()) sourceOptions.push(['human','Your review']);
   const pager = `${iconButton('review-prev', 'left', 'Previous report', state.reviewIndex === 0)}<button type="button" class="button ${readonly ? '' : 'ghost'}" id="review-next" ${state.reviewIndex === last ? 'disabled' : ''}>Next${icon('right')}</button>`;
   $('#main').innerHTML = header('Reviews', `${count} / ${state.reviews.length}`, `<label for="review-source" class="sr-only">Report set</label><select id="review-source">${sourceOptions.map(([id,label]) => `<option value="${id}" ${state.reviewSource === id ? 'selected' : ''}>${label}</option>`).join('')}</select><button class="button ghost" id="open-guide">Guide</button><a class="button" href="/api/review/export?source=${source}" download>Export</a>`, 'review-header') +
     `<div class="review-page"><div class="review-meta"><div class="review-location"><span>${esc(row.id)}</span>${row.review ? `<span class="saved-state">${icon('check')}${readonly ? 'Reviewed' : 'Saved'}</span>` : ''}</div><button type="button" class="button ghost" id="open-jump" aria-label="Choose report">${state.reviewIndex + 1} / ${state.reviews.length}${icon('labels')}</button></div>
@@ -307,7 +367,8 @@ async function navigate() {
       const evidence = await api(`/api/evidence?dataset=${state.evidenceDataset}`);
       if (version === navigationVersion) {state.evidence = evidence; renderEvidence();}
     } else {
-      const source = ['human', 'fresh', 'fresh2', 'auto', 'quality'].includes(filter) ? filter : 'quality';
+      const validSource = ['fresh', 'fresh2', 'auto', 'quality'].includes(filter) || (filter === 'human' && !browserDemo());
+      const source = validSource ? filter : 'quality';
       const reviews = await api(`/api/review?source=${source}`);
       if (version === navigationVersion) {
         state.reviewSource = source; state.reviews = reviews;
@@ -332,10 +393,9 @@ $('#new-form').onsubmit = async event => {
   newPending = true;
   document.querySelectorAll('#new-form textarea, #new-form button').forEach(el => el.disabled = true);
   try {
-    const result = await api('/api/triage', {method: 'POST', body: JSON.stringify({text: $('#new-text').value,
-      method: state.method, policy: state.policy, save: true})});
+    const id = await createIncident($('#new-text').value, state.method, state.policy);
     $('#new-report').close(); event.target.reset();
-    state.selected = result.id; state.search = ''; state.revealOnce = true;
+    state.selected = id; state.search = ''; state.revealOnce = true;
     history.replaceState(null, '', '#operations/all'); await navigate(); toast('Report created');
   } catch (error) {$('#new-error').textContent = error.message;}
   finally {newPending = false; document.querySelectorAll('#new-form textarea, #new-form button').forEach(el => el.disabled = false); button.disabled = false;}
@@ -351,6 +411,11 @@ window.addEventListener('keydown', event => {
   }
 });
 (async () => {
-  try {state.config = await api('/api/config'); state.evidenceDataset = state.config.default_evidence_dataset || 'development'; await navigate();}
+  try {
+    state.config = await api('/api/config');
+    $('#browser-save-notice').hidden = !browserDemo();
+    state.evidenceDataset = state.config.default_evidence_dataset || 'development';
+    await navigate();
+  }
   catch (error) {$('#main').innerHTML = `<div class="fatal"><p>${esc(error.message)}</p><button class="button" onclick="location.reload()">Reload</button></div>`;}
 })();

@@ -177,6 +177,7 @@ dialog { color: var(--text); background: #202127; border: 1px solid #494a56; bor
 dialog::backdrop { background: #090a0dad; }
 .dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
 .dialog-head h2 { font-size: 17px; }
+.browser-save-notice { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
 dialog textarea { background: transparent; font-size: 14px; }
 .dialog-actions { display: flex; align-items: center; justify-content: flex-end; gap: 9px; margin-top: 20px; }
 .guide-list { margin: 0; }

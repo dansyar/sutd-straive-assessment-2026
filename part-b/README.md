@@ -18,6 +18,10 @@ python -m uvicorn app:app --host 127.0.0.1 --port 8000
 
 Open http://127.0.0.1:8000. Stop with Ctrl-C. State persists in `part-b/.local/`. Set `RELAY_STATE_DIR` to another directory for an isolated demo. Keep loopback binding; this prototype has no authentication or production integration.
 
+### Vercel demo
+
+Connect the GitHub repository to a FastAPI project with `part-b` as the root directory. With Vercel system environment variables enabled, Relay saves demo reports and decisions in the current browser. New report text is sent to the server for classification. Use fictional reports only. Evaluation and completed reviews remain available, and **Your review** is editable in the local app.
+
 From `part-b/`, Docker is an alternative:
 
 ```sh

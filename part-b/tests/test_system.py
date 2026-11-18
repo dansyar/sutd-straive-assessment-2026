@@ -204,6 +204,24 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
     async def asyncTearDown(self):
         await self.client.aclose()
 
+    async def test_hosted_triage_and_evidence_do_not_open_sqlite(self):
+        report = {"text": "Refrigerated cargo is at 19 C. The allowed range is 2 to 8 C."}
+        decision = {"category": "temperature", "urgent": True}
+        with patch.object(self.module, "BROWSER_STORAGE", True), patch.object(
+                self.module, "connection", side_effect=AssertionError("Hosted demo opened SQLite")):
+            self.assertEqual((await self.client.get("/api/config")).json()["storage"], "browser")
+            rows = (await self.client.get("/api/incidents")).json()
+            self.assertTrue(rows and all(row["decision"] is None for row in rows))
+            prediction = (await self.client.post("/api/triage", json=report)).json()["prediction"]
+            self.assertEqual((prediction["category"], prediction["urgent"]), ("temperature", True))
+            self.assertEqual((await self.client.post("/api/triage", json={**report, "save": True})).status_code, 409)
+            self.assertEqual((await self.client.post(f"/api/incidents/{rows[0]['id']}/decision", json=decision)).status_code, 409)
+            self.assertEqual((await self.client.get("/api/review?source=human")).status_code, 409)
+            self.assertEqual((await self.client.get("/api/audit")).json(), [])
+            for dataset in ("development", "test", "retest", "fresh", "fresh2"):
+                with self.subTest(dataset=dataset):
+                    self.assertEqual((await self.client.get(f"/api/evidence?dataset={dataset}")).status_code, 200)
+
     async def test_real_triage_correction_and_persistence(self):
         result = await self.client.post("/api/triage", json={"text": "A pallet has crushed cartons and broken glass. No active hazard remains.", "save": True})
         self.assertEqual(result.status_code, 200)

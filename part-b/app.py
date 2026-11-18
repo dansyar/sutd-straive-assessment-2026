@@ -1,4 +1,4 @@
-"""Local Relay demo. No dispatch integration; all decisions remain local."""
+"""Relay demo with SQLite locally and browser-owned decisions on Vercel."""
 from __future__ import annotations
 
 import csv
@@ -23,8 +23,8 @@ from historical_review import fresh1_rows
 from taxonomy import CATEGORIES, COSTS, GUIDE, POLICIES
 
 ROOT = Path(__file__).resolve().parent
+BROWSER_STORAGE = os.environ.get("VERCEL") == "1"
 LOCAL = Path(os.environ.get("RELAY_STATE_DIR", str(ROOT / ".local")))
-LOCAL.mkdir(parents=True, exist_ok=True)
 DB = LOCAL / "relay.sqlite3"
 development, review_reports, _ = load_corpus()
 review_ids = {r["id"] for r in review_reports}
@@ -40,17 +40,19 @@ def connection():
     finally:
         conn.close()
 
-with connection() as db:
-    db.executescript("""
-        CREATE TABLE IF NOT EXISTS incidents(id TEXT PRIMARY KEY, text TEXT, channel TEXT, created_at TEXT);
-        CREATE TABLE IF NOT EXISTS decisions(id INTEGER PRIMARY KEY AUTOINCREMENT, report_id TEXT,
-            category TEXT, urgent INTEGER, note TEXT, created_at TEXT);
-        CREATE TABLE IF NOT EXISTS reviews(report_id TEXT PRIMARY KEY, category TEXT, urgency TEXT,
-            clarification INTEGER, reason TEXT, reviewer TEXT, updated_at TEXT);
-        CREATE TABLE IF NOT EXISTS review_history(id INTEGER PRIMARY KEY AUTOINCREMENT,
-            report_id TEXT, category TEXT, urgency TEXT, clarification INTEGER, reason TEXT,
-            reviewer TEXT, updated_at TEXT);
-    """)
+if not BROWSER_STORAGE:
+    LOCAL.mkdir(parents=True, exist_ok=True)
+    with connection() as db:
+        db.executescript("""
+            CREATE TABLE IF NOT EXISTS incidents(id TEXT PRIMARY KEY, text TEXT, channel TEXT, created_at TEXT);
+            CREATE TABLE IF NOT EXISTS decisions(id INTEGER PRIMARY KEY AUTOINCREMENT, report_id TEXT,
+                category TEXT, urgent INTEGER, note TEXT, created_at TEXT);
+            CREATE TABLE IF NOT EXISTS reviews(report_id TEXT PRIMARY KEY, category TEXT, urgency TEXT,
+                clarification INTEGER, reason TEXT, reviewer TEXT, updated_at TEXT);
+            CREATE TABLE IF NOT EXISTS review_history(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                report_id TEXT, category TEXT, urgency TEXT, clarification INTEGER, reason TEXT,
+                reviewer TEXT, updated_at TEXT);
+        """)
 
 app = FastAPI(title="Relay incident desk", docs_url="/api/docs")
 
@@ -122,6 +124,8 @@ def seed_incidents():
     return rows
 
 def all_incidents():
+    if BROWSER_STORAGE:
+        return seed_incidents()
     with connection() as db:
         custom = [dict(r) for r in db.execute("SELECT * FROM incidents ORDER BY created_at DESC")]
     return custom + seed_incidents()
@@ -133,14 +137,17 @@ def health():
 @app.get("/api/config")
 def config():
     return {"categories": CATEGORIES, "policies": POLICIES, "costs": COSTS, "guide": GUIDE,
+            "storage": "browser" if BROWSER_STORAGE else "sqlite",
             "development_n": 300, "train_n": 240, "validation_n": 60, "review_n": 60,
             "default_evidence_dataset": "fresh2" if current_evaluation().get("fresh2") else "fresh" if current_evaluation().get("fresh") else "retest" if current_evaluation().get("retest") else "development",
             "revision": ENGINE_VERSION}
 
 @app.get("/api/incidents")
 def incidents(method: Literal["rules", "learned"]="learned", policy: Literal["standard", "sensitive"]="sensitive"):
-    with connection() as db:
-        decisions = {r["report_id"]: dict(r) for r in db.execute("SELECT * FROM decisions ORDER BY id")}
+    decisions = {}
+    if not BROWSER_STORAGE:
+        with connection() as db:
+            decisions = {r["report_id"]: dict(r) for r in db.execute("SELECT * FROM decisions ORDER BY id")}
     rows = []
     for report in all_incidents():
         prediction = triage(report["text"], model, method, policy)
@@ -154,6 +161,8 @@ def incidents(method: Literal["rules", "learned"]="learned", policy: Literal["st
 def classify(body: TriageInput):
     if not body.text.strip():
         raise HTTPException(422, "Enter an incident report.")
+    if BROWSER_STORAGE and body.save:
+        raise HTTPException(409, "Hosted demo reports are saved in the browser.")
     result = {"prediction": triage(body.text, model, body.method, body.policy)}
     if body.save:
         import secrets
@@ -165,6 +174,8 @@ def classify(body: TriageInput):
 
 @app.post("/api/incidents/{report_id}/decision")
 def save_decision(report_id: str, body: DecisionInput):
+    if BROWSER_STORAGE:
+        raise HTTPException(409, "Hosted demo decisions are saved in the browser.")
     if report_id not in {r["id"] for r in all_incidents()}:
         raise HTTPException(404, "Report not found.")
     stamp = now()
@@ -175,6 +186,8 @@ def save_decision(report_id: str, body: DecisionInput):
 
 @app.get("/api/audit")
 def audit():
+    if BROWSER_STORAGE:
+        return []
     with connection() as db:
         return [dict(r) for r in db.execute("SELECT * FROM decisions ORDER BY id DESC LIMIT 10")]
 
@@ -221,8 +234,10 @@ def evidence(dataset: Literal["development", "test", "retest", "fresh", "fresh2"
     if test and (type(test.get("evaluation_n")) is not int
                  or not isinstance(test.get("review_provenance"), dict)):
         raise HTTPException(503, "The original evaluation is incomplete.")
-    with connection() as db:
-        count = db.execute("SELECT COUNT(*) FROM reviews").fetchone()[0]
+    count = 0
+    if not BROWSER_STORAGE:
+        with connection() as db:
+            count = db.execute("SELECT COUNT(*) FROM reviews").fetchone()[0]
     payload["independent_review"] = {"completed": max(count, test["evaluation_n"] if test else 0), "total": 60,
         "reviewer_types": test.get("review_provenance", {}).get("reviewer_types", []) if test else [],
         "final_test": "available" if test else "pending review and label freeze"}
@@ -307,6 +322,8 @@ def review(source: Literal["auto", "human", "independent", "fresh", "fresh2", "q
                 "updated_at": r.get("reviewed_at") or ""}} for r in labels]
     if source == "independent":
         raise HTTPException(503, "The independent review has not been frozen.")
+    if BROWSER_STORAGE:
+        raise HTTPException(409, "Editable benchmark reviews are only available in the local app.")
     with connection() as db:
         saved = {r["report_id"]: dict(r) for r in db.execute("SELECT * FROM reviews")}
     # Deliberately no prediction, channel, family, generated label or urgency.
@@ -314,6 +331,8 @@ def review(source: Literal["auto", "human", "independent", "fresh", "fresh2", "q
 
 @app.post("/api/review/{report_id}")
 def save_review(report_id: str, body: ReviewInput):
+    if BROWSER_STORAGE:
+        raise HTTPException(409, "Editable benchmark reviews are only available in the local app.")
     if report_id not in review_ids:
         raise HTTPException(404, "Review report not found.")
     values = (report_id, body.category, body.urgency, int(body.clarification),
