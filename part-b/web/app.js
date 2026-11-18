@@ -1,6 +1,7 @@
 /* Incident workflow. Independent review never receives predictions. */
 const $ = (selector, root = document) => root.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shortCopy = value => value.trim().replace(/\.$/, '').replace(/\.\s+/g, ' · ');
 const pct = value => value == null ? '—' : `${(value * 100).toFixed(1)}%`;
 const storage = {
   get(key) {try {return localStorage.getItem(key);} catch {return null;}},
@@ -16,6 +17,7 @@ const state = {
   reviewer: storage.get('relay-reviewer') || '', reviewSource: 'quality'
 };
 let toastTimer, navigationVersion = 0, benchmarkVersion = 0, newPending = false;
+let incidentRevision = 0;
 const browserDemo = () => state.config?.storage === 'browser';
 const demoStorageKey = 'relay-demo-incidents-v1';
 const demoPredictions = new Map();
@@ -27,7 +29,7 @@ function readDemoState() {
 
 function writeDemoState(data) {
   try {localStorage.setItem(demoStorageKey, JSON.stringify(data));}
-  catch {throw new Error('Browser storage is unavailable. Allow site data or use another browser.');}
+  catch {throw new Error('Browser storage blocked · Allow site data or switch browsers');}
 }
 
 const paths = {
@@ -50,11 +52,11 @@ const header = (title, count = '', actions = '', className = '') => `<header cla
 async function api(path, options = {}) {
   let response;
   try {response = await fetch(path, {headers: {'Content-Type': 'application/json'}, ...options});}
-  catch {throw new Error('Couldn’t reach Relay. Try again.');}
+  catch {throw new Error('Couldn’t reach Relay · Try again');}
   if (!response.ok) {
-    let message = 'Request failed.';
+    let message = 'Request failed';
     try { const result = await response.json(); message = typeof result.detail === 'string' ? result.detail : result.detail?.[0]?.msg || message; } catch {}
-    throw new Error(message);
+    throw new Error(shortCopy(message));
   }
   return response.json();
 }
@@ -79,16 +81,22 @@ function reportParts(text) {
   const match = clean.match(/^(.+?[.!?])(?:\s+|$)([\s\S]*)$/);
   return match ? {title: match[1].replace(/\.$/, ''), body: match[2]} : {title: clean, body: ''};
 }
+const isUrgent = row => Boolean(row.clarification?.urgent ?? row.prediction.urgent);
+const needsReview = row => Boolean(row.clarification || row.prediction.review);
+const compareIncidents = (a, b) => Boolean(a.decision) - Boolean(b.decision) || isUrgent(b) - isUrgent(a) ||
+  needsReview(b) - needsReview(a) || a.id.localeCompare(b.id);
+
 function rowStatus(row) {
   if (row.decision) return {name: 'Done', type: 'done', icon: 'done'};
-  if (row.prediction.urgent) return {name: 'Urgent', type: 'urgent', icon: 'urgent'};
-  if (row.prediction.review) return {name: 'Review', type: 'review', icon: 'review'};
+  if (isUrgent(row)) return {name: 'Urgent', type: 'urgent', icon: 'urgent'};
+  if (row.clarification) return {name: 'Clarification', type: 'review', icon: 'review'};
+  if (needsReview(row)) return {name: 'Review', type: 'review', icon: 'review'};
   return {name: '', type: '', icon: ''};
 }
 function renderNavigation() {
   const open = (state.incidents || []).filter(r => !r.decision);
-  const counts = {all: open.length, urgent: open.filter(r => r.prediction.urgent).length,
-    review: open.filter(r => r.prediction.review && !r.prediction.urgent).length, done: (state.incidents || []).length - open.length};
+  const counts = {all: open.length, urgent: open.filter(isUrgent).length,
+    review: open.filter(r => needsReview(r) && !isUrgent(r)).length, done: (state.incidents || []).length - open.length};
   $('#navigation').innerHTML = [['all', 'Inbox', 'inbox'], ['urgent', 'Urgent', 'urgent'], ['review', 'Needs review', 'review'], ['done', 'Done', 'done']].map(([id, name, symbol]) =>
     `<a class="nav-link ${id === 'all' ? 'mobile-inbox ' : ''}${id === 'all' && state.view === 'operations' ? 'section-active ' : ''}${state.view === 'operations' && state.filter === id ? 'active' : ''}" href="#operations/${id}" data-filter="${id}" ${state.view === 'operations' && state.filter === id ? 'aria-current="page"' : ''}>${icon(symbol)}<span>${name}</span>${state.incidents ? `<span class="nav-count">${counts[id]}</span>` : ''}</a>`).join('') +
     `<div class="nav-divider" role="separator"></div><a class="nav-link ${state.view === 'review' ? 'active' : ''}" href="#review" ${state.view === 'review' ? 'aria-current="page"' : ''}>${icon('labels')}<span>Reviews</span></a>
@@ -102,7 +110,7 @@ async function incidentRows(method, policy) {
   const rows = await api(`/api/incidents?method=${method}&policy=${policy}`);
   if (!browserDemo()) return rows;
 
-  const {reports, decisions} = readDemoState();
+  const {reports, decisions, clarifications = {}} = readDemoState();
   const custom = await Promise.all(reports.map(async report => {
     const key = `${report.id}:${method}:${policy}`;
     if (!demoPredictions.has(key)) {
@@ -111,9 +119,8 @@ async function incidentRows(method, policy) {
     }
     return {...report, prediction: demoPredictions.get(key)};
   }));
-  return [...rows, ...custom].map(row => ({...row, decision: decisions[row.id] || null}))
-    .sort((a, b) => Boolean(a.decision) - Boolean(b.decision) || b.prediction.urgent - a.prediction.urgent ||
-      b.prediction.review - a.prediction.review || a.id.localeCompare(b.id));
+  return [...rows, ...custom].map(row => ({...row, decision: decisions[row.id] || null,
+    clarification: clarifications[row.id] || null})).sort(compareIncidents);
 }
 
 async function createIncident(text, method, policy) {
@@ -128,28 +135,43 @@ async function createIncident(text, method, policy) {
   return id;
 }
 
-async function saveIncidentDecision(id, payload) {
+async function saveIncidentAction(id, action, payload) {
   if (!browserDemo()) {
-    const {created_at} = await api(`/api/incidents/${id}/decision`, {method: 'POST', body: JSON.stringify(payload)});
-    return {...payload, created_at};
+    const {created_at} = await api(`/api/incidents/${id}/${action}`, {method: 'POST', body: JSON.stringify(payload)});
+    return {...payload, note: payload.note.trim(), created_at};
   }
   const data = readDemoState();
-  const decision = {...payload, note: payload.note.trim(), created_at: new Date().toISOString()};
-  data.decisions[id] = decision;
+  const saved = {...payload, note: payload.note.trim(), created_at: new Date().toISOString()};
+  if (action === 'clarification') {
+    if (data.decisions[id]) throw new Error('Route already confirmed');
+    (data.clarifications ??= {})[id] = saved;
+  } else {
+    data.decisions[id] = saved;
+    delete data.clarifications?.[id];
+  }
   writeDemoState(data);
-  return decision;
+  return saved;
 }
 
-async function loadIncidents() {
+async function refreshIncidents(method, policy, version, onReady) {
+  while (version === navigationVersion) {
+    const revision = incidentRevision;
+    const rows = await incidentRows(method, policy);
+    if (version === navigationVersion && revision === incidentRevision) return onReady(rows);
+  }
+}
+
+function loadIncidents() {
   const method = state.method, policy = state.policy, version = navigationVersion;
-  const rows = await incidentRows(method, policy);
-  if (version === navigationVersion && method === state.method && policy === state.policy) state.incidents = rows;
+  return refreshIncidents(method, policy, version, rows => {
+    if (method === state.method && policy === state.policy) state.incidents = rows;
+  });
 }
 function filteredIncidents() {
   return (state.incidents || []).filter(row => {
     if (state.filter === 'done' ? !row.decision : row.decision) return false;
-    if (state.filter === 'urgent' && !row.prediction.urgent) return false;
-    if (state.filter === 'review' && (!row.prediction.review || row.prediction.urgent)) return false;
+    if (state.filter === 'urgent' && !isUrgent(row)) return false;
+    if (state.filter === 'review' && (!needsReview(row) || isUrgent(row))) return false;
     const category = row.decision?.category || row.prediction.category;
     const team = state.config.categories[category];
     return !state.search.trim() || `${row.id} ${row.text} ${team.label} ${team.team}`.toLowerCase().includes(state.search.trim().toLowerCase());
@@ -195,21 +217,23 @@ function renderDetail() {
   const detail = $('#incident-detail');
   if (!row) {detail.innerHTML = '<p class="empty">No report selected</p>'; return;}
   const rows = filteredIncidents(), index = rows.findIndex(r => r.id === row.id);
-  const pred = row.prediction, decision = row.decision;
+  const pred = row.prediction, decision = row.decision, clarification = row.clarification;
   const draft = state.decisionDrafts[row.id] || {category: decision?.category || pred.category,
-    urgent: decision ? Boolean(decision.urgent) : pred.urgent, note: decision?.note || ''};
+    urgent: decision ? Boolean(decision.urgent) : isUrgent(row), note: decision?.note ?? clarification?.note ?? ''};
   const parts = reportParts(row.text);
-  const status = decision ? {name: 'Done', type: 'done', symbol: 'done'} : pred.urgent && pred.review ?
+  const status = decision ? {name: 'Done', type: 'done', symbol: 'done'} : clarification ?
+    {name: 'Awaiting clarification', type: isUrgent(row) ? 'urgent' : 'review', symbol: isUrgent(row) ? 'urgent' : 'review'} : pred.urgent && pred.review ?
     {name: 'Urgent review', type: 'urgent', symbol: 'urgent'} : pred.review ?
     {name: 'Needs review', type: 'review', symbol: 'review'} : pred.urgent ? {name: 'Urgent', type: 'urgent', symbol: 'urgent'} : {name: 'Open', type: '', symbol: 'inbox'};
   detail.innerHTML = `<div class="detail-top"><div class="detail-location"><button class="icon-button back-button" id="back-to-list" aria-label="Back to reports">${icon('left')}</button><span class="detail-id">${row.id}</span></div>
     <div class="detail-pager"><span class="position">${index + 1} / ${rows.length}</span>${iconButton('prev-report', 'left', 'Previous report', index <= 0)}${iconButton('next-report', 'right', 'Next report', index >= rows.length - 1)}</div></div>
     <div class="detail-content"><div class="detail-status status ${status.type}">${icon(status.symbol)}${status.name}</div><h2 tabindex="-1">${esc(parts.title)}</h2>${parts.body ? `<p class="report-body">${esc(parts.body)}</p>` : ''}
+    ${decision ? '' : renderRationale(pred)}
     <form id="decision-form"><div class="properties">
     <div class="property"><label for="decision-category">Team</label><select id="decision-category" required>${categoryOptions(draft.category, false, true)}</select></div>
     <div class="property"><label for="decision-urgency">Urgency</label><select id="decision-urgency"><option value="urgent" ${draft.urgent ? 'selected' : ''}>Urgent</option><option value="routine" ${!draft.urgent ? 'selected' : ''}>Routine</option></select></div></div>
     <div class="note-field"><label class="sr-only" for="decision-note">Note</label><textarea id="decision-note" maxlength="1000" rows="2" placeholder="Add a note…">${esc(draft.note)}</textarea></div>
-    <div class="form-actions"><button type="submit" class="button primary">${icon('check')}${decision ? 'Update' : 'Confirm route'}</button></div></form>
+    <div class="form-actions">${decision ? '' : `<button type="button" id="request-clarification" class="button ghost">${clarification ? 'Save clarification' : 'Request clarification'}</button>`}<button type="submit" class="button primary">${icon('check')}${decision ? 'Update' : 'Confirm route'}</button></div></form>
     ${decision ? `<details class="activity"><summary>Activity</summary><div class="activity-row">${icon('check')}<span>${esc(state.config.categories[decision.category].team)}</span><time datetime="${esc(decision.created_at)}">${esc(new Date(decision.created_at).toLocaleTimeString('en-SG', {hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Singapore'}))}</time>${decision.note ? `<p>${esc(decision.note)}</p>` : ''}</div></details>` : ''}</div>`;
   $('#back-to-list').onclick = () => {state.mobileDetail = false; $('#desk').classList.remove('mobile-detail'); $('#queue-search').focus();};
   $('#prev-report').onclick = () => moveIncident(-1);
@@ -220,25 +244,76 @@ function renderDetail() {
   if (state.pendingDecisions.has(row.id)) {
     document.querySelectorAll('#decision-form select, #decision-form textarea, #decision-form button').forEach(el => el.disabled = true);
   }
-  $('#decision-form').onsubmit = async event => {
-    event.preventDefault(); const button = $('button[type=submit]', event.target); if (button.disabled) return; button.disabled = true;
+  async function saveAction(action) {
+    if (state.pendingDecisions.has(row.id)) return;
     const version = navigationVersion;
-    const payload = {category: $('#decision-category').value, urgent: $('#decision-urgency').value === 'urgent', note: $('#decision-note').value};
+    const pending = action === 'clarification';
+    const category = $('#decision-category').value;
+    const payload = {urgent: $('#decision-urgency').value === 'urgent', note: $('#decision-note').value};
+    if (pending && !payload.note.trim()) {
+      toast('Add a clarification note', true);
+      $('#decision-note').focus();
+      return;
+    }
+    if (!pending) payload.category = category;
     state.pendingDecisions.add(row.id);
     document.querySelectorAll('#decision-form select, #decision-form textarea, #decision-form button').forEach(el => el.disabled = true);
     try {
-      const saved = await saveIncidentDecision(row.id, payload);
+      const saved = await saveIncidentAction(row.id, action, payload);
       // A successful save is final even if a later refresh loses its connection.
-      for (const item of state.incidents || []) if (item.id === row.id) item.decision = saved;
-      delete state.decisionDrafts[row.id]; state.pendingDecisions.delete(row.id);
-      if (version === navigationVersion && state.view === 'operations') renderOperations();
-      renderNavigation(); toast(decision ? 'Route updated' : 'Route confirmed', false, row.id);
+      incidentRevision++;
+      const item = (state.incidents || []).find(incident => incident.id === row.id);
+      if (item) {
+        item[action] = saved;
+        if (!pending) item.clarification = null;
+        state.incidents.sort(compareIncidents);
+      }
+      if (pending && category !== pred.category) state.decisionDrafts[row.id] = {category, urgent: saved.urgent, note: saved.note};
+      else delete state.decisionDrafts[row.id];
+      state.pendingDecisions.delete(row.id);
+      if (state.view === 'operations' && $('#queue-list')) {
+        const sameView = version === navigationVersion;
+        const selected = state.selected === row.id;
+        const moved = selected && !filteredIncidents().some(incident => incident.id === row.id);
+        if (pending && sameView && moved) {
+          state.revealOnce = true;
+          location.hash = `operations/${saved.urgent ? 'urgent' : 'review'}`;
+        } else {
+          if (moved) {
+            state.mobileDetail = false;
+            $('#desk').classList.remove('mobile-detail');
+          }
+          updateQueue();
+          if (pending && sameView && selected) $('#request-clarification')?.focus({preventScroll: true});
+        }
+      }
+      renderNavigation();
+      toast(pending ? 'Clarification saved' : decision ? 'Route updated' : 'Route confirmed', false, pending ? null : row.id);
     } catch (error) {
       state.pendingDecisions.delete(row.id); toast(error.message, true);
       if (state.view === 'operations' && state.selected === row.id && $('#incident-detail')) renderDetail();
     }
+  }
+  $('#decision-form').onsubmit = event => {
+    event.preventDefault();
+    return saveAction('decision');
   };
+  const clarificationButton = $('#request-clarification');
+  if (clarificationButton) clarificationButton.onclick = () => saveAction('clarification');
 }
+function renderRationale(prediction) {
+  const rationale = prediction.rationale;
+  if (!rationale) return '';
+  const rows = [['Team', rationale.team], ['Urgency', rationale.urgency], ['Review', rationale.review]];
+  const seen = new Set();
+  const details = rows.filter(([, reason]) => {
+    if (!reason || seen.has(reason)) return false;
+    seen.add(reason);
+    return true;
+  }).map(([label, reason]) => `<div><dt>${label}</dt><dd>${esc(reason)}</dd></div>`).join('');
+  return details ? `<details class="route-rationale"><summary>${prediction.urgent || prediction.review ? 'Why flagged?' : 'Why this route?'}</summary><dl>${details}</dl></details>` : '';
+}
+
 function moveIncident(delta) {
   if (!$('#queue-list')) return;
   const rows = filteredIncidents(), index = rows.findIndex(r => r.id === state.selected);
@@ -246,27 +321,68 @@ function moveIncident(delta) {
 }
 function renderEvidence() {
   const result = state.evidence;
-  const final = state.evidenceDataset === 'test', retest = state.evidenceDataset === 'retest', fresh = ['fresh', 'fresh2'].includes(state.evidenceDataset), fresh2 = state.evidenceDataset === 'fresh2';
-  const resultLabel = fresh2 ? 'Fresh 2' : fresh ? 'Fresh 1' : retest ? 'Retest' : final ? 'Original test' : 'Development';
+  const dataset = state.evidenceDataset;
+  const fresh = dataset === 'fresh' || dataset === 'fresh2';
+  const metricsOpen = $('#all-metrics')?.open ? 'open' : '';
+  const methodOpen = $('#evaluation-method')?.open ? 'open' : '';
+  const datasets = result.available_datasets || [{id:'development',label:'Development'}];
+  const benchmarkVersionLabel = result.revision || (dataset === 'test' ? 'v1' : '');
   const denominators = result.methods[0];
-  const costKey = state.policy === 'sensitive' ? 'cost_units_sensitive' : 'cost_units_standard';
-  $('#main').innerHTML = header('Evaluation') + `<div class="content-page"><form class="model-form" id="model-form">
-    <div><label for="method">Model</label><select id="method"><option value="rules" ${state.method === 'rules' ? 'selected' : ''}>Rules</option><option value="learned" ${state.method === 'learned' ? 'selected' : ''}>Text model</option></select></div>
-    <div><label for="policy">Policy</label><select id="policy"><option value="standard" ${state.policy === 'standard' ? 'selected' : ''}>Standard</option><option value="sensitive" ${state.policy === 'sensitive' ? 'selected' : ''}>Sensitive</option></select></div><button class="button" type="submit">Apply</button></form>
-    <div class="section-line"><label for="benchmark" class="sr-only">Results</label><select id="benchmark">${(result.available_datasets || [{id:'development',label:'Development'}]).map(item=>`<option value="${item.id}" ${state.evidenceDataset === item.id ? 'selected' : ''}>${item.label}</option>`).join('')}</select><span>n = ${result.evaluation_n}</span></div>
-    <div class="table-wrap" role="region" aria-label="${resultLabel} results" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Policy</th><th scope="col">Team accuracy</th><th scope="col">Macro F1</th><th scope="col">Urgent recall</th><th scope="col">Misses</th><th scope="col">Review</th><th scope="col">Coverage</th><th scope="col">Cost (${state.policy === 'sensitive' ? '100' : '30'})</th><th scope="col">p95 (ms)</th></tr></thead>
-    <tbody>${result.methods.map(m => `<tr class="${m.method === state.method && m.policy === state.policy ? 'active-result' : ''}"><td>${m.method === 'rules' ? 'Rules' : 'Text model'}</td><td>${m.policy === 'standard' ? 'Standard' : 'Sensitive'}</td><td>${pct(m.category_accuracy)}</td><td>${m.macro_f1 == null ? '—' : m.macro_f1.toFixed(3)}</td><td>${pct(m.urgent_recall)}</td><td>${m.urgent_misses}/${m.urgent_total}</td><td>${m.review_count}/${m.n}</td><td>${pct(m.automation_coverage)}</td><td>${m[costKey]}</td><td>${m.p95_ms.toFixed(3)}</td></tr>`).join('')}</tbody></table></div>
-    <dl class="dataset-counts"><div><dt>Train</dt><dd>${result.train_n}</dd></div><div><dt>Development</dt><dd>60</dd></div><div><dt>Reviewed</dt><dd>${result.independent_review.completed}/${result.independent_review.total}</dd></div><div><dt>Test</dt><dd>${result.independent_review.final_test === 'available' ? result.evaluation_n : 'Pending'}</dd></div></dl>
-    ${fresh ? `<a class="button ghost" href="#review/${fresh2 ? 'fresh2' : 'fresh'}">Labels</a>` : ''}
-    <details class="methodology"><summary>How to read these results</summary>
-    <p>${fresh ? `${resultLabel} uses ${result.evaluation_n} fictional reports. We can score ${denominators.category_n} team judgments and ${denominators.urgency_n} urgency judgments; ${denominators.urgent_total} are urgent. The model was frozen before these reports were written. A separate agent read the reports and guide, then labeled them before scoring. No model changes followed this test.` : retest ? 'These 60 reports had already been seen during development. This retest checks the later fixes; it is not a fresh accuracy estimate. The original labels and results are still available under Original test.' : final ? 'These are the first test results, using the preserved v1 model. A separate agent labeled the reports before scoring. Later fixes are shown separately under Retest.' : 'These results use the development set and its author-provided labels. Use the fresh tests to see how the model handled reports written later.'}</p>
-    <ul><li>The text model learns word patterns from 240 training reports. Rules matches a fixed set of keywords. Current versions also check temperature, custody and safety consequences.</li>
-    <li>Team accuracy counts correct teams. Macro F1 gives each team equal weight. Urgent recall counts urgent cases caught. Review counts reports flagged for a closer look; coverage is the remainder. Every route still needs confirmation.</li>
-    <li>Unclear judgments stay unclear and are excluded only from the relevant accuracy score. Review and cost counts include all reports.</li>
-    <li>Costs are assumed units: 1 for review, 6 for a wrong route or skipped required review, and 2 for false urgency. Missing an urgent flag adds 30 or 100. All rows use the penalty shown in the table.</li>
-    <li>p95 is the time within which 95% of ${result.methods[0].latency_samples} warm predictions finished. It excludes startup, loading the website and time spent reviewing.</li>
-    <li>The classifiers make no paid API calls. Local computing, Codex assistance and review time have not been priced.</li></ul>
-    <p>The reports are synthetic, and the author knew the classifier. Reviewer agents share a model family and sometimes interpret team ownership differently. These results need checking by real operators before operational use. The Latest review is a later second opinion; it does not change these test labels or scores.</p></details></div>`;
+  const count = value => Number.isFinite(value) ? value : '—';
+  const ratio = (numerator, total) => Number.isInteger(numerator) && Number.isInteger(total) ? `${numerator}/${total}` : '—';
+  const caught = (total, missed) => Number.isInteger(missed) ? ratio(total - missed, total) : '—';
+  const standard = result.methods.find(row => row.method === 'learned' && row.policy === 'standard');
+  const sensitive = result.methods.find(row => row.method === 'learned' && row.policy === 'sensitive');
+  const comparison = [
+    ['Review flags', row => ratio(row.review_count, row.n)],
+    ['Required reviews flagged', row => caught(row.review_required_n, row.required_review_automated)],
+    ['False urgent flags', row => count(row.false_urgent)],
+    ['Urgent cases caught', row => caught(row.urgent_total, row.urgent_misses)]
+  ];
+  const benchmarkMethod = {
+    fresh: 'Implementation frozen before test reports',
+    fresh2: 'Implementation frozen before test reports',
+    test: 'Original frozen test',
+    retest: 'Diagnostic retest · previously seen reports',
+    development: 'Development held-out split · author labels'
+  }[dataset];
+  const referenceLabels = dataset === 'development' ? '' : `<a class="button ghost" href="#review/${fresh ? dataset : 'auto'}">Labels</a>`;
+  $('#main').innerHTML = header('Evaluation') + `<div class="content-page evaluation-page">
+    <div class="evaluation-toolbar">
+      <label for="benchmark" class="sr-only">Benchmark</label>
+      <select id="benchmark">${datasets.map(item => `<option value="${esc(item.id)}" ${dataset === item.id ? 'selected' : ''}>${esc(item.label)}</option>`).join('')}</select>
+      <div class="evaluation-meta"><span>${count(result.evaluation_n)} reports</span>
+      ${benchmarkVersionLabel ? `<span class="evaluation-version"><span class="sr-only">Benchmark version </span>${esc(benchmarkVersionLabel)}</span>` : ''}</div>
+      ${referenceLabels}
+    </div>
+    <table class="evaluation-comparison">
+      <caption>Policy comparison</caption>
+      <thead><tr><th scope="col">Text model</th><th scope="col">Standard</th><th scope="col">Sensitive</th></tr></thead>
+      <tbody>${comparison.map(([label, value]) => `<tr><th scope="row">${label}</th>${[standard, sensitive].map(row => `<td>${row ? value(row) : '—'}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table>
+    <details class="evaluation-details" id="all-metrics" ${metricsOpen}><summary>All metrics</summary>
+      <div class="table-wrap" role="region" aria-label="Benchmark metrics" tabindex="0"><table>
+      <thead><tr><th scope="col">Model</th><th scope="col">Policy</th><th scope="col">Team accuracy</th><th scope="col">Macro F1</th><th scope="col">Urgent recall</th><th scope="col">Urgent missed</th><th scope="col">Review flags</th><th scope="col">Coverage</th><th scope="col">Cost · 30 per miss</th><th scope="col">Cost · 100 per miss</th><th scope="col">p95 ms</th></tr></thead>
+      <tbody>${result.methods.map(row => `<tr><td>${row.method === 'rules' ? 'Rules' : 'Text model'}</td><td>${row.policy === 'standard' ? 'Standard' : 'Sensitive'}</td><td>${pct(row.category_accuracy)}</td><td>${row.macro_f1?.toFixed(3) ?? '—'}</td><td>${pct(row.urgent_recall)}</td><td>${ratio(row.urgent_misses, row.urgent_total)}</td><td>${ratio(row.review_count, row.n)}</td><td>${pct(row.automation_coverage)}</td><td>${count(row.cost_units_standard)}</td><td>${count(row.cost_units_sensitive)}</td><td>${row.p95_ms?.toFixed(3) ?? '—'}</td></tr>`).join('')}</tbody></table></div>
+    </details>
+    <details class="evaluation-details" id="evaluation-method" ${methodOpen}><summary>Method</summary>
+      <dl class="evaluation-method">
+        <div><dt>Reports</dt><dd>Synthetic · ${benchmarkMethod}</dd></div>
+        ${dataset !== 'development' ? '<div><dt>Labels</dt><dd>Independent agent · same model family · operator validation pending</dd></div>' : ''}
+        <div><dt>Training</dt><dd>${count(result.train_n)} reports</dd></div>
+        <div><dt>Known labels</dt><dd>Team ${ratio(denominators.category_n, result.evaluation_n)} · Urgency ${ratio(denominators.urgency_n, result.evaluation_n)}</dd></div>
+        <div><dt>Cost units</dt><dd>Review 1 · Wrong team or required review missed 6 · False urgent 2 · Urgent missed 30 or 100</dd></div>
+        <div><dt>p95</dt><dd>Warm inference · ${count(denominators.latency_samples)} runs per model and policy</dd></div>
+      </dl>
+    </details>
+    <section class="evaluation-settings" aria-labelledby="inbox-settings">
+      <div class="evaluation-settings-heading"><h2 id="inbox-settings">Inbox settings</h2>${state.config?.revision ? `<span class="evaluation-version"><span class="sr-only">Live version </span>${esc(state.config.revision)}</span>` : ''}</div>
+      <form class="model-form" id="model-form">
+        <div><label for="method">Model</label><select id="method"><option value="rules" ${state.method === 'rules' ? 'selected' : ''}>Rules</option><option value="learned" ${state.method === 'learned' ? 'selected' : ''}>Text model</option></select></div>
+        <div><label for="policy">Policy</label><select id="policy"><option value="standard" ${state.policy === 'standard' ? 'selected' : ''}>Standard</option><option value="sensitive" ${state.policy === 'sensitive' ? 'selected' : ''}>Sensitive</option></select></div>
+        <button class="button" id="apply-settings" type="submit" ${state.settingsPending ? 'disabled' : ''}>Apply</button>
+      </form>
+    </section></div>`;
   renderNavigation();
   if ($('#benchmark')) $('#benchmark').onchange = async event => {
     const dataset = event.target.value, request = ++benchmarkVersion, version = navigationVersion;
@@ -275,14 +391,25 @@ function renderEvidence() {
     catch (error) {if (request === benchmarkVersion && version === navigationVersion) {event.target.value = state.evidenceDataset; toast(error.message, true);}}
   };
   $('#model-form').onsubmit = async event => {
-    event.preventDefault(); const button = $('button', event.target); if (button.disabled) return; button.disabled = true;
+    event.preventDefault();
+    if (state.settingsPending) return;
+    state.settingsPending = true;
+    $('#apply-settings').disabled = true;
     const method = $('#method').value, policy = $('#policy').value, version = navigationVersion;
     try {
-      const incidents = await incidentRows(method, policy);
-      if (version !== navigationVersion) return;
-      Object.assign(state, {method, policy, incidents}); storage.set('relay-method', method); storage.set('relay-policy', policy);
-      renderEvidence(); $('#method').focus(); toast('Settings applied');
-    } catch (error) {button.disabled = false; toast(error.message, true);}
+      await refreshIncidents(method, policy, version, incidents => {
+        Object.assign(state, {method, policy, incidents});
+        storage.set('relay-method', method); storage.set('relay-policy', policy);
+        if ($('#model-form') !== event.target) {$('#method').value = method; $('#policy').value = policy;}
+        renderNavigation(); toast('Settings applied');
+      });
+    } catch (error) {
+      if (version === navigationVersion) toast(error.message, true);
+    } finally {
+      state.settingsPending = false;
+      const apply = $('#apply-settings');
+      if (apply) apply.disabled = false;
+    }
   };
 }
 function reviewDraft(row) {
@@ -307,7 +434,7 @@ function renderReview() {
     ${readonly ? `<dl class="review-verdict"><div><dt>Team</dt><dd>${esc(state.config.categories[draft.category]?.team || 'Unclear')}</dd></div><div><dt>Urgency</dt><dd class="${draft.urgency === 'urgent' ? 'urgent-text' : ''}">${draft.urgency === 'urgent' ? icon('urgent') : ''}${esc(draft.urgency[0].toUpperCase() + draft.urgency.slice(1))}</dd></div><div><dt>Clarification</dt><dd>${clarification === 'yes' ? 'Needed' : 'Not needed'}</dd></div></dl>
       <section class="review-explanation"><h3>Reason</h3><p>${esc(draft.reason)}</p></section>
       ${draft.agrees_with_reference === false ? `<details class="review-difference"><summary>Review difference</summary><p>${esc(draft.disagreement_note)}</p></details>` : ''}
-      <div class="review-footer"><span class="completion">${count === state.reviews.length ? icon('check') + 'All ' + count + ' reviewed' : count + ' reviewed'}</span><div class="right">${pager}</div></div>` :
+      <div class="review-footer review-pagination"><div class="right">${pager}</div></div>` :
       `<form id="review-form"><div class="review-fields"><div><label for="review-category">Team</label><select id="review-category" required>${categoryOptions(draft.category || '', true, true)}</select></div>
       <div><label for="review-urgency">Urgency</label><select id="review-urgency" required><option value="">Select…</option>${['urgent','routine','unclear'].map(u => `<option value="${u}" ${draft.urgency === u ? 'selected' : ''}>${u[0].toUpperCase() + u.slice(1)}</option>`).join('')}</select></div>
       <div><label for="review-clarify">Clarification</label><select id="review-clarify" required><option value="">Select…</option><option value="yes" ${clarification === 'yes' ? 'selected' : ''}>Needed</option><option value="no" ${clarification === 'no' ? 'selected' : ''}>Not needed</option></select></div></div>
@@ -317,8 +444,8 @@ function renderReview() {
   renderNavigation();
   $('#review-source').onchange = event => {location.hash = `review/${event.target.value}`;};
   $('#open-guide').onclick = () => {
-    const credit = source === 'quality' ? 'A separate Codex agent checked all 60 Fresh 2 reports again on 24 October. This review could see the earlier labels. It adds a second opinion; it does not replace the frozen test labels or count as human validation.' : 'A separate Codex agent assigned these labels using only the reports and the guide. The original judgments remain unchanged. They have not been validated by a logistics operator.';
-    $('#guide-content').innerHTML = state.config.guide.map(([name, definition]) => `<dt>${esc(name)}</dt><dd>${esc(definition)}</dd>`).join('') + (readonly ? `<dt>About this review</dt><dd>${credit}</dd>` : '<dt>Your review</dt><dd>Use Unclear when the report leaves out facts you need. Add a reason before saving. Earlier labels remain separate.</dd>');
+    const credit = source === 'quality' ? 'Agent second review · Earlier labels visible' : 'Independent agent review · Reports and guide only';
+    $('#guide-content').innerHTML = state.config.guide.map(([name, definition]) => `<dt>${esc(name)}</dt><dd>${esc(shortCopy(definition))}</dd>`).join('') + (readonly ? `<dt>Review source</dt><dd>${credit}</dd>` : '<dt>Your review</dt><dd>Use Unclear for missing facts · Add a reason</dd>');
     $('#guide-dialog').showModal();
   };
   $('#open-jump').onclick = () => {
@@ -335,8 +462,8 @@ function renderReview() {
     const version = navigationVersion, index = state.reviewIndex, savedDraft = storage.get(`relay-draft-${row.id}`);
     const payload = {category: $('#review-category').value, urgency: $('#review-urgency').value,
       clarification: $('#review-clarify').value === 'yes', reason: $('#review-reason').value, reviewer: state.reviewer.trim()};
-    if (!payload.reviewer) {error.textContent = 'Enter your name.'; $('#reviewer-name').focus(); return;}
-    if ((payload.category === 'unclear' || payload.urgency === 'unclear' || payload.clarification) && !payload.reason.trim()) {error.textContent = 'Add the facts you still need to check.'; $('#review-reason').focus(); return;}
+    if (!payload.reviewer) {error.textContent = 'Enter your name'; $('#reviewer-name').focus(); return;}
+    if ((payload.category === 'unclear' || payload.urgency === 'unclear' || payload.clarification) && !payload.reason.trim()) {error.textContent = 'Add the facts you still need to check'; $('#review-reason').focus(); return;}
     button.disabled = true;
     try {
       await api(`/api/review/${row.id}`, {method: 'POST', body: JSON.stringify(payload)});

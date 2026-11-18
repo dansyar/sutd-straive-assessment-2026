@@ -202,6 +202,44 @@ test('manual review save finishing after a source change leaves the new set inta
   assert.match(app.get('.review-location').textContent, /FRESH/);
 });
 
+test('Fresh 2 compares both text policies independently of Inbox settings', async () => {
+  const app = harness();
+  const frozen = JSON.parse(readFileSync(new URL('../evidence/fresh2-20261022/fresh-test.json', import.meta.url), 'utf8'));
+  app.set({view:'evidence', evidenceDataset:'fresh2', evidence:{...evidence('fresh2'), ...frozen}, config:{...config, revision:'routing-v5'}});
+  app.run('renderEvidence()');
+  const comparison = () => app.get('.evaluation-comparison tbody').querySelectorAll('tr').map(row => row.children.map(cell => cell.textContent));
+  const allMetrics = () => app.get('#all-metrics').textContent;
+  const textPolicies = [
+    ['Review flags', '30/60', '43/60'],
+    ['Required reviews flagged', '8/10', '10/10'],
+    ['False urgent flags', '3', '5'],
+    ['Urgent cases caught', '13/13', '13/13']
+  ];
+  const baseline = allMetrics();
+  assert.deepEqual(comparison(), textPolicies);
+  assert.match(baseline, /Cost · 30 per missCost · 100 per miss/);
+  assert.match(app.get('.evaluation-toolbar .evaluation-version').textContent, /routing-v4/);
+  assert.match(app.get('.evaluation-settings-heading .evaluation-version').textContent, /routing-v5/);
+  app.get('#method').value = 'rules'; app.get('#policy').value = 'standard';
+  const applying = submit(app.get('#model-form'));
+  assert.equal(app.requests[0].path, '/api/incidents?method=rules&policy=standard');
+  app.requests[0].succeed([]); await applying;
+  assert.deepEqual(comparison(), textPolicies);
+  assert.equal(allMetrics(), baseline);
+  assert.equal(app.get('#policy').value, 'standard');
+});
+
+test('comparison distinguishes unknown tallies from measured zero', () => {
+  const app = harness();
+  const dataset = evidence('original');
+  delete dataset.revision;
+  Object.assign(dataset.methods[0], {urgent_misses:null, review_required_n:11, required_review_automated:null, false_urgent:0});
+  app.set({view:'evidence', evidenceDataset:'test', evidence:dataset}); app.run('renderEvidence()');
+  const rows = app.get('.evaluation-comparison tbody').querySelectorAll('tr').map(row => row.children.map(cell => cell.textContent));
+  assert.deepEqual(rows.map(row => row.at(-1)), ['43/60', '—', '0', '—']);
+  assert.match(app.get('.evaluation-toolbar .evaluation-version').textContent, /v1/);
+});
+
 test('benchmark changes keep the latest choice when responses arrive backwards', async () => {
   const app = harness(); app.set({view:'evidence',evidenceDataset:'fresh2',evidence:evidence('INITIAL')}); app.run('renderEvidence()');
   const selector = app.get('#benchmark'); selector.value = 'fresh';
@@ -244,6 +282,88 @@ test('an urgent report without a review flag still displays Urgent', () => {
   app.run('renderOperations()');
   assert.equal(app.get('.detail-status').textContent, 'Urgent');
   assert.equal(app.get('#decision-urgency').value, 'urgent');
+});
+
+test('hosted clarification keeps a case open and restores the note on reload', async () => {
+  const app = harness();
+  app.set({config: {...config, storage: 'browser'}});
+  const oldDecision = {category:'delay',urgent:false,note:'Previous demo route',created_at:'2026-11-18T00:00:00Z'};
+  app.local.set('relay-demo-incidents-v1', JSON.stringify({reports:[],decisions:{OLD:oldDecision}}));
+  const seeds = [incident('CASE'), incident('OLD')];
+
+  const opening = app.navigate('#operations/all');
+  app.requests.at(-1).succeed(seeds); await opening;
+  app.get('#decision-category').value = '';
+  app.get('#decision-urgency').value = 'urgent';
+  app.get('#decision-note').value = 'Confirm the delivery address';
+  await app.get('#request-clarification').onclick();
+  assert.match(app.get('.detail-status').textContent, /Awaiting clarification/);
+  assert.equal(app.get('#decision-category').value, '', 'request can be saved without a team');
+  assert.equal(app.get('#decision-note').value, 'Confirm the delivery address');
+  assert.equal(app.run('state.incidents.find(row=>row.id === "CASE").decision'), null);
+  assert.deepEqual(JSON.parse(app.local.get('relay-demo-incidents-v1')).decisions, {OLD:oldDecision});
+
+  // A new navigation and an empty draft store use the persisted request
+  app.set({decisionDrafts:{},incidents:null});
+  const urgent = app.navigate('#operations/urgent');
+  app.requests.at(-1).succeed(seeds); await urgent;
+  assert.deepEqual(app.snapshot('filteredIncidents().map(row=>row.id)'), ['CASE']);
+  assert.equal(app.get('#decision-urgency').value, 'urgent');
+  assert.equal(app.get('#decision-note').value, 'Confirm the delivery address');
+
+  await submit(app.get('#decision-form'));
+  assert.deepEqual(JSON.parse(app.local.get('relay-demo-incidents-v1')).clarifications, {});
+  assert.equal(app.run('state.incidents.find(row=>row.id === "CASE").decision.note'), 'Confirm the delivery address');
+  await assert.rejects(app.run(`saveIncidentAction('CASE','clarification',{urgent:true,note:'Older browser tab'})`), /Route already confirmed/);
+  assert.equal(app.requests.some(request=>request.options.method === 'POST'), false);
+  assert.match(app.get('#toast').textContent, /Route confirmed/);
+});
+
+test('failed clarification keeps the entered note and permits retry', async () => {
+  const app = harness(); app.set({selected:'CASE',incidents:[incident('CASE')]});
+  app.run('renderOperations()');
+  await app.get('#request-clarification').onclick();
+  assert.equal(app.requests.length, 0);
+  assert.equal(app.get('#toast').textContent, 'Add a clarification note');
+  assert.equal(app.document.activeElement, app.get('#decision-note'));
+  app.get('#decision-note').value = 'Check the signature'; app.get('#decision-form').oninput();
+  const saving = app.get('#request-clarification').onclick();
+  assert.equal(app.get('#request-clarification').disabled, true);
+  assert.equal(app.requests[0].path, '/api/incidents/CASE/clarification');
+  app.requests[0].fail('Couldn’t save clarification'); await saving;
+  assert.equal(app.get('#request-clarification').disabled, false);
+  assert.equal(app.get('#decision-note').value, 'Check the signature');
+  assert.equal(app.run('state.incidents[0].clarification'), undefined);
+});
+
+test('queue navigation retries a snapshot taken before an acknowledged clarification', async () => {
+  const app = harness(); app.set({selected:'CASE',incidents:[incident('CASE')]});
+  app.run('renderOperations()');
+  app.get('#decision-note').value = 'Check the signature'; app.get('#decision-urgency').value = 'urgent';
+  const saving = app.get('#request-clarification').onclick();
+  const loading = app.navigate('#operations/urgent');
+  const saved = {urgent:true,note:'Check the signature',created_at:'2026-11-18T00:00:00Z'};
+  app.requests[0].succeed({created_at:saved.created_at}); await saving;
+  app.requests[1].succeed([incident('CASE')]); await tick();
+  assert.equal(app.requests.length, 3, 'a save during navigation invalidates the old request');
+  app.requests[2].succeed([incident('CASE',{clarification:saved})]); await loading;
+  assert.equal(app.get('#decision-note').value, saved.note);
+  assert.match(app.get('.detail-status').textContent, /Awaiting clarification/);
+});
+
+test('an acknowledged clarification updates a new queue that finished loading first', async () => {
+  const app = harness(); app.set({selected:'CASE',incidents:[incident('CASE')]});
+  app.run('renderOperations()');
+  app.get('#decision-note').value = 'Check the signature';
+  const saving = app.get('#request-clarification').onclick();
+  const loading = app.navigate('#operations/review');
+  app.requests[1].succeed([incident('CASE')]); await loading;
+  assert.equal(app.get('#request-clarification').disabled, true);
+  app.requests[0].succeed({created_at:'2026-11-18T00:00:00Z'}); await saving;
+  assert.equal(app.location.hash, '#operations/review');
+  assert.equal(app.get('#decision-note').value, 'Check the signature');
+  assert.match(app.get('.detail-status').textContent, /Awaiting clarification/);
+  assert.equal(app.get('#request-clarification').disabled, false);
 });
 
 test('operations shortcuts do nothing while the queue is loading', async () => {

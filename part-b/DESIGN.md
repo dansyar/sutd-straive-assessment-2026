@@ -8,7 +8,8 @@ prototype with synthetic data, not a connected dispatch system.
 ## Experience
 
 - Operations: queue → original report → proposed route and urgency → reasons →
-  human confirmation/correction. No automatic messages to external teams.
+  confirm route or request clarification with a note. Confirm moves the case to
+  Done. Pending clarification stays open. No automatic messages to external teams.
 - Evidence: fresh test, current development, a disclosed diagnostic retest,
   preserved original test, costs and policy experiment. Never mix these versions.
 - Reviews: Latest review shows a completed second pass over all 60 Fresh 2 reports. Original, Fresh 1 and Fresh 2 keep their frozen judgments.
@@ -29,8 +30,10 @@ and a detail pane. Use functional labels only. No hero, slogan, subtitle,
 description, summary strip, explanatory paragraph, redundant metadata, or footer.
 The report's first sentence becomes its heading; the remaining report is the body.
 Only non-substantive generation wrappers are omitted; the original data is intact.
-Team, urgency, note, and confirmation remain in the incident pane. Model/policy
-controls, inference details, metrics and methodology belong in Evaluation.
+Team, urgency, note and actions remain in the incident pane. A closed disclosure
+holds the decisive route and flag evidence. Keep model/policy controls, metrics
+and methodology in Evaluation. Use short labels without sentence punctuation
+in the interface. Preserve the original report and evaluation judgments.
 
 At 1024/768 px reduce rail and list widths. At 390 px show a full-width queue,
 then a full-width report with an explicit back button. Do not stack a long queue
@@ -43,6 +46,6 @@ Check 1440, 1024, 768 and 390 px and inspect all three views visually.
 Semantic navigation, visible keyboard focus, explicit labels, text alongside
 status colors, live feedback for saves and errors, and reduced-motion support.
 Keep the compact Demo indicator in the navigation. Counts come from actual records.
-Human actions are stored only in this local demo. Model similarity is not a
+Human actions stay in the local database or the hosted visitor’s browser. Model similarity is not a
 probability. Never present development estimates as independently verified test
 performance. Show an actionable unavailable/error state rather than a fake zero.

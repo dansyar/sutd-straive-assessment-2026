@@ -16,7 +16,8 @@ from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator, model_validator
 
-from engine import ENGINE_VERSION, TextModel, routing_queue, triage
+from engine import TextModel, routing_queue
+from live_engine import ENGINE_VERSION, triage
 from corpus import load_corpus, sha256
 from evaluate import reviewed_rows
 from historical_review import fresh1_rows
@@ -47,6 +48,8 @@ if not BROWSER_STORAGE:
             CREATE TABLE IF NOT EXISTS incidents(id TEXT PRIMARY KEY, text TEXT, channel TEXT, created_at TEXT);
             CREATE TABLE IF NOT EXISTS decisions(id INTEGER PRIMARY KEY AUTOINCREMENT, report_id TEXT,
                 category TEXT, urgent INTEGER, note TEXT, created_at TEXT);
+            CREATE TABLE IF NOT EXISTS clarifications(report_id TEXT PRIMARY KEY, urgent INTEGER,
+                note TEXT, created_at TEXT);
             CREATE TABLE IF NOT EXISTS reviews(report_id TEXT PRIMARY KEY, category TEXT, urgency TEXT,
                 clarification INTEGER, reason TEXT, reviewer TEXT, updated_at TEXT);
             CREATE TABLE IF NOT EXISTS review_history(id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -71,6 +74,10 @@ class DecisionInput(BaseModel):
     category: Literal["delay", "missing", "damage", "temperature", "safety", "documentation"]
     urgent: bool
     note: str = Field(default="", max_length=1000)
+
+class ClarificationInput(BaseModel):
+    urgent: bool
+    note: str = Field(max_length=1000)
 
 class ReviewInput(BaseModel):
     category: Literal["delay", "missing", "damage", "temperature", "safety", "documentation", "unclear"]
@@ -145,16 +152,23 @@ def config():
 @app.get("/api/incidents")
 def incidents(method: Literal["rules", "learned"]="learned", policy: Literal["standard", "sensitive"]="sensitive"):
     decisions = {}
+    clarifications = {}
     if not BROWSER_STORAGE:
         with connection() as db:
+            db.execute("BEGIN")
             decisions = {r["report_id"]: dict(r) for r in db.execute("SELECT * FROM decisions ORDER BY id")}
+            clarifications = {r["report_id"]: dict(r) for r in db.execute("SELECT * FROM clarifications")}
     rows = []
     for report in all_incidents():
         prediction = triage(report["text"], model, method, policy)
         decision = decisions.get(report["id"])
+        clarification = clarifications.get(report["id"])
+        priority = {"urgent": bool(clarification["urgent"]), "review": True} if clarification else prediction
         rows.append({**report, "prediction": prediction, "decision": decision,
-                     "queue": routing_queue(prediction, bool(decision))})
-    rows.sort(key=lambda r: (bool(r["decision"]), not r["prediction"]["urgent"], not r["prediction"]["review"], r["id"]))
+                     "clarification": clarification, "queue": routing_queue(priority, bool(decision))})
+    rows.sort(key=lambda r: (bool(r["decision"]),
+                             not (r["clarification"] or r["prediction"])["urgent"],
+                             not (r["clarification"] or r["prediction"]["review"]), r["id"]))
     return rows
 
 @app.post("/api/triage")
@@ -182,6 +196,25 @@ def save_decision(report_id: str, body: DecisionInput):
     with connection() as db:
         db.execute("INSERT INTO decisions(report_id,category,urgent,note,created_at) VALUES(?,?,?,?,?)",
                    (report_id, body.category, int(body.urgent), body.note.strip(), stamp))
+        db.execute("DELETE FROM clarifications WHERE report_id = ?", (report_id,))
+    return {"saved": True, "scope": "local demo", "created_at": stamp}
+
+@app.post("/api/incidents/{report_id}/clarification")
+def save_clarification(report_id: str, body: ClarificationInput):
+    if BROWSER_STORAGE:
+        raise HTTPException(409, "Hosted demo clarifications are saved in the browser")
+    if report_id not in {r["id"] for r in all_incidents()}:
+        raise HTTPException(404, "Report not found")
+    note = body.note.strip()
+    if not note:
+        raise HTTPException(422, "Add a clarification note")
+    stamp = now()
+    with connection() as db:
+        db.execute("BEGIN IMMEDIATE")
+        if db.execute("SELECT 1 FROM decisions WHERE report_id = ? LIMIT 1", (report_id,)).fetchone():
+            raise HTTPException(409, "Route already confirmed")
+        db.execute("INSERT OR REPLACE INTO clarifications VALUES(?,?,?,?)",
+                   (report_id, int(body.urgent), note, stamp))
     return {"saved": True, "scope": "local demo", "created_at": stamp}
 
 @app.get("/api/audit")

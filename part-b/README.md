@@ -35,12 +35,14 @@ The application needs only the pinned packages in `requirements.txt`. A clean Li
 
 1. Inbox shows all open incidents. Initial examples are 48 training reports, one per family, not test evidence.
 2. Urgent contains urgent reports, including those needing review. Needs review contains non-urgent review reports. These priority queues are exclusive. Done contains confirmed decisions.
-3. Select a report; change Team or Urgency if needed, add a note, then Confirm route. Reload and open Done to inspect the saved local decision.
+3. Open a report and expand **Why flagged?** or **Why this route?** to inspect the suggested decision. Confirm the route when ready. If you need more facts, enter a note and select **Request clarification**. The case stays open in **Urgent** or **Needs review** with your selected urgency. Reopen it when you have the facts, then confirm it to move it to **Done**.
 4. New report runs the selected classifier and can add the report to the queue.
-5. Evaluation holds model and policy controls. Fresh 2 defaults to the latest 60-report test; Fresh 1 retains the preceding version; Retest shows the exposed-case diagnostic; Original test preserves v1 results. Every row uses the same selected miss penalty.
+5. Evaluation compares review workload, urgent catches, false urgent flags, and required reviews caught for both text policies. Both miss-cost assumptions are available under **All metrics**. **Inbox settings** change the live classifier only. Fresh 2 defaults to the frozen 60-report routing-v4 test; Fresh 1 retains the preceding version; Retest shows the exposed-case diagnostic; Original test preserves v1 results.
 6. Reviews opens Latest review: all 60 Fresh 2 reports checked again, with short reasons. Fresh 2, Fresh 1 and Original preserve the frozen reference labels. Your review opens the separate editable original-set workflow. Guide explains attribution, and Export downloads the selected set. The latest second pass is not another blind benchmark.
 
 Text/Sensitive is the default for new use; explicitly saved model/policy choices remain available. Rules remains the baseline comparator. Both approaches share explicit cold-chain protection. Changing approach/policy updates the queue without retraining; every decision still needs human confirmation.
+
+The demo uses `live_engine.py` (routing-v5), including the missing-paperwork fix. `engine.py` remains the frozen routing-v4 implementation used by the published benchmark. The routing-v5 change is covered by regression checks, and the frozen metrics apply to the version shown in Evaluation.
 
 ## Reproduce the evidence
 

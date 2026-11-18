@@ -238,6 +238,42 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
             if not row["decision"] and row["prediction"]["urgent"]:
                 self.assertEqual(row["queue"], "urgent")
 
+    async def test_clarification_persists_priority_without_confirming_route(self):
+        report = {"text": "The system says delivered but the recipient denies receipt and the signature is unreadable.", "save": True}
+        created = (await self.client.post("/api/triage", json=report)).json()
+        incident_id = created["id"]
+        path = f"/api/incidents/{incident_id}"
+
+        async def current_row():
+            rows = (await self.client.get("/api/incidents")).json()
+            return next(row for row in rows if row["id"] == incident_id)
+
+        missing = await self.client.post(f"{path}/clarification", json={"urgent": False, "note": " "})
+        self.assertEqual(missing.status_code, 422)
+        self.assertIsNone((await current_row())["clarification"])
+
+        routine = await self.client.post(f"{path}/clarification", json={"urgent": False, "note": "Verify the delivery address"})
+        self.assertEqual(routine.status_code, 200)
+        row = await current_row()
+        self.assertIsNone(row["decision"])
+        self.assertEqual((row["queue"], row["clarification"]["note"]), ("review", "Verify the delivery address"))
+
+        request = {"urgent": True, "note": " Ask the driver to verify the address "}
+        urgent = await self.client.post(f"{path}/clarification", json=request)
+        self.assertEqual(urgent.status_code, 200)
+        row = await current_row()
+        self.assertEqual((row["queue"], row["clarification"]["note"]), ("urgent", request["note"].strip()))
+        self.assertIsNone(row["decision"])
+
+        confirmed = await self.client.post(f"{path}/decision", json={**request, "category": "missing"})
+        self.assertEqual(confirmed.status_code, 200)
+        row = await current_row()
+        self.assertEqual((row["queue"], row["decision"]["note"]), ("done", request["note"].strip()))
+        self.assertIsNone(row["clarification"])
+        self.assertEqual((await self.client.post(f"{path}/clarification", json=request)).status_code, 409)
+        with patch.object(self.module, "BROWSER_STORAGE", True):
+            self.assertEqual((await self.client.post(f"{path}/clarification", json=request)).status_code, 409)
+
     async def test_report_length_uses_trimmed_text_and_does_not_save_invalid_reports(self):
         with self.module.connection() as db:
             before = db.execute("SELECT COUNT(*) FROM incidents").fetchone()[0]
