@@ -22,13 +22,18 @@ MISSING_DOCUMENT = re.compile(
     rf"\b(?P<subject>{DOCUMENT})\b(?: (?:for|of) (?:the |this |that )?{CARGO}\b)?"
     rf" (?:is |are |was |were |has gone |remains? )?(?:still )?"
     rf"(?:(?P<denial>not )?(?:missing|absent)|not attached|not supplied)\b"
-    rf"|\b(?:missing|absent|cannot find|cannot locate|can't find|can't locate) "
+    rf"|\b(?:missing|absent|(?:cannot|can't|could not|unable to) (?:find|locate)) "
     rf"(?:the |a |an |its |our )?(?P<object>{DOCUMENT})\b"
 )
 CARGO_CARRYING_DOCUMENT = re.compile(rf"\b{CARGO} (?:with|without|carrying|holding|containing) (?:the |a |an |its )?$")
-CARGO_PASSIVE_LOSS = re.compile(
-    rf"\b{CARGO}s? (?:still |currently )?(?:(?:cannot|can't|could not) (?:yet )?be|"
-    rf"(?:has|have) not (?:yet )?been) (?:found|located|accounted for)\b"
+CARGO_JOINED_TO_DOCUMENT = re.compile(rf"\b{CARGO}s?\s*,?\s+and (?:its |their |the |an? )?$")
+CARGO_EXPLICIT_LOSS = re.compile(
+    rf"\b{CARGO}s?(?: (?:with|without|carrying|holding|containing) (?:the |its )?paperwork)? "
+    rf"(?:still |currently )?(?:(?:(?:cannot|can't|could not) (?:yet )?be|"
+    rf"(?:has|have) not (?:yet )?been) (?:found|located|accounted for)|"
+    rf"(?:was|were|has been|have been) stolen)\b"
+    rf"|\bneither\b[^.!?;\n]{{0,90}}\bnor (?:the |our |its )?{CARGO}s?(?: itself)? "
+    rf"(?:can|could) be (?:found|located|accounted for)\b"
 )
 READING_BOUNDARY = re.compile(r"[!?;\n]|\.(?!\d)|\b(?:but|however|while)\b")
 EARLIER_READING = re.compile(r"\b(?:yesterday|earlier|last (?:night|week|month)|previous(?:ly)?|historical)\b")
@@ -42,20 +47,19 @@ def document_issue(text):
     def mask(match):
         nonlocal document
         prefix = lower[max(0, match.start() - 55):match.start()]
-        if match["subject"] and CARGO_CARRYING_DOCUMENT.search(prefix):
+        if match["subject"] and (CARGO_CARRYING_DOCUMENT.search(prefix) or CARGO_JOINED_TO_DOCUMENT.search(prefix)):
             return match[0]
         if not (match["denial"] or re.search(r"\b(?:not|never) $", prefix)):
             document = document or match["subject"] or match["object"]
-        return "a document"
+        return "paperwork"
 
     # Reassess the remaining facts without treating missing paperwork as cargo loss.
     masked = MISSING_DOCUMENT.sub(mask, lower)
+    if document:
+        masked = CARGO_EXPLICIT_LOSS.sub("cargo is missing", masked)
     issue = issue_check(masked if masked != lower else text)
     if not document or (issue and (issue["active_safety"] or issue["category"] == "missing")):
         return issue
-    if CARGO_PASSIVE_LOSS.search(masked):
-        return {"category": "missing", "urgent": False, "active_safety": False, "reasons": [],
-                "signals": ["Reported cargo cannot be located"]}
 
     return {"category": "documentation", "urgent": False, "active_safety": False, "reasons": [],
             "signals": [f"Missing {document}"]}
