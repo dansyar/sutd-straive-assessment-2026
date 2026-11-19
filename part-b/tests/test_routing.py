@@ -22,6 +22,17 @@ class RoutingTests(unittest.TestCase):
                         if review:
                             self.assertTrue(result["review"])
 
+    def test_material_unknowns_are_flagged_for_review(self):
+        reports = [
+            "A reagent box gives off an unusual odour. Nobody knows whether it contains hazardous material.",
+            "A delivery has arrived. There is no information about who signed for it.",
+        ]
+        for report in reports:
+            for method in ("rules", "learned"):
+                for policy in ("standard", "sensitive"):
+                    with self.subTest(report=report, method=method, policy=policy):
+                        self.assertTrue(triage(report, self.model, method, policy)["review"])
+
     def test_critical_system_consequence_overrides_paperwork_and_transport(self):
         self.check_cases([
             ("A licence number is missing from the clearance packet for the replacement fire-alarm controller. The building's alarm remains out of service with no temporary alarm, and customs will not release the controller until the licence is supplied.", "safety", True),

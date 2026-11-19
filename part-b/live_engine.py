@@ -11,7 +11,7 @@ from engine import (
 )
 from taxonomy import CATEGORIES, POLICIES
 
-ENGINE_VERSION = "routing-v5"
+ENGINE_VERSION = "routing-v6"
 
 CARGO = r"(?:parcel|shipment|consignment|cargo|pallet|load|carton|case|goods|stock|freight)"
 DOCUMENT = (r"(?:commercial invoice|invoice number|invoice|air ?waybill|airway bill|bill of lading|packing list|"
@@ -174,7 +174,8 @@ def triage(text, model, method="learned", policy="sensitive"):
         reasons.append("Too little matching evidence to route automatically.")
     if pred["margin"] < config["margin_floor"]:
         reasons.append("More than one category has similar evidence.")
-    if any(re.search(p, lower) for p in CLARIFY):
+    missing_facts = re.search(r"\b(?:nobody|no one) knows (?:whether|if|what|where|who|how)\b|\bno information (?:is available )?(?:about|on|regarding)\b", lower)
+    if missing_facts or any(re.search(p, lower) for p in CLARIFY):
         reasons.append("The report contains missing or conflicting facts.")
     if policy == "sensitive" and not urgent and any(re.search(p, lower) for p in SENSITIVE_SIGNALS):
         urgent = policy_escalated = True
